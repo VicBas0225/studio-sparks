@@ -145,7 +145,7 @@ function ContactPage() {
                           <option>{lang === "ja" ? "100〜500万円" : "¥1M – ¥5M"}</option>
                           <option>{lang === "ja" ? "500〜2000万円" : "¥5M – ¥20M"}</option>
                           <option>{lang === "ja" ? "2000万円〜" : "¥20M+"}</option>
-                          <option>{lang === "ja" ? "相談したい", en: "Not sure — let's discuss" as unknown as string}</option>
+                          <option>{lang === "ja" ? "相談したい" : "Not sure — let's discuss"}</option>
                         </select>
                       ) : (
                         <select className={inputCls} defaultValue="">

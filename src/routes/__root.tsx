@@ -51,11 +51,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "結 Yui — 日本のフリーランス開発ギルド | Bilingual Web Development Guild" },
-      { name: "description", content: "東京・大阪・福岡・北海道から集まった8名の精鋭フリーランスによる、Web開発・デザイン一気通貫のギルド型スタジオ。A remote-first guild of eight independent engineers and designers building web products end-to-end in Japan." },
-      { name: "author", content: "Yui Guild Studio" },
-      { property: "og:title", content: "結 Yui — Bilingual Web Development Guild" },
-      { property: "og:description", content: "8-person remote guild in Japan. Fullstack, infra, and design under one roof." },
+      { title: "Dream-cha — 理想の未来へ、技術で挑み続ける。" },
+      { name: "description", content: "Dream-cha（ドリームチャ）は、デザイナーとバックエンドエンジニアが組む完全成果報酬型の共同開発チームです。前払いゼロ・フルパッケージ対応でデザイナー・ノーコードディレクターの案件を技術で突破します。" },
+      { name: "author", content: "Dream-cha" },
+      { property: "og:title", content: "Dream-cha — Dream Challenge Engineering" },
+      { property: "og:description", content: "Performance-based co-development. Zero upfront. Full-stack. Your creative vision, backed by solid engineering." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -81,6 +81,12 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="ja">
       <head>
         <HeadContent />
+        {/* Prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})()`,
+          }}
+        />
       </head>
       <body>
         {children}

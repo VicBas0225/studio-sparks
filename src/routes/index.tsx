@@ -1,261 +1,231 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
-import { ProjectVisual } from "@/components/ProjectVisual";
-import { projects, team } from "@/lib/content";
+import { caseStudies, team } from "@/lib/content";
 import { Avatar } from "@/components/Avatar";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Layers, Paintbrush } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
 function HomePage() {
-  const { t, lang } = useLang();
+  const { t } = useLang();
 
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-background">
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-20 md:px-10 md:pb-32 md:pt-28">
-          <div className="grid gap-12 md:grid-cols-12 md:gap-16">
-            <div className="md:col-span-8">
-              <SectionLabel index="01">Yui · Guild Studio</SectionLabel>
-              <h1 className="mt-8 font-serif text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-tight">
-                {t({
-                  ja: (
-                    <>
-                      技術と美意識を、<br />
-                      一つの手で結ぶ。
-                    </>
-                  ),
-                  en: (
-                    <>
-                      Engineering and craft,<br />
-                      tied by a single hand.
-                    </>
-                  ),
-                })}
-              </h1>
-              <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                {t({
-                  ja: "私たちは、日本各地からオンラインで集まった8名の精鋭フリーランスによるギルド型スタジオです。要件定義、設計、実装、デザイン、運用まで — Web開発を一気通貫でお引き受けします。",
-                  en: "Yui is a remote-first guild of eight independent specialists based across Japan. We take web products end-to-end — from requirements and architecture to design, build and long-term operation.",
-                })}
-              </p>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Link
-                  to="/contact"
-                  className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm text-background transition-transform hover:-translate-y-0.5"
-                >
-                  {t({ ja: "プロジェクトの相談を始める", en: "Start a project" })}
-                  <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm"
-                >
-                  {t({ ja: "実績を見る", en: "See our work" })}
-                </Link>
-              </div>
-            </div>
-
-            <div className="md:col-span-4">
-              <div className="border-l border-border pl-6">
-                <div className="label-jp">Location</div>
-                <p className="mt-2 font-serif text-2xl">Tokyo · Osaka · Fukuoka · Sapporo</p>
-                <div className="mt-8 label-jp">Team</div>
-                <p className="mt-2 font-serif text-2xl">8 {t({ ja: "名の職人", en: "specialists" })}</p>
-                <div className="mt-8 label-jp">Since</div>
-                <p className="mt-2 font-serif text-2xl">2023</p>
-              </div>
-            </div>
-          </div>
-
-          {/* vertical rule accent */}
-          <div className="pointer-events-none absolute right-8 top-0 hidden h-full w-px bg-border md:block" />
-        </div>
-      </section>
-
-      <div className="hairline mx-auto max-w-7xl" />
-
-      {/* Capabilities */}
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-16 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <SectionLabel index="02">Capabilities</SectionLabel>
-            <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
-              {t({ ja: "設計から運用まで、\n一つのチームで。", en: "From spec to ops,\nunder one roof." })}
-            </h2>
-          </div>
-          <div className="md:col-span-8">
-            <div className="grid gap-px bg-border md:grid-cols-2">
-              {[
-                {
-                  n: "01",
-                  t: { ja: "要件定義 / 上流設計", en: "Discovery & Requirements" },
-                  d: {
-                    ja: "非エンジニアの意図を、実装可能な仕様に翻訳。手戻りを最小化する見取り図を最初に描きます。",
-                    en: "We translate non-technical intent into shippable specs, keeping rework close to zero.",
-                  },
-                },
-                {
-                  n: "02",
-                  t: { ja: "UI / UX デザイン", en: "UI / UX Design" },
-                  d: {
-                    ja: "美しさと実装性を両立するFigmaデザイン。開発への受け渡しまで責任を持ちます。",
-                    en: "Figma that is beautiful and implementable. Owned all the way to developer handoff.",
-                  },
-                },
-                {
-                  n: "03",
-                  t: { ja: "フロントエンド実装", en: "Frontend Engineering" },
-                  d: {
-                    ja: "Next.js / React を用いた、アクセシブルで軽快なプロダクトを構築します。",
-                    en: "Fast, accessible products built with Next.js and React.",
-                  },
-                },
-                {
-                  n: "04",
-                  t: { ja: "バックエンド / API", en: "Backend & APIs" },
-                  d: {
-                    ja: "Go / Python / Node.js による高速・堅牢なAPIとデータベース設計。",
-                    en: "Robust APIs and schemas in Go, Python and Node.js.",
-                  },
-                },
-                {
-                  n: "05",
-                  t: { ja: "クラウドインフラ", en: "Cloud Infrastructure" },
-                  d: {
-                    ja: "AWS を中心にIaCで再現性の高い環境を構築し、監視までセットで納品します。",
-                    en: "Reproducible IaC on AWS with observability wired in from day one.",
-                  },
-                },
-                {
-                  n: "06",
-                  t: { ja: "決済 / 認証連携", en: "Payments & Auth" },
-                  d: {
-                    ja: "Stripe、LINE、Google 認証など、外部連携の実装をスピーディに。",
-                    en: "Stripe, LINE and Google auth — shipped quickly, safely, and cleanly.",
-                  },
-                },
-              ].map((c) => (
-                <div key={c.n} className="bg-background p-8 transition-colors hover:bg-secondary">
-                  <div className="font-mono text-xs text-muted-foreground">{c.n}</div>
-                  <div className="mt-3 font-serif text-lg">{t(c.t)}</div>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t(c.d)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="hairline mx-auto max-w-7xl" />
-
-      {/* Selected work */}
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="flex items-end justify-between">
-          <div>
-            <SectionLabel index="03">Selected Work</SectionLabel>
-            <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
-              {t({ ja: "静かに、確かに動くもの。", en: "Quiet products that work." })}
-            </h2>
-          </div>
-          <Link to="/projects" className="hidden text-sm text-muted-foreground hover:text-foreground md:block">
-            {t({ ja: "すべての実績 →", en: "All projects →" })}
-          </Link>
-        </div>
-
-        <div className="mt-16 space-y-16">
-          {projects.map((p, i) => (
+          <SectionLabel index="01">Dream-cha · ドリームチャ</SectionLabel>
+          <h1 className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5.5vw,4rem)] leading-[1.08] tracking-tight">
+            {t({
+              ja: <>デザインはできる。<br />でも、システムが組めないから、<br />その高単価案件を諦めますか？</>,
+              en: <>Great design, zero backend fear.<br />We are your complete tech partner.</>,
+            })}
+          </h1>
+          <p className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
+            {t({
+              ja: "『Dream-cha（ドリームチャ＝Dream Challenge）』は、デザイナーのシステム不安とエンジニアのデザイン不安を相殺する、完全成果報酬型の共同開発チームです。あなたの挑戦リスクをゼロにします。",
+              en: "Dream-cha is a performance-based co-development team that eliminates the gap between design and engineering. We take on the technical risk so you can focus on winning the work.",
+            })}
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              key={p.id}
-              to="/projects"
-              className="group grid gap-8 border-t border-border pt-8 md:grid-cols-12 md:gap-10"
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              <div className="md:col-span-5">
-                <ProjectVisual hue={p.hue} label={`${p.year} · CASE 0${i + 1}`} />
-              </div>
-              <div className="md:col-span-7">
-                <div className="flex items-center gap-4 label-jp">
-                  <span>{p.year}</span>
-                  <span className="h-px w-6 bg-border" />
-                  <span>{t(p.category)}</span>
-                </div>
-                <h3 className="mt-4 font-serif text-2xl leading-snug transition-colors group-hover:text-vermilion md:text-3xl">
-                  {t(p.title)}
-                </h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
-                  {t(p.summary)}
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {p.stack.slice(0, 5).map((s) => (
-                    <span key={s} className="border border-border px-2.5 py-1 font-mono text-[10px] tracking-wider text-muted-foreground">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              {t({ ja: "⚡ 30分・無料壁打ち相談", en: "⚡ Free 30-min consult" })}
+              <ArrowUpRight size={15} />
             </Link>
+            <Link to="/projects" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
+              {t({ ja: "解決実績を見る →", en: "See our case studies →" })}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <div className="hairline mx-auto max-w-7xl" />
+
+      {/* Pain points */}
+      <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <SectionLabel index="02">{t({ ja: "よくある悩み", en: "Sound familiar?" })}</SectionLabel>
+          <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+            {t({ ja: "皆さんには、このような経験はありませんか？", en: "Have you ever been here?" })}
+          </h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                label: { ja: "デザイナーの限界", en: "The designer's wall" },
+                body: {
+                  ja: "クライアントから会員サイトや独自決済を頼まれた。デザインやWordPressは得意だけど、バックエンドのセキュリティやDB構築をどう処理すればいいか分からない……",
+                  en: "Your client wants a membership site with custom payments. Design and WordPress — no problem. But backend security and database architecture? Complete blank.",
+                },
+              },
+              {
+                label: { ja: "バックエンド開発者の限界", en: "The engineer's wall" },
+                body: {
+                  ja: "システムの裏側は完璧に組める。だけど、フロントのデザインセンスに自信がなくて、直受け案件の提案を躊躇してしまう……",
+                  en: "You can architect perfect systems. But your design confidence stops you from pitching direct clients, leaving money on the table every month.",
+                },
+              },
+              {
+                label: { ja: "既存の選択肢の罠", en: "The existing options trap" },
+                body: {
+                  ja: "企業に外注すると見積もりが高すぎる。クラウドソーシングは前払い・立替が必要。本当に動くものが納品されるか不安だし、そもそも手元の予算がない……",
+                  en: "Agency quotes blow the budget. Freelancer platforms require upfront payment before you see a single line of code. Neither option works.",
+                },
+              },
+            ].map((c) => (
+              <div
+                key={c.label.ja}
+                className="rounded-sm border border-border bg-background p-8"
+              >
+                <div className="label-jp text-[var(--dreamblue)]">{t(c.label)}</div>
+                <p className="mt-4 text-sm leading-[1.8] text-muted-foreground">{t(c.body)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+        <SectionLabel index="03">{t({ ja: "私たちの約束", en: "What we promise" })}</SectionLabel>
+        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+          {t({ ja: "3つのメリット。", en: "Three guarantees." })}
+        </h2>
+        <div className="mt-14 grid gap-10 md:grid-cols-3">
+          {[
+            {
+              icon: <ShieldCheck size={28} className="text-[var(--dreamblue)]" />,
+              title: { ja: "初期費用0円・完全成果報酬", en: "Zero upfront · Performance-based" },
+              body: {
+                ja: "前払い・立替は一切不要。クライアントからの着金ベース、または案件検収後の支払いで対応します。あなたの身銭を切るリスクを完全に排除。",
+                en: "No prepayment, no cash advances. We invoice after your client pays or the project is accepted. Your financial risk: zero.",
+              },
+            },
+            {
+              icon: <Layers size={28} className="text-[var(--dreamblue)]" />,
+              title: { ja: "フロント × バックエンド ワンストップ", en: "Full-stack, one point of contact" },
+              body: {
+                ja: "窓口は1つ。デザイン課題から複雑なAPI連携・決済・セキュリティまで一括で引き受け、あなたの提案力を劇的に引き上げます。",
+                en: "One contact for everything. From UI challenges to complex API integrations, payments and security — your proposal power multiplied.",
+              },
+            },
+            {
+              icon: <Paintbrush size={28} className="text-[var(--dreamblue)]" />,
+              title: { ja: "デザインへの絶対不可侵", en: "Your design is sacred" },
+              body: {
+                ja: "デザイナー様のこだわりとブランドの世界観を100%尊重します。私たちはそれを裏側から動かす「エンジン」の構築に徹します。",
+                en: "Your creative vision and brand identity are untouchable. We build the engine that powers it from behind — nothing more, nothing less.",
+              },
+            },
+          ].map((b) => (
+            <div key={b.title.ja} className="border-t-2 border-[var(--dreamblue)] pt-8">
+              {b.icon}
+              <h3 className="mt-4 font-serif text-xl leading-snug">{t(b.title)}</h3>
+              <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{t(b.body)}</p>
+            </div>
           ))}
         </div>
       </section>
 
       <div className="hairline mx-auto max-w-7xl" />
 
-      {/* Team preview */}
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-16 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <SectionLabel index="04">The Guild</SectionLabel>
-            <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
-              {t({ ja: "8名の職人が、\n一つの窓口に。", en: "Eight specialists,\none point of contact." })}
-            </h2>
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              {t({
-                ja: "それぞれ5〜7年の実務経験を持つフリーランサーが、地域を越えて集結しています。",
-                en: "Independents with 5–7 years of specialist experience, gathered from across Japan.",
-              })}
-            </p>
-            <Link to="/about" className="mt-8 inline-block border-b border-foreground pb-1 text-sm">
-              {t({ ja: "メンバーを見る →", en: "Meet the team →" })}
+      {/* Case study preview */}
+      <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="flex items-end justify-between">
+            <div>
+              <SectionLabel index="04">{t({ ja: "解決事例", en: "Case Studies" })}</SectionLabel>
+              <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+                {t({ ja: "Before / After の数字で語る。", en: "The numbers tell the story." })}
+              </h2>
+            </div>
+            <Link to="/projects" className="hidden text-sm text-muted-foreground hover:text-foreground md:block">
+              {t({ ja: "すべての実績 →", en: "All projects →" })}
             </Link>
           </div>
-          <div className="md:col-span-8">
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-              {team.slice(0, 8).map((m) => (
-                <div key={m.id} className="flex flex-col items-center text-center">
-                  <Avatar initials={m.initials} tone={m.tone} size={88} />
-                  <div className="mt-4 font-serif text-sm">{t(m.name)}</div>
-                  <div className="mt-1 text-[11px] text-muted-foreground">{t(m.role)}</div>
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {caseStudies.map((c) => (
+              <div key={c.id} className="rounded-sm border border-border bg-background p-8">
+                <div className="label-jp text-[var(--dreamblue)]">{t(c.category)}</div>
+                <h3 className="mt-3 font-serif text-xl leading-snug">{t(c.title)}</h3>
+                <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{t(c.before)}</p>
+                <div className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-sm border border-border bg-border">
+                  {c.metrics.map((m) => (
+                    <div key={m.value} className="bg-background p-4 text-center">
+                      <div className="font-serif text-2xl text-[var(--dreamblue)]">{m.value}</div>
+                      <div className="mt-1 text-[10px] text-muted-foreground">{t(m.label)}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Team preview */}
+      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+        <SectionLabel index="05">{t({ ja: "チーム", en: "The Team" })}</SectionLabel>
+        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+          {t({ ja: "2名の専門家が、あなたの案件を守る。", en: "Two specialists dedicated to your project." })}
+        </h2>
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
+          {team.map((m) => (
+            <div key={m.id} className="flex gap-6 border-t border-border pt-8">
+              <Avatar initials={m.initials} tone={m.tone} size={80} />
+              <div>
+                <div className="font-serif text-xl">{t(m.name)}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{t(m.role)}</div>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {m.skills.map((s) => (
+                    <span key={s} className="border border-border px-2 py-0.5 font-mono text-[10px] tracking-wider text-muted-foreground">{s}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10">
+          <Link to="/about" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
+            {t({ ja: "詳しいプロフィールを見る →", en: "Full profiles →" })}
+          </Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
-        <div className="grain rounded-sm border border-border bg-secondary/50 px-8 py-16 text-center md:px-16 md:py-24">
-          <span className="label-jp">{lang === "ja" ? "ご相談はいつでも" : "Always open"}</span>
-          <h2 className="mt-6 font-serif text-4xl md:text-5xl">
-            {t({ ja: "一度、話してみませんか。", en: "Let's have a first conversation." })}
+        <div className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-16 text-center md:px-16 md:py-24">
+          <span className="label-jp text-[var(--dreamblue)]">{t({ ja: "ご相談はいつでも・無料", en: "Always free to ask" })}</span>
+          <h2 className="mt-6 font-serif text-3xl md:text-4xl">
+            {t({ ja: "「こんな相談でいいのかな？」は不要です。", en: "No such thing as a stupid question here." })}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground md:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-[1.8] text-muted-foreground md:text-base">
             {t({
-              ja: "案件のご相談、パートナーシップのご応募、どちらも歓迎します。",
-              en: "Project inquiries and partnership applications — both are welcome.",
+              ja: "仕様書がない段階でも、商談前でも全く問題ありません。30分の無料壁打ち相談で、あなたの課題に最短の答えをお出しします。",
+              en: "No brief needed. No spec required. A free 30-minute session is all we need to give you a clear path forward.",
             })}
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm text-background">
-              {t({ ja: "開発のご依頼", en: "Hire the guild" })} <ArrowUpRight size={16} />
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+            >
+              {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })}
+              <ArrowUpRight size={15} />
             </Link>
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-foreground px-6 py-3 text-sm">
-              {t({ ja: "参画のご応募", en: "Join as partner" })}
-            </Link>
+            <a
+              href="https://line.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+            >
+              {t({ ja: "LINEで今すぐ相談（24時間受付）", en: "Chat on LINE (24h)" })}
+            </a>
           </div>
         </div>
       </section>

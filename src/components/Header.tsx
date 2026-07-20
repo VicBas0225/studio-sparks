@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { LangToggle } from "./LangToggle";
+import { ThemeToggle } from "./ThemeToggle";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -12,18 +13,18 @@ export function Header() {
     { to: "/", label: t({ ja: "ホーム", en: "Home" }) },
     { to: "/about", label: t({ ja: "私たちについて", en: "About" }) },
     { to: "/projects", label: t({ ja: "実績", en: "Projects" }) },
-    { to: "/contact", label: t({ ja: "お問い合わせ", en: "Contact" }) },
+    { to: "/blog", label: t({ ja: "お客様の声", en: "Stories" }) },
+    { to: "/contact", label: t({ ja: "無料相談", en: "Contact" }) },
   ] as const;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
-        <Link to="/" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="font-serif text-lg leading-none tracking-tight">結 — Yui</span>
-          <span className="label-jp hidden md:inline">Guild Studio</span>
+        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <img src="/dream-cha-logo.png" alt="Dream-cha" className="h-9 w-auto" />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {nav.map((n) => (
             <Link
               key={n.to}
@@ -34,13 +35,15 @@ export function Header() {
               {n.label}
             </Link>
           ))}
-          <div className="ml-2 border-l border-border pl-6">
+          <div className="ml-2 flex items-center gap-3 border-l border-border pl-5">
             <LangToggle />
+            <ThemeToggle />
           </div>
         </nav>
 
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-3 md:hidden">
           <LangToggle />
+          <ThemeToggle />
           <button
             aria-label="menu"
             onClick={() => setOpen((v) => !v)}

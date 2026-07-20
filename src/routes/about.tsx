@@ -1,16 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Avatar } from "@/components/Avatar";
 import { team } from "@/lib/content";
+import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — 結 Yui | 私たちについて" },
-      { name: "description", content: "日本各地からオンラインで集まった8名のフリーランスによるギルド型Web開発スタジオ。理念、メンバー、パートナー募集について。" },
-      { property: "og:title", content: "About — Yui Guild Studio" },
-      { property: "og:description", content: "A remote-first guild of eight independent specialists building web products end-to-end in Japan." },
+      { title: "About — Dream-cha | 私たちについて" },
+      { name: "description", content: "Dream-chaは、デザイナーとバックエンドエンジニアが組む完全成果報酬型の共同開発チームです。あなたの挑戦リスクをゼロにします。" },
     ],
   }),
   component: AboutPage,
@@ -21,26 +20,26 @@ function AboutPage() {
 
   return (
     <>
-      {/* Intro */}
+      {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <SectionLabel index="01">About</SectionLabel>
-        <h1 className="mt-8 max-w-4xl font-serif text-[clamp(2.25rem,5vw,4rem)] leading-[1.1]">
+        <h1 className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
           {t({
-            ja: "地域を越え、職種を越え、\nクリエイティブを拡張する。",
-            en: "Across cities. Across disciplines.\nExpanding what creativity can ship.",
+            ja: <>孤独なクリエイターを、<br />リスクと限界から解放するために。</>,
+            en: <>Built to free solo creators<br />from risk and technical walls.</>,
           })}
         </h1>
-        <div className="mt-12 grid gap-10 md:grid-cols-12">
-          <p className="text-base leading-relaxed text-muted-foreground md:col-span-6 md:text-lg">
+        <div className="mt-12 grid gap-10 md:grid-cols-2">
+          <p className="text-base leading-[1.8] text-muted-foreground">
             {t({
-              ja: "私たちは、東京、大阪、福岡、北海道など、異なる地域からオンラインで集結した8名のクラウドチームです。それぞれの分野で5〜7年の実務経験を持つフリーランスが、ひとつの柔軟な開発拠点として機能しています。",
-              en: "Yui is an eight-person cloud team, gathered online from Tokyo, Osaka, Fukuoka, Sapporo and beyond. Each member brings 5–7 years of independent experience, together forming a single, flexible development studio.",
+              ja: "私たち自身も、かつては全く同じ壁にぶつかっていました。デザインのプロと、バックエンドのプロ。お互いに1人では、クライアントの『フルパッケージの要求』に応えられず、悔しい思いをしてきました。",
+              en: "We hit the same walls ourselves. A design expert and a backend expert — each alone, each unable to answer a client's full-package demand. Both frustrated.",
             })}
           </p>
-          <p className="text-base leading-relaxed text-muted-foreground md:col-span-6 md:text-lg">
+          <p className="text-base leading-[1.8] text-muted-foreground">
             {t({
-              ja: "大きな組織のような固定費や中間マージンは発生しません。だからこそ、無駄のない適正な価格と、意思決定のフットワークの軽さで応えます。私たちの目的は、システムを納品することではなく、デザイナーの皆様が『技術の限界』を理由に案件を断らない状態を作ることです。",
-              en: "We carry no overhead or middlemen. That lets us respond with fair pricing and quick decisions. Our aim isn't merely to deliver systems — it's to ensure designers never have to decline good work because of technical uncertainty.",
+              ja: "「それぞれの得意を等価交換し、リスクも等価交換すれば、個人でも企業に負けない開発ができるのではないか？」この問いから、Dream-chaは結成されました。あなたが持つクリエイティブの可能性を、システムの壁で終わらせないために。",
+              en: "\"What if we traded skills equally and shared risk equally — could independents compete with agencies?\" That question formed Dream-cha. We exist so your creative potential never ends at a technical wall.",
             })}
           </p>
         </div>
@@ -48,97 +47,117 @@ function AboutPage() {
 
       <div className="hairline mx-auto max-w-7xl" />
 
-      {/* Principles */}
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-16 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <SectionLabel index="02">Principles</SectionLabel>
-            <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
-              {t({ ja: "私たちの姿勢。", en: "How we work." })}
-            </h2>
-          </div>
-          <div className="md:col-span-8 md:pt-2">
-            <dl className="space-y-10">
-              {[
-                {
-                  n: "01",
-                  t: { ja: "翻訳者として、まず聴く。", en: "Translate first, code second." },
-                  d: {
-                    ja: "専門用語を持ち込みません。ビジネスと非エンジニアの言葉のまま、要件を丁寧に描きます。",
-                    en: "We drop the jargon. Requirements begin in the client's language, not ours.",
-                  },
+      {/* Pain points — empathy section */}
+      <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <SectionLabel index="02">{t({ ja: "共感の起点", en: "Where we started" })}</SectionLabel>
+          <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+            {t({ ja: "あなたは今、どちらの壁の前にいますか？", en: "Which wall are you standing in front of?" })}
+          </h2>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                tag: { ja: "ケースA：デザイナーの限界", en: "Case A: The designer's ceiling" },
+                body: {
+                  ja: "クライアントから会員サイトや独自の決済機能を頼まれた。デザインやWordPressは得意だけど、バックエンドのセキュリティやデータベース構築をどう処理すればいいか分からない……",
+                  en: "Your client wants a members-only site with custom payments. You own the design and WordPress side — but backend security and DB architecture are a complete mystery.",
                 },
-                {
-                  n: "02",
-                  t: { ja: "適正価格で、泥臭く。", en: "Fair pricing, honest work." },
-                  d: {
-                    ja: "派手な演出はしません。仕様に真正面から向き合い、必要なものを必要なだけ作ります。",
-                    en: "No theatrics. We meet the spec head-on and build only what is needed.",
-                  },
+              },
+              {
+                tag: { ja: "ケースB：バックエンド開発者の限界", en: "Case B: The engineer's ceiling" },
+                body: {
+                  ja: "システムの裏側は完璧に組める。だけど、フロントのデザインセンスに自信がなくて、直受け案件の提案を躊躇してしまう……",
+                  en: "You can build bulletproof systems. But design confidence is a gap that keeps you from pitching direct clients and billing what you're worth.",
                 },
-                {
-                  n: "03",
-                  t: { ja: "デザインを、100%尊重する。", en: "Respect the design, 100%." },
-                  d: {
-                    ja: "クリエイティブの意図を守るために、実装側から歩み寄ります。",
-                    en: "The design leads. Engineering meets it, not the other way around.",
-                  },
+              },
+              {
+                tag: { ja: "共通の壁：既存の選択肢の罠", en: "The shared wall: bad existing options" },
+                body: {
+                  ja: "企業に外注しようとすると見積もりが高すぎて予算が合わない。クラウドソーシングで探すと前払い・立替が必要。本当に動くものが納品されるか不安だし、そもそも手元の予算がない……",
+                  en: "Agency quotes blow the budget. Freelancer platforms demand cash upfront before a line of code is written. No budget, no trust, no good options.",
                 },
-                {
-                  n: "04",
-                  t: { ja: "長く、続けられるものを。", en: "Build things that last." },
-                  d: {
-                    ja: "納品後に手離れよく運用できることを、設計の第一条件にしています。",
-                    en: "Operability after launch is a non-negotiable design criterion.",
-                  },
-                },
-              ].map((p) => (
-                <div key={p.n} className="grid gap-4 border-t border-border pt-6 md:grid-cols-12">
-                  <div className="font-mono text-xs text-muted-foreground md:col-span-1">{p.n}</div>
-                  <dt className="font-serif text-xl md:col-span-4">{t(p.t)}</dt>
-                  <dd className="text-sm leading-relaxed text-muted-foreground md:col-span-7">{t(p.d)}</dd>
-                </div>
-              ))}
-            </dl>
+              },
+            ].map((c) => (
+              <div key={c.tag.ja} className="rounded-sm border border-border bg-background p-8">
+                <div className="label-jp text-[var(--dreamblue)]">{t(c.tag)}</div>
+                <p className="mt-4 text-sm leading-[1.8] text-muted-foreground">{t(c.body)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <div className="hairline mx-auto max-w-7xl" />
-
-      {/* Team */}
+      {/* Benefits */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <SectionLabel index="03">The Members</SectionLabel>
-        <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
-          {t({ ja: "8名の紹介。", en: "Meet the eight." })}
+        <SectionLabel index="03">{t({ ja: "チームのメリット", en: "What working with us looks like" })}</SectionLabel>
+        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+          {t({ ja: "3つの約束。", en: "Three promises." })}
         </h2>
+        <dl className="mt-14 space-y-0 divide-y divide-border">
+          {[
+            {
+              n: "01",
+              title: { ja: "初期費用0円・完全成果報酬制", en: "Zero upfront · 100% performance-based" },
+              body: {
+                ja: "あなたの身銭を切るリスク（前払い・立替）を完全に排除します。クライアントからの着金ベース、または案件検収後の支払いで問題ありません。リスクは私たちが半分背負います。だからこそ、本気でクリーンな開発を行います。",
+                en: "We eliminate your personal financial risk entirely. Payment is triggered by your client's payment or project acceptance. We share the risk — which is why we ship clean, serious work every time.",
+              },
+            },
+            {
+              n: "02",
+              title: { ja: "フロント × バックエンドのワンストップ対応", en: "Front-end × back-end under one roof" },
+              body: {
+                ja: "窓口は1つ。デザイン課題から複雑なAPI連携・決済・セキュリティまで一括で引き受けるため、あなたのクライアントへの提案力が劇的に跳ね上がります。クライアントには「フルパッケージで対応できるチーム」として紹介できます。",
+                en: "One point of contact for everything — from design challenges to complex API integrations, payments and security. Your pitch to clients becomes: \"yes, we can do all of it.\"",
+              },
+            },
+            {
+              n: "03",
+              title: { ja: "デザイン・クリエイティブへの絶対不可侵", en: "Absolute respect for your creative vision" },
+              body: {
+                ja: "デザイナー様としてのこだわり、ブランドの世界観を100%尊重します。私たちはそれを裏側から動かす「エンジン」の構築に徹します。あなたのFigmaに手を加えることは絶対にありません。",
+                en: "Your craft and brand worldview are untouchable. We build the engine that runs behind it. We never touch your Figma files.",
+              },
+            },
+          ].map((p) => (
+            <div key={p.n} className="grid gap-6 py-10 md:grid-cols-12">
+              <div className="font-mono text-xs text-muted-foreground md:col-span-1">{p.n}</div>
+              <dt className="font-serif text-xl md:col-span-4">{t(p.title)}</dt>
+              <dd className="text-sm leading-[1.8] text-muted-foreground md:col-span-7">{t(p.body)}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
-        <div className="mt-16 grid gap-x-10 gap-y-16 md:grid-cols-2">
+      <div className="hairline mx-auto max-w-7xl" />
+
+      {/* Member profiles */}
+      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+        <SectionLabel index="04">{t({ ja: "メンバー紹介", en: "Meet the team" })}</SectionLabel>
+        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+          {t({ ja: "2名の専門家が、あなたを支える。", en: "Two specialists. One complete team." })}
+        </h2>
+        <div className="mt-14 grid gap-12 md:grid-cols-2">
           {team.map((m, i) => (
-            <article key={m.id} className="grid grid-cols-[auto_1fr] gap-6 border-t border-border pt-8">
-              <Avatar initials={m.initials} tone={m.tone} size={96} />
-              <div>
-                <div className="font-mono text-xs text-muted-foreground">
-                  MEMBER · {String(i + 1).padStart(2, "0")}
+            <article key={m.id} className="border border-border p-8 rounded-sm">
+              <div className="flex items-start gap-6">
+                <Avatar initials={m.initials} tone={m.tone} size={88} />
+                <div>
+                  <div className="font-mono text-xs text-muted-foreground">MEMBER · 0{i + 1}</div>
+                  <h3 className="mt-2 font-serif text-2xl leading-tight">{t(m.name)}</h3>
+                  <div className="mt-1 text-sm text-[var(--dreamblue)]">{t(m.role)}</div>
                 </div>
-                <h3 className="mt-2 font-serif text-2xl leading-tight">{t(m.name)}</h3>
-                <div className="mt-1 text-sm text-muted-foreground">{t(m.role)}</div>
-                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[10px] tracking-wider text-muted-foreground">
-                  <span>{t(m.location)}</span>
-                  <span>·</span>
-                  <span>{m.birth}</span>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed">{t(m.bio)}</p>
-                <blockquote className="mt-4 border-l-2 border-vermilion pl-4 text-sm italic text-muted-foreground">
-                  {t(m.quote)}
-                </blockquote>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {m.skills.map((s) => (
-                    <span key={s} className="border border-border px-2 py-0.5 font-mono text-[10px] tracking-wider text-muted-foreground">
-                      {s}
-                    </span>
-                  ))}
-                </div>
+              </div>
+              <p className="mt-6 text-sm leading-[1.8] text-muted-foreground">{t(m.bio)}</p>
+              <blockquote className="mt-5 border-l-2 border-[var(--dreamblue)] pl-4 text-sm italic leading-[1.8] text-muted-foreground">
+                {t(m.quote)}
+              </blockquote>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {m.skills.map((s) => (
+                  <span key={s} className="border border-border px-2.5 py-1 font-mono text-[10px] tracking-wider text-muted-foreground">
+                    {s}
+                  </span>
+                ))}
               </div>
             </article>
           ))}
@@ -147,32 +166,33 @@ function AboutPage() {
 
       <div className="hairline mx-auto max-w-7xl" />
 
-      {/* Partners */}
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <SectionLabel index="04">Partners Wanted</SectionLabel>
-            <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
-              {t({ ja: "共に挑戦する仲間を。", en: "Looking for future members." })}
-            </h2>
-          </div>
-          <div className="md:col-span-7">
-            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              {t({
-                ja: "私たちは、案件をお受けするだけでなく、理念に共感し、一緒に大きなプロジェクトへ挑戦する仲間を随時募集しています。将来的には法人化を目指し、長く続く組織へと成長していきます。",
-                en: "We hire as we grow. If our principles resonate — and if you want to take on larger work as part of a team — we would love to hear from you. Incorporation is on the roadmap.",
-              })}
-            </p>
-            <ul className="mt-8 space-y-4 text-sm">
-              <li className="flex gap-3">
-                <span className="font-mono text-xs text-muted-foreground">→</span>
-                <span>{t({ ja: "フルスタックエンジニア（バックエンド・インフラに強い方）", en: "Full-stack engineers (backend / infra-strong)" })}</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="font-mono text-xs text-muted-foreground">→</span>
-                <span>{t({ ja: "Webデザイナー / UI・UX デザイナー（上流に挑戦したい方）", en: "Web / UI-UX designers (interested in upstream direction)" })}</span>
-              </li>
-            </ul>
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
+        <div className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
+          <h2 className="font-serif text-2xl md:text-3xl">
+            {t({ ja: "まずは、30分話してみませんか？", en: "Start with a free 30-minute chat." })}
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-sm leading-[1.8] text-muted-foreground">
+            {t({
+              ja: "仕様書がない状態でも、商談前でも全く問題ありません。",
+              en: "No brief, no spec needed. Just bring your problem.",
+            })}
+          </p>
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+            >
+              {t({ ja: "無料相談を申し込む", en: "Book free consult" })} <ArrowUpRight size={15} />
+            </Link>
+            <a
+              href="https://line.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+            >
+              {t({ ja: "LINEで相談（24時間受付）", en: "Chat on LINE (24h)" })}
+            </a>
           </div>
         </div>
       </section>

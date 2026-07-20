@@ -16,6 +16,7 @@ export function Header() {
     { to: "/projects", label: t({ ja: "実績", en: "Projects" }) },
     { to: "/blog", label: t({ ja: "お客様の声", en: "Stories" }) },
     { to: "/recruit", label: t({ ja: "採用情報", en: "Careers" }) },
+    { to: "/security", label: t({ ja: "開発規約", en: "Policy" }) },
     { to: "/contact", label: t({ ja: "無料相談", en: "Contact" }) },
   ] as const;
 

@@ -36,6 +36,7 @@ export function Footer() {
             <li><Link to="/projects" className="text-muted-foreground hover:text-foreground">{t({ ja: "実績", en: "Projects" })}</Link></li>
             <li><Link to="/blog" className="text-muted-foreground hover:text-foreground">{t({ ja: "お客様の声", en: "Stories" })}</Link></li>
             <li><Link to="/recruit" className="text-muted-foreground hover:text-foreground">{t({ ja: "採用情報", en: "Careers" })}</Link></li>
+            <li><Link to="/security" className="text-muted-foreground hover:text-foreground">{t({ ja: "開発規約", en: "Policy" })}</Link></li>
             <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">{t({ ja: "無料相談", en: "Contact" })}</Link></li>
           </ul>
         </div>

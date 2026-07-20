@@ -8,42 +8,158 @@ export type Member = {
   tone: string;
   name: Bi;
   role: Bi;
+  location: Bi;
+  birth: string;
   skills: string[];
+  photo?: string;
   bio: Bi;
   quote: Bi;
 };
 
 export const team: Member[] = [
   {
-    id: "backend",
-    initials: "K",
+    id: "leader",
+    initials: "M",
     tone: "oklch(0.35 0.12 240 / 0.18)",
-    name: { ja: "バックエンドエンジニア", en: "Backend Engineer" },
-    role: { ja: "バックエンド・インフラ専門エンジニア", en: "Backend & Infrastructure Engineer" },
-    skills: ["PHP / WordPress", "Python", "Go", "AWS", "決済API", "セキュリティ"],
+    name: { ja: "村上 豪", en: "Go Murakami" },
+    role: { ja: "リーダー / シニアバックエンドエンジニア", en: "Team Lead / Senior Backend Engineer" },
+    location: { ja: "東京都・完全リモート", en: "Tokyo · Fully remote" },
+    birth: "1993.07.12",
+    skills: ["Go", "Python / FastAPI", "AWS", "Docker", "DB設計", "要件定義"],
+    photo: "/members/murakami.jpg",
     bio: {
-      ja: "基幹システムの開発から AWS インフラ設計、決済 API 連携まで一手に担う。非エンジニアの言葉を仕様に翻訳し、手戻りのない設計を得意とする。",
-      en: "Owns backend architecture, AWS infrastructure and payment API integration end-to-end. Translates non-technical intent into precise, low-rework specifications.",
+      ja: "システム開発会社にてバックエンドの基幹システム構築に5年間従事後、フリーランスとして独立。大規模Webサービスのインフラ刷新やAPI設計を多数経験。非エンジニアの意図を日常の言葉に「翻訳」し、手戻りのない堅牢な要件定義を行うスキルに定評がある。本チームの発起人。",
+      en: "5 years building core backend systems at an enterprise studio before going independent. Led API design and infra overhauls for large-scale services. Known for translating non-technical intent into precise, low-rework specifications. Founder of Dream-cha.",
     },
     quote: {
-      ja: "「見えない裏側を、最も安全に、最も美しく組み上げます。システムの仕様で迷ったら商談前でもお気軽にご相談ください。」",
-      en: "\"I build the invisible layer — safe, clean, and engineered to last. Reach out before the pitch if you're unsure about the spec.\"",
+      ja: "「デザインは完璧なのに、ログイン機能や決済の要件が複雑で形にできない」。そんなデザイナー様のピンチを裏側から支える黒子です。バックエンドはすべて私に丸投げしてください。",
+      en: "\"The design is perfect, but auth or payments stall it.\" Hand the backend to me and focus on your craft.",
     },
   },
   {
-    id: "designer",
-    initials: "D",
-    tone: "oklch(0.65 0.10 55 / 0.18)",
-    name: { ja: "UI/UXデザイナー", en: "UI/UX Designer" },
-    role: { ja: "UI/UXデザイナー 兼 フロントエンドエンジニア", en: "UI/UX Designer & Frontend Engineer" },
-    skills: ["Figma", "Webデザイン", "HTML5 / CSS3", "JavaScript", "STUDIO", "Bubble"],
+    id: "m2",
+    initials: "K",
+    tone: "oklch(0.42 0.14 240 / 0.18)",
+    name: { ja: "佐藤 健人", en: "Kento S." },
+    role: { ja: "バックエンドエンジニア / インフラ", en: "Backend Engineer / Infrastructure" },
+    location: { ja: "東京都・完全リモート", en: "Tokyo · Fully remote" },
+    birth: "----",
+    skills: ["PHP / WordPress", "Python", "Go", "AWS", "決済API連携", "セキュリティ対策"],
     bio: {
-      ja: "Figma によるUI設計から HTML/CSS 実装、各種ノーコードツールまで幅広く対応。バックエンドエンジニアが組んだシステムを、エンドユーザーが最も使いやすいUIへ落とし込む。",
-      en: "Covers UI design in Figma through to HTML/CSS implementation and no-code platforms. Translates the backend engineer's systems into interfaces users genuinely enjoy.",
+      ja: "バックエンド開発・サーバーインフラ構築6年。WordPressのコアカスタマイズから AWS 構築まで対応。全体の戦略と堅牢なバックエンドを設計し、複雑な決済や会員システムを裏側から支える。",
+      en: "6 years in backend development and server infrastructure. From WordPress core customisation to AWS architecture. Designs overall strategy and robust backend systems.",
     },
     quote: {
-      ja: "「エンジニアが組んだ最高のシステムを、エンドユーザーが感動するUIへ。美しさと実装しやすさは両立できます。」",
-      en: "\"The best backend deserves an interface users love. Beauty and implementability are not a trade-off.\"",
+      ja: "「全体の戦略と堅牢なバックエンドを設計します。デザイナー様が受注を迷うような複雑な決済や会員システムを、最も安全に、最も美しく裏側から組み上げます。」",
+      en: "\"I design the overall strategy and a robust backend. Complex payment and membership systems that make designers hesitate — I build them safely and cleanly from behind.\"",
+    },
+  },
+  {
+    id: "m3",
+    initials: "Y",
+    tone: "oklch(0.58 0.12 340 / 0.18)",
+    name: { ja: "宮崎 由佳", en: "Yuka M." },
+    role: { ja: "フロントエンドエンジニア / UI・UXディレクター", en: "Frontend Engineer & UI/UX Director" },
+    location: { ja: "大阪府・完全リモート", en: "Osaka · Fully remote" },
+    birth: "----",
+    skills: ["HTML5 / CSS3", "JavaScript", "React", "Figma", "STUDIO", "Bubble"],
+    bio: {
+      ja: "フロントエンド開発・UIデザイン5年。チーム内の唯一のフロントエンド・UI窓口として、デザイナーのFigmaデータを1ミリのズレもなくコードへ落とし込み、バックエンドと繋ぐ橋渡し役を担う。",
+      en: "5 years in frontend development and UI design. The team's sole frontend/UI point of contact — translates Figma with pixel-perfect accuracy and bridges the gap to backend.",
+    },
+    quote: {
+      ja: "「デザイナー様のこだわりやFigmaのデザインデータを1ミリのズレもなく完璧にコードへ落とし込み、バックエンドへと繋ぎます。」",
+      en: "\"I translate your Figma with zero deviation — pixel-perfect code, perfectly wired to the backend.\"",
+    },
+  },
+  {
+    id: "m4",
+    initials: "R",
+    tone: "oklch(0.48 0.14 160 / 0.18)",
+    name: { ja: "川口 蓮", en: "Ren K." },
+    role: { ja: "バックエンド / データベース最適化", en: "Backend & Database Specialist" },
+    location: { ja: "福岡県・完全リモート", en: "Fukuoka · Fully remote" },
+    birth: "----",
+    skills: ["Node.js", "Python", "MySQL", "PostgreSQL", "API設計", "高負荷対策"],
+    bio: {
+      ja: "大規模データベース設計・バックエンド開発5年。ユーザー数が増えても落ちないデータベースと高速APIの構築を専門とする。データ連携が必要な大規模案件にも対応。",
+      en: "5 years in large-scale database design and backend development. Specialist in databases that never go down under load and APIs that run fast.",
+    },
+    quote: {
+      ja: "「ユーザー数が増えても絶対に落ちないデータベースと、高速で動くAPIを構築します。データ連携が必要な大規模案件も安心してお任せください。」",
+      en: "\"I build databases that never buckle under growth and APIs that stay fast. Large-scale data integration projects are my speciality.\"",
+    },
+  },
+  {
+    id: "nakamura",
+    initials: "N",
+    tone: "oklch(0.42 0.14 200 / 0.18)",
+    name: { ja: "中村 秀一", en: "Shuichi Nakamura" },
+    role: { ja: "バックエンド / データベースエンジニア", en: "Backend & Database Engineer" },
+    location: { ja: "北海道・完全リモート", en: "Hokkaido · Fully remote" },
+    birth: "1991.09.30",
+    skills: ["Go", "PostgreSQL", "Redis", "Docker", "GitHub Actions"],
+    bio: {
+      ja: "中堅SIerにてECサイトのバックエンドや物流基幹システムのDB設計・API開発に7年間従事。膨大なデータが交差する処理を「超高速」かつ「整合性を保って」実装するスペシャリスト。Dockerを用いた一貫性のある開発環境の構築や、テスト・デプロイの自動化に長けている。",
+      en: "7 years of backend and DB design for e-commerce and logistics at a mid-scale SIer. Specialises in high-throughput data processing with strict consistency. Expert in Docker-based dev environments and CI/CD automation.",
+    },
+    quote: {
+      ja: "「ユーザーが増えてからサイトが重くなった」「決済処理のデータ連携が心配」といった裏側の不安を完全に解消します。将来的な機能拡張に耐えられる美しいデータベースを設計します。",
+      en: "\"The site slowed down as users grew\" and \"I'm worried about payment data sync\" — I eliminate those fears. I design databases built to last.",
+    },
+  },
+  {
+    id: "shimizu",
+    initials: "S",
+    tone: "oklch(0.48 0.16 55 / 0.18)",
+    name: { ja: "清水 拓海", en: "Takumi Shimizu" },
+    role: { ja: "フルスタックエンジニア", en: "Full-stack Engineer" },
+    location: { ja: "愛知県・完全リモート", en: "Aichi · Fully remote" },
+    birth: "1996.06.14",
+    skills: ["Node.js", "TypeScript", "Next.js", "Firebase", "Stripe", "LINE Login"],
+    bio: {
+      ja: "自社SaaS開発企業にてフルスタックエンジニアとして3年間勤務。フロントとバックを境界なく一人で完結できる機動力を持ち、特にStripe等を利用した独自決済システムやSNS認証のスピード実装を得意とする。",
+      en: "3 years as a full-stack engineer at an in-house SaaS company. Owns both sides of the stack solo, with a speciality in fast Stripe payment integration and social auth (LINE / Google).",
+    },
+    quote: {
+      ja: "「すぐに決済機能とログイン機能を連動させたい」といったスピード感が求められる要件に即座に対応します。デザイナーさんの細かな画面要望にも、裏側のプログラムを柔軟に合わせて調整できます。",
+      en: "\"We need payments and login live ASAP.\" — that's my brief. Full-stack context means I flex the backend to match every detail of your UI.",
+    },
+  },
+  {
+    id: "kobayashi",
+    initials: "K",
+    tone: "oklch(0.62 0.10 340 / 0.18)",
+    name: { ja: "小林 美咲", en: "Misaki Kobayashi" },
+    role: { ja: "シニアUI/UXデザイナー", en: "Senior UI/UX Designer" },
+    location: { ja: "京都府・完全リモート", en: "Kyoto · Fully remote" },
+    birth: "1992.12.05",
+    skills: ["UI/UX", "Figma", "ワイヤーフレーム", "デザインシステム"],
+    bio: {
+      ja: "大手制作代理店にて有名ブランドのWebサイトやiOS/AndroidアプリのUI/UXデザインに6年間従事。人間の認知心理に基づいた「直感的に迷わない画面レイアウト」と、コンポーネントを再利用しやすいFigmaデータの構築に絶対的な強みを持つ。エンジニアへのハンドオフが最もスムーズなデザイナーとして定評がある。",
+      en: "6 years of UI/UX design for premium brands and iOS/Android apps at a major agency. Absolute strength in cognition-based layout design and component-ready Figma files. Renowned for the smoothest designer-to-engineer handoffs.",
+    },
+    quote: {
+      ja: "「ワイヤーフレームが引けない」「エンジニアへのデザインの渡し方がわからない」と困ったデザイナー仲間の相談窓口です。デザインのクオリティを担保しつつ、実装しやすいデータ設計をサポートします。",
+      en: "Stuck on wireframing or designer-to-dev handoff? I'm the sounding board for fellow designers. Quality design, implemented cleanly.",
+    },
+  },
+  {
+    id: "watanabe",
+    initials: "W",
+    tone: "oklch(0.65 0.12 100 / 0.18)",
+    name: { ja: "渡辺 玲奈", en: "Rena Watanabe" },
+    role: { ja: "Webデザイナー / アートディレクター", en: "Web Designer & Art Director" },
+    location: { ja: "広島県・完全リモート", en: "Hiroshima · Fully remote" },
+    birth: "1998.03.19",
+    skills: ["Webデザイン", "Figma", "Photoshop", "アートディレクション", "ブランディング"],
+    bio: {
+      ja: "クリエイティブスタジオにて中小企業やスタートアップのブランディング、Webデザインを3年間担当。企業の強みや世界観を引き出すグラフィック・ビジュアル表現が得意。エンジニアチームと初期段階から密に連携し、技術制約に縛られない自由で美しいクリエイティブを提案している。",
+      en: "3 years of branding and web design for SMBs and startups at a creative studio. Extracts and expresses each company's distinct worldview. Collaborates with engineers from day one to propose creatives unbounded by technical limits.",
+    },
+    quote: {
+      ja: "「こんな表現をしたいけれど、システム的にできるのかな？」と諦める前に相談してください。エンジニアチームが裏側を100%支えてくれるからこそ、技術の限界を気にせず最高に美しいクリエイティブを提案できます。",
+      en: "\"Can we even build this?\" — ask before giving up. With our engineers handling the backend 100%, I propose the most beautiful creative without worrying about technical limits.",
     },
   },
 ];

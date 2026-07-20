@@ -139,26 +139,36 @@ function AboutPage() {
         </h2>
         <div className="mt-14 grid gap-12 md:grid-cols-2">
           {team.map((m, i) => (
-            <article key={m.id} className="border border-border p-8 rounded-sm">
+            <article key={m.id} className={`border border-border p-8 rounded-sm ${m.id.includes('m2') || m.id.includes('m3')}`}>
               <div className="flex items-start gap-6">
-                <Avatar initials={m.initials} tone={m.tone} size={88} />
+                <Avatar initials={m.initials} tone={m.tone} size={88} photo={m.photo} name={t(m.name)} />
                 <div>
-                  <div className="font-mono text-xs text-muted-foreground">MEMBER · 0{i + 1}</div>
+                  <div className="font-mono text-xs text-muted-foreground">MEMBER · {String(i + 1).padStart(2, "0")}</div>
                   <h3 className="mt-2 font-serif text-2xl leading-tight">{t(m.name)}</h3>
                   <div className="mt-1 text-sm text-[var(--dreamblue)]">{t(m.role)}</div>
+                  <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[10px] tracking-wider text-muted-foreground">
+                    <span>{t(m.location)}</span>
+                    {m.birth !== "----" && <><span>·</span><span>{m.birth}</span></>}
+                  </div>
                 </div>
               </div>
-              <p className="mt-6 text-sm leading-[1.8] text-muted-foreground">{t(m.bio)}</p>
-              <blockquote className="mt-5 border-l-2 border-[var(--dreamblue)] pl-4 text-sm italic leading-[1.8] text-muted-foreground">
-                {t(m.quote)}
-              </blockquote>
-              <div className="mt-5 flex flex-wrap gap-1.5">
-                {m.skills.map((s) => (
-                  <span key={s} className="border border-border px-2.5 py-1 font-mono text-[10px] tracking-wider text-muted-foreground">
-                    {s}
-                  </span>
-                ))}
-              </div>
+              {m.bio.ja !== "プロフィール準備中。" ? (
+                <>
+                  <p className="mt-6 text-sm leading-[1.8] text-muted-foreground">{t(m.bio)}</p>
+                  <blockquote className="mt-5 border-l-2 border-[var(--dreamblue)] pl-4 text-sm italic leading-[1.8] text-muted-foreground">
+                    {t(m.quote)}
+                  </blockquote>
+                  <div className="mt-5 flex flex-wrap gap-1.5">
+                    {m.skills.map((s) => (
+                      <span key={s} className="border border-border px-2.5 py-1 font-mono text-[10px] tracking-wider text-muted-foreground">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p className="mt-6 text-sm text-muted-foreground italic">{t({ ja: "プロフィール準備中", en: "Profile coming soon" })}</p>
+              )}
             </article>
           ))}
         </div>
@@ -186,7 +196,7 @@ function AboutPage() {
               {t({ ja: "無料相談を申し込む", en: "Book free consult" })} <ArrowUpRight size={15} />
             </Link>
             <a
-              href="https://line.me"
+              href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"

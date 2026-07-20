@@ -117,7 +117,7 @@ function BlogPage() {
               {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })} <ArrowUpRight size={15} />
             </Link>
             <a
-              href="https://line.me"
+              href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"

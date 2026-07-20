@@ -2,9 +2,22 @@ type Props = {
   initials: string;
   tone: string;
   size?: number;
+  photo?: string;
+  name?: string;
 };
 
-export function Avatar({ initials, tone, size = 96 }: Props) {
+export function Avatar({ initials, tone, size = 96, photo, name }: Props) {
+  if (photo) {
+    return (
+      <img
+        src={photo}
+        alt={name ?? initials}
+        className="shrink-0 rounded-full object-cover object-top ring-2 ring-[var(--dreamgold)] ring-offset-2 ring-offset-background"
+        style={{ width: size, height: size }}
+      />
+    );
+  }
+
   return (
     <div
       className="grain flex shrink-0 items-center justify-center rounded-full font-serif text-foreground/80"

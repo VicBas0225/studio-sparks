@@ -21,7 +21,11 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <img src="/dream-cha-logo.png" alt="Dream-cha" className="h-9 w-auto" />
+          <img
+            src="/dream-cha-logo.png"
+            alt="Dream-cha"
+            className="h-10 w-10 rounded-full object-cover ring-2 ring-[var(--dreamgold)] ring-offset-2 ring-offset-background"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">

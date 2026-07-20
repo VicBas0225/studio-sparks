@@ -8,7 +8,11 @@ export function Footer() {
     <footer className="mt-32 border-t border-border">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-4 md:px-10">
         <div className="md:col-span-2">
-          <img src="/dream-cha-logo.png" alt="Dream-cha" className="h-10 w-auto" />
+          <img
+            src="/dream-cha-logo.png"
+            alt="Dream-cha"
+            className="h-14 w-14 rounded-full object-cover ring-2 ring-[var(--dreamgold)] ring-offset-2 ring-offset-background"
+          />
           <p className="mt-4 max-w-sm text-sm leading-[1.8] text-muted-foreground">
             {t({
               ja: "理想の未来へ、技術で挑み続ける。デザイナーとエンジニアが組む完全成果報酬型の共同開発チームです。",
@@ -16,7 +20,7 @@ export function Footer() {
             })}
           </p>
           <a
-            href="https://line.me"
+            href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"

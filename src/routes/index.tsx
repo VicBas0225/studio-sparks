@@ -172,21 +172,14 @@ function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <SectionLabel index="05">{t({ ja: "チーム", en: "The Team" })}</SectionLabel>
         <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
-          {t({ ja: "2名の専門家が、あなたの案件を守る。", en: "Two specialists dedicated to your project." })}
+          {t({ ja: "8名の専門家が、あなたの案件を守る。", en: "Eight specialists dedicated to your project." })}
         </h2>
-        <div className="mt-14 grid gap-8 md:grid-cols-2">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           {team.map((m) => (
-            <div key={m.id} className="flex gap-6 border-t border-border pt-8">
-              <Avatar initials={m.initials} tone={m.tone} size={80} />
-              <div>
-                <div className="font-serif text-xl">{t(m.name)}</div>
-                <div className="mt-1 text-sm text-muted-foreground">{t(m.role)}</div>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {m.skills.map((s) => (
-                    <span key={s} className="border border-border px-2 py-0.5 font-mono text-[10px] tracking-wider text-muted-foreground">{s}</span>
-                  ))}
-                </div>
-              </div>
+            <div key={m.id} className={`flex flex-col items-center text-center border-t border-border pt-6 ${m.id.includes('m2') || m.id.includes('m3') || m.id.includes('m4') ? 'opacity-40' : ''}`}>
+              <Avatar initials={m.initials} tone={m.tone} size={72} photo={m.photo} name={t(m.name)} />
+              <div className="mt-3 font-serif text-base leading-tight">{t(m.name)}</div>
+              <div className="mt-1 text-[11px] text-muted-foreground leading-snug">{t(m.role)}</div>
             </div>
           ))}
         </div>
@@ -219,7 +212,7 @@ function HomePage() {
               <ArrowUpRight size={15} />
             </Link>
             <a
-              href="https://line.me"
+              href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"

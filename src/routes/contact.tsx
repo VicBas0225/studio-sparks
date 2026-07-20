@@ -167,7 +167,7 @@ function ContactPage() {
                 })}
               </p>
               <a
-                href="https://line.me"
+                href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"

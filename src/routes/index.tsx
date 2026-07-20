@@ -181,7 +181,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Team preview */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <SectionLabel index="05">{t({ ja: "チーム", en: "The Team" })}</SectionLabel>

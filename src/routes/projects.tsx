@@ -33,6 +33,8 @@ function ProjectsPage() {
         </p>
       </section>
 
+      <div className="hairline mx-auto max-w-7xl" />    
+
       {/* Revenue model explainer */}
       <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 md:px-10">

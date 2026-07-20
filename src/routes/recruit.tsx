@@ -102,8 +102,8 @@ function RecruitPage() {
   return (
     <>
       {/* Hero — dark navy */}
-      <section className="bg-[#1D1D1F] text-white">
-        <div className="mx-auto max-w-7xl px-6 pb-20 pt-24 md:px-10 md:pb-28 md:pt-32">
+      <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
+        <div>
           <SectionLabel index="01">
             <span className="text-white/60">Careers</span>
           </SectionLabel>
@@ -121,6 +121,8 @@ function RecruitPage() {
           </p>
         </div>
       </section>
+
+      <div className="hairline mx-auto max-w-7xl" />
 
       {/* Job listings — accordion */}
       <section className="bg-background py-20 md:py-28">

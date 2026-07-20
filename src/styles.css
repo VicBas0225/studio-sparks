@@ -129,6 +129,7 @@
 }
 
 @utility hairline {
+  display: block;
   background: linear-gradient(to right, transparent, var(--color-hairline) 20%, var(--color-hairline) 80%, transparent);
   height: 1px;
 }

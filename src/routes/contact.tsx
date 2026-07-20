@@ -77,7 +77,7 @@ function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-[#F5F5F7] dark:bg-secondary/40 px-6 pb-16 pt-20 md:px-10 md:pb-20 md:pt-28">
+      <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel index="01">Contact</SectionLabel>
           <h1 className="mt-8 font-serif text-[clamp(1.75rem,4vw,3rem)] leading-[1.1]">
@@ -95,6 +95,8 @@ function ContactPage() {
           </div>
         </div>
       </section>
+
+      <div className="hairline mx-auto max-w-7xl" />
 
       {/* Form */}
       <section className="mx-auto max-w-3xl px-6 py-16 md:px-10 md:py-24">

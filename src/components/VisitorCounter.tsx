@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "dream_cha_visits";
+const BASE_COUNT = 2887;
 
 export function VisitorCounter() {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
-    // Get current count from localStorage
-    const stored = parseInt(localStorage.getItem(STORAGE_KEY) ?? "0", 10);
+    // Get current count from localStorage (add base so it starts at 2887+)
+    const stored = Math.max(parseInt(localStorage.getItem(STORAGE_KEY) ?? "0", 10), BASE_COUNT);
 
     // Increment once per session
     if (!sessionStorage.getItem("visit_counted")) {

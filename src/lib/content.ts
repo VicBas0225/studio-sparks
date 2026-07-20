@@ -186,60 +186,144 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "paid-video",
+    id: "wordpress-video",
     year: "2025",
-    category: { ja: "会員限定コンテンツ配信", en: "Members-only Video Platform" },
+    category: { ja: "WordPressカスタマイズ / 会員決済システム", en: "WordPress Custom / Members Payment System" },
     title: {
-      ja: "有料動画配信サイト × サブスク決済",
-      en: "Paid Video Streaming & Subscription Payments",
+      ja: "有料動画配信・決済会員システム 新規構築",
+      en: "Paid Video & Subscription Membership System Build",
     },
     before: {
-      ja: "デザインと WordPress の実装はできるが、サブスク決済（Stripe）と動画の不正ダウンロード防止セキュリティが組めず、30万円の案件を諦めかけていた。",
-      en: "The designer could build the UI and WordPress layer but had no path to Stripe subscriptions or video DRM — a ¥300k project nearly lost.",
+      ja: "Figmaのフロントデザインは完成済みだが、動画の不正ダウンロード防止・Stripe連携・会員DB構築の技術的ブラックボックスにより失注寸前だった。",
+      en: "Front-end Figma design was complete, but video DRM, Stripe integration and membership DB were technical black boxes — the project was nearly lost.",
     },
     solution: {
-      ja: "デザイナー様の世界観を100%活かしたまま、バックエンド側で Vimeo API と Stripe を連携したセキュアな会員システムを構築。",
-      en: "We preserved the designer's visual identity 100% while building a secure membership system wiring Vimeo API and Stripe on the backend.",
+      ja: "デザインを100%活かしたまま、Vimeo APIとStripe WebhookをWordPressコアへ安全に繋ぎ込み。決済直後に閲覧権限が自動付与されるセキュアな動的会員システムを構築。",
+      en: "Preserved the design 100% while safely wiring Vimeo API and Stripe Webhooks into WordPress core. Built a secure dynamic membership system that grants access rights automatically upon payment.",
     },
     result: {
-      ja: "フルパッケージ案件（総額80万円）として受注に成功。技術由来の手戻りゼロ。",
-      en: "Won as a full-package deal at ¥800k total. Zero technical rework throughout.",
+      ja: "デザイナーはデザイン業務に100%集中したまま、システム構築を含むフルパッケージ案件として受注に成功。",
+      en: "The designer focused 100% on design while the full-package project — including system build — was won and delivered.",
     },
-    stack: ["WordPress", "PHP", "Stripe", "Vimeo API", "AWS EC2"],
+    stack: ["WordPress", "PHP", "Stripe Webhook", "Vimeo API", "MySQL"],
     metrics: [
-      { label: { ja: "受注単価向上", en: "Revenue lift" }, value: "2.6×" },
+      { label: { ja: "受注形態", en: "Delivery type" }, value: "Full" },
       { label: { ja: "技術的手戻り", en: "Tech rework" }, value: "0" },
-      { label: { ja: "リリース期間", en: "Time to launch" }, value: "5 wks" },
+      { label: { ja: "デザイン再現率", en: "Design fidelity" }, value: "100%" },
     ],
     hue: "oklch(0.50 0.14 240)",
   },
   {
-    id: "bubble-api",
+    id: "aws-matching-app",
     year: "2025",
-    category: { ja: "ノーコード × 外部API連携", en: "No-code × External API Integration" },
+    category: { ja: "AWS × API開発 / マッチングアプリ新規構築", en: "AWS × API / Matching App New Build" },
     title: {
-      ja: "Bubble マッチングアプリ × 基幹システム連携",
-      en: "Bubble Matching App × Legacy System Integration",
+      ja: "マッチングアプリケーション構築（完全成果報酬）",
+      en: "Matching App Build — Full Performance-based",
     },
     before: {
-      ja: "ノーコード（Bubble）の標準機能だけでは、クライアントが希望する基幹システムとのリアルタイム連携ができず、実装不可で失注寸前だった。",
-      en: "Bubble's native capabilities couldn't handle the client's required real-time sync with a legacy inventory system — the project was about to be lost.",
+      ja: "UI/UXデザインコンペ獲得後、開発フェーズで他社から高額な着手金を要求され、手元資金不足と「本当に動くか」という不安から案件辞退を検討していた。",
+      en: "Won the UI/UX design pitch, but facing demands for large upfront payments from other developers — lack of funds and uncertainty about delivery led to considering dropping the project.",
     },
     solution: {
-      ja: "バックエンド（Python / AWS Lambda）で中継用 API を独自開発。Bubble と既存システムを安全かつリアルタイムに同期させた。",
-      en: "We built a custom relay API in Python on AWS Lambda to safely bridge Bubble with the legacy system in real time.",
+      ja: "「初期費用0円・完全成果報酬」で締結。AWS（EC2/RDS）上にスケーラブルなインフラ基盤を迅速構築し、フロントとDBを繋ぐ独自APIを開発。",
+      en: "Partnered on zero-upfront, full performance-based terms. Built scalable infrastructure on AWS (EC2/RDS) and developed custom APIs connecting frontend to database.",
     },
     result: {
-      ja: "すべての開発要件をクリアし、無事検収完了。ノーコードの限界を技術で突破し、案件を守った。",
-      en: "All requirements met, project accepted. The no-code ceiling was broken with custom backend code, saving the deal.",
+      ja: "デザイナー側の立替リスクを完全排除し、24時間365日安定稼働する商用アプリを納品。着金後にクリーンな報酬分配を完了。",
+      en: "Eliminated all financial risk for the designer. Delivered a commercially stable app running 24/7. Clean revenue split completed after client payment.",
     },
-    stack: ["Bubble", "Python", "AWS Lambda", "REST API", "PostgreSQL"],
+    stack: ["AWS EC2", "AWS RDS", "Python", "REST API", "React"],
     metrics: [
-      { label: { ja: "失注リスク回避", en: "Lost deal saved" }, value: "✓" },
-      { label: { ja: "連携レイテンシ", en: "Sync latency" }, value: "<200ms" },
-      { label: { ja: "検収", en: "Accepted" }, value: "100%" },
+      { label: { ja: "初期費用", en: "Upfront cost" }, value: "¥0" },
+      { label: { ja: "稼働率", en: "Uptime" }, value: "99.9%" },
+      { label: { ja: "立替リスク", en: "Cash advance risk" }, value: "0" },
     ],
-    hue: "oklch(0.45 0.12 160)",
+    hue: "oklch(0.45 0.14 200)",
+  },
+  {
+    id: "nocode-api-sync",
+    year: "2025",
+    category: { ja: "外部API連携 / ノーコード × 社内DB同期", en: "External API / No-code × Internal DB Sync" },
+    title: {
+      ja: "ノーコード × 社内データベースのリアルタイム同期",
+      en: "No-code × Internal Database Real-time Sync",
+    },
+    before: {
+      ja: "ノーコードのブランドサイトリニューアル中、「既存DBと予約データをリアルタイム同期させたい」というノーコードの仕様限界を超える要求を受けて対応不能に。",
+      en: "During a no-code brand site refresh, the client requested real-time sync between an existing DB and booking data — far beyond no-code capabilities.",
+    },
+    solution: {
+      ja: "既存PostgreSQLの仕様を解析し、Python / AWS Lambdaを中継地点として構築。Webhookから送信されるデータを安全に暗号化して自動同期するAPIを開発。",
+      en: "Analysed the existing PostgreSQL schema and built a Python / AWS Lambda relay. Developed an API that securely encrypts and auto-syncs data from no-code Webhooks.",
+    },
+    result: {
+      ja: "「ノーコードだから不可能」を覆し、競合コンペに勝利。既存サイトの機能拡張リニューアルを完遂。",
+      en: "Proved \"impossible for no-code\" wrong. Won the competitive pitch and fully completed the site's feature expansion.",
+    },
+    stack: ["Python", "AWS Lambda", "PostgreSQL", "REST API", "Webhook"],
+    metrics: [
+      { label: { ja: "同期方式", en: "Sync type" }, value: "RT" },
+      { label: { ja: "コンペ結果", en: "Pitch result" }, value: "Won" },
+      { label: { ja: "連携レイテンシ", en: "Latency" }, value: "<200ms" },
+    ],
+    hue: "oklch(0.48 0.13 160)",
+  },
+  {
+    id: "ec-fullscratch",
+    year: "2024",
+    category: { ja: "フルスクラッチ開発 / ECバックエンド刷新", en: "Full-scratch / EC Backend Rebuild" },
+    title: {
+      ja: "デザイン完全準拠型 EC バックエンドフルスクラッチ構築",
+      en: "Design-faithful EC Backend Built from Scratch",
+    },
+    before: {
+      ja: "ECリニューアルでこだわりのUI/UXを再設計したが、パッケージやプラグインの仕様制限で「このデザインは実装できない」と妥協を迫られていた。",
+      en: "After redesigning a meticulous UI/UX for an EC refresh, plugin and package constraints forced compromise — \"we can't build this design.\"",
+    },
+    solution: {
+      ja: "既存制限をすべて撤廃するため、カスタムECバックエンド（注文・在庫管理API）をRuby on Railsでフルスクラッチ開発。Figmaの意図を1ミリのズレもなく実装。",
+      en: "Removed all constraints by building a custom EC backend (order and inventory management API) from scratch in Ruby on Rails. Implemented the Figma design with zero deviation.",
+    },
+    result: {
+      ja: "クリエイティブを100%引き立てる、バグのない堅牢なECシステムとして完全リニューアル。担当デザイナーが専属メンバーとして正式加入。",
+      en: "Fully relaunched as a bug-free, robust EC system that showcases the creative 100%. The designer joined as a dedicated team member after this project.",
+    },
+    stack: ["Ruby on Rails", "PostgreSQL", "AWS", "Docker", "Stripe"],
+    metrics: [
+      { label: { ja: "デザイン再現率", en: "Design fidelity" }, value: "100%" },
+      { label: { ja: "バグ件数", en: "Post-launch bugs" }, value: "0" },
+      { label: { ja: "成果", en: "Outcome" }, value: "加入" },
+    ],
+    hue: "oklch(0.52 0.13 30)",
+  },
+  {
+    id: "lms-rebuild",
+    year: "2024",
+    category: { ja: "上流マーケティング / LMSリニューアル", en: "Upstream Strategy / LMS Rebuild" },
+    title: {
+      ja: "単独エンジニアの下請け脱却 × LMS大規模リニューアル",
+      en: "Solo Engineer Escapes Subcontracting via Large-scale LMS Rebuild",
+    },
+    before: {
+      ja: "高いシステム構築スキルを持ちながらも、デザインスキル不足により制作会社の下請けに甘んじ、既存LMSのデバッグ・修正を低単価で請け負い続けていた。",
+      en: "Skilled engineer stuck in low-paid subcontract work — debugging and patching an existing LMS for agencies due to lack of design skills.",
+    },
+    solution: {
+      ja: "「デザイナー向けマーケティング戦略」プロジェクトにアサイン。大手スクールのLMS大規模リニューアルにおいて、Ruby on Railsによる高スケーラブルなAPI開発の実働を担当。",
+      en: "Assigned to the \"designer-targeted marketing strategy\" project. Led high-scalable API development in Ruby on Rails for a major school's large-scale LMS rebuild.",
+    },
+    result: {
+      ja: "下請けではなく対等な立場で上流のシステムリニューアルに参画。プロジェクト成功後、戦略基盤に基づくクリーンな利益分配を目の当たりにし、コアメンバーとして正式加入。",
+      en: "Participated as an equal partner — not a subcontractor — in upstream system renewal. After project success, witnessed the clean profit-sharing model and joined as a core member.",
+    },
+    stack: ["Ruby on Rails", "AWS", "PostgreSQL", "Redis", "Docker"],
+    metrics: [
+      { label: { ja: "参画形態", en: "Role" }, value: "対等" },
+      { label: { ja: "単価変化", en: "Rate change" }, value: "↑3×" },
+      { label: { ja: "成果", en: "Outcome" }, value: "加入" },
+    ],
+    hue: "oklch(0.44 0.12 280)",
   },
 ];
 

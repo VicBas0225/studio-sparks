@@ -149,7 +149,7 @@ function HomePage() {
             </Link>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {caseStudies.slice(0, 2).map((c) => (
+            {[caseStudies[0], caseStudies[3]].map((c) => (
               <div key={c.id} className="rounded-sm border border-border bg-background overflow-hidden">
                 {c.image ? (
                   <img

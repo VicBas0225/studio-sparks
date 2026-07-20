@@ -182,6 +182,7 @@ export type CaseStudy = {
   stack: string[];
   metrics: { label: Bi; value: string }[];
   hue: string;
+  image?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -212,6 +213,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "デザイン再現率", en: "Design fidelity" }, value: "100%" },
     ],
     hue: "oklch(0.50 0.14 240)",
+    image: "/cases/wordpress-video.jpg",
   },
   {
     id: "aws-matching-app",
@@ -240,6 +242,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "立替リスク", en: "Cash advance risk" }, value: "0" },
     ],
     hue: "oklch(0.45 0.14 200)",
+    image: "/cases/aws-matching.jpg",
   },
   {
     id: "nocode-api-sync",
@@ -268,6 +271,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "連携レイテンシ", en: "Latency" }, value: "<200ms" },
     ],
     hue: "oklch(0.48 0.13 160)",
+    image: "/cases/nocode-api.jpg",
   },
   {
     id: "ec-fullscratch",
@@ -296,6 +300,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "成果", en: "Outcome" }, value: "加入" },
     ],
     hue: "oklch(0.52 0.13 30)",
+    image: "/cases/ec-fullscratch.jpg",
   },
   {
     id: "lms-rebuild",
@@ -324,6 +329,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "成果", en: "Outcome" }, value: "加入" },
     ],
     hue: "oklch(0.44 0.12 280)",
+    image: "/cases/lms-rebuild.jpg",
   },
 ];
 

@@ -70,11 +70,21 @@ function ProjectsPage() {
             <article key={c.id} className="grid gap-10 border-t border-border pt-12 md:grid-cols-12">
               {/* visual */}
               <div className="md:col-span-4">
-                <div
-                  className="flex h-52 items-center justify-center rounded-sm"
-                  style={{ background: `linear-gradient(135deg, ${c.hue} 0%, oklch(0.92 0.01 80) 100%)` }}
-                >
-                  <span className="font-mono text-xs tracking-widest text-white/80">CASE 0{i + 1}</span>
+                <div className="overflow-hidden rounded-sm">
+                  {c.image ? (
+                    <img
+                      src={c.image}
+                      alt={c.title.ja}
+                      className="w-full h-52 object-cover object-top"
+                    />
+                  ) : (
+                    <div
+                      className="flex h-52 items-center justify-center"
+                      style={{ background: `linear-gradient(135deg, ${c.hue} 0%, oklch(0.92 0.01 80) 100%)` }}
+                    >
+                      <span className="font-mono text-xs tracking-widest text-white/80">CASE 0{i + 1}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {c.stack.map((s) => (

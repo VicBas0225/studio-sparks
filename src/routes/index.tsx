@@ -149,18 +149,32 @@ function HomePage() {
             </Link>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {caseStudies.map((c) => (
-              <div key={c.id} className="rounded-sm border border-border bg-background p-8">
-                <div className="label-jp text-[var(--dreamblue)]">{t(c.category)}</div>
-                <h3 className="mt-3 font-serif text-xl leading-snug">{t(c.title)}</h3>
-                <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{t(c.before)}</p>
-                <div className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-sm border border-border bg-border">
-                  {c.metrics.map((m) => (
-                    <div key={m.value} className="bg-background p-4 text-center">
-                      <div className="font-serif text-2xl text-[var(--dreamblue)]">{m.value}</div>
-                      <div className="mt-1 text-[10px] text-muted-foreground">{t(m.label)}</div>
-                    </div>
-                  ))}
+            {caseStudies.slice(0, 2).map((c) => (
+              <div key={c.id} className="rounded-sm border border-border bg-background overflow-hidden">
+                {c.image ? (
+                  <img
+                    src={c.image}
+                    alt={c.title.ja}
+                    className="w-full h-48 object-cover object-top"
+                  />
+                ) : (
+                  <div
+                    className="w-full h-48"
+                    style={{ background: `linear-gradient(135deg, ${c.hue} 0%, oklch(0.85 0.02 80) 100%)` }}
+                  />
+                )}
+                <div className="p-8">
+                  <div className="label-jp text-[var(--dreamblue)]">{t(c.category)}</div>
+                  <h3 className="mt-3 font-serif text-xl leading-snug">{t(c.title)}</h3>
+                  <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{t(c.before)}</p>
+                  <div className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-sm border border-border bg-border">
+                    {c.metrics.map((m) => (
+                      <div key={m.value} className="bg-background p-4 text-center">
+                        <div className="font-serif text-2xl text-[var(--dreamblue)]">{m.value}</div>
+                        <div className="mt-1 text-[10px] text-muted-foreground">{t(m.label)}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

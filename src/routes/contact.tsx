@@ -1,8 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
-import { useState } from "react";
-import { ArrowUpRight, Check } from "lucide-react";
+import { useState, useRef } from "react";
+import { ArrowUpRight, Check, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_8ynsrfj";
+const EMAILJS_TEMPLATE_ID = "template_7pkd17m";
+const EMAILJS_PUBLIC_KEY = "qQyvQutwlGFBsRRek";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -22,6 +27,39 @@ function ContactPage() {
   const [occupation, setOccupation] = useState<Occupation | null>(null);
   const [situation, setSituation] = useState<Situation | null>(null);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const occupationLabel = (v: Occupation) =>
+    lang === "ja"
+      ? occupations.find((o) => o.value === v)?.ja ?? v
+      : occupations.find((o) => o.value === v)?.en ?? v;
+
+  const situationLabel = (v: Situation) =>
+    lang === "ja"
+      ? situations.find((s) => s.value === v)?.ja ?? v
+      : situations.find((s) => s.value === v)?.en ?? v;
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!occupation || !situation || !formRef.current) return;
+    setSending(true);
+    setError(false);
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
+      setSent(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
+  }
 
   const occupations: { value: Occupation; ja: string; en: string }[] = [
     { value: "designer", ja: "Webデザイナー", en: "Web Designer" },
@@ -78,9 +116,13 @@ function ContactPage() {
           </div>
         ) : (
           <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            onSubmit={handleSubmit}
+            ref={formRef}
             className="space-y-10"
           >
+            {/* Hidden fields for EmailJS template variables */}
+            <input type="hidden" name="occupation" value={occupation ? occupationLabel(occupation) : ""} />
+            <input type="hidden" name="situation" value={situation ? situationLabel(situation) : ""} />
             {/* Name */}
             <div>
               <label className="block">
@@ -90,8 +132,26 @@ function ContactPage() {
                 </span>
                 <input
                   required
+                  name="from_name"
                   className={inputCls}
                   placeholder={lang === "ja" ? "例：山田 花子" : "e.g. Jane Smith"}
+                />
+              </label>
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="block">
+                <span className="label-jp">
+                  {t({ ja: "メールアドレス", en: "Email address" })}
+                  <span className="ml-1 text-red-500">*</span>
+                </span>
+                <input
+                  required
+                  type="email"
+                  name="reply_to"
+                  className={inputCls}
+                  placeholder="you@example.com"
                 />
               </label>
             </div>
@@ -150,6 +210,7 @@ function ContactPage() {
                 <span className="label-jp">{t({ ja: "ご相談内容（任意・140文字程度でOK）", en: "Details (optional — 140 chars is fine)" })}</span>
                 <textarea
                   rows={4}
+                  name="message"
                   className={`${inputCls} resize-none`}
                   placeholder={lang === "ja"
                     ? "例：「会員サイトの決済について」「Bubbleの外部連携について」など、箇条書きで構いません。"
@@ -176,16 +237,26 @@ function ContactPage() {
               </a>
             </div>
 
+            {error && (
+              <p className="text-sm text-red-500">
+                {t({ ja: "送信に失敗しました。時間をおいて再度お試しください。", en: "Failed to send. Please try again later." })}
+              </p>
+            )}
+
             <div className="flex items-center justify-between border-t border-border pt-6">
               <p className="text-xs text-muted-foreground">
                 {t({ ja: "送信内容は Dream-cha メンバーのみが確認します。", en: "Only Dream-cha team members will see your message." })}
               </p>
               <button
                 type="submit"
-                disabled={!occupation || !situation}
+                disabled={!occupation || !situation || sending}
                 className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-40"
               >
-                {t({ ja: "⚡ 無料壁打ち相談を申し込む", en: "⚡ Book free session" })} <ArrowUpRight size={15} />
+                {sending ? (
+                  <><Loader2 size={15} className="animate-spin" /> {t({ ja: "送信中…", en: "Sending…" })}</>
+                ) : (
+                  <>{t({ ja: "⚡ 無料壁打ち相談を申し込む", en: "⚡ Book free session" })} <ArrowUpRight size={15} /></>
+                )}
               </button>
             </div>
           </form>

@@ -176,7 +176,7 @@ function HomePage() {
         </h2>
         <div className="mt-14 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           {team.map((m) => (
-            <div key={m.id} className={`flex flex-col items-center text-center border-t border-border pt-6 ${m.id.includes('m2') || m.id.includes('m3') || m.id.includes('m4') ? 'opacity-40' : ''}`}>
+            <div key={m.id} className={`flex flex-col items-center text-center border-t border-border pt-6 ${m.id.includes('m2') || m.id.includes('m3')}`}>
               <Avatar initials={m.initials} tone={m.tone} size={72} photo={m.photo} name={t(m.name)} />
               <div className="mt-3 font-serif text-base leading-tight">{t(m.name)}</div>
               <div className="mt-1 text-[11px] text-muted-foreground leading-snug">{t(m.role)}</div>

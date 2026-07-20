@@ -34,7 +34,7 @@ function BlogPage() {
         </p>
       </section>
 
-      <hr className="hairline mx-auto max-w-7xl" />
+      <div className="hairline mx-auto max-w-7xl h-[2px]" />
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
         <div className="grid gap-8 md:grid-cols-2">

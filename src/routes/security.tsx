@@ -107,7 +107,7 @@ function SecurityPage() {
         </div>
       </section>
 
-      <hr className="hairline mx-auto max-w-7xl" />
+      <div className="hairline mx-auto max-w-7xl h-[2px]" />
 
       {/* Security policy */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">

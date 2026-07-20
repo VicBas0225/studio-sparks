@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { LangToggle } from "./LangToggle";
 import { ThemeToggle } from "./ThemeToggle";
+import { VisitorCounter } from "./VisitorCounter";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -19,16 +20,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
-        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-8 lg:px-10">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0" onClick={() => setOpen(false)}>
           <img
             src="/dream-cha-logo.png"
             alt="Dream-cha"
-            className="h-10 w-10 rounded-full object-cover ring-2 ring-[var(--dreamgold)] ring-offset-2 ring-offset-background"
+            className="h-9 w-9 rounded-full object-cover ring-2 ring-[var(--dreamgold)] ring-offset-2 ring-offset-background"
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        {/* Desktop nav — shown at lg (1024px+) */}
+        <nav className="hidden items-center gap-6 lg:flex">
           {nav.map((n) => (
             <Link
               key={n.to}
@@ -42,10 +44,13 @@ export function Header() {
           <div className="ml-2 flex items-center gap-3 border-l border-border pl-5">
             <LangToggle />
             <ThemeToggle />
+            <VisitorCounter />
           </div>
         </nav>
 
-        <div className="flex items-center gap-3 md:hidden">
+        {/* Mobile/tablet toolbar — shown below lg */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <VisitorCounter />
           <LangToggle />
           <ThemeToggle />
           <button
@@ -59,8 +64,8 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border md:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col px-6 py-4">
+        <div className="border-t border-border lg:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4">
             {nav.map((n) => (
               <Link
                 key={n.to}

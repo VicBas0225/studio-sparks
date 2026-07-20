@@ -314,4 +314,149 @@ export const blogPosts: BlogPost[] = [
       en: '"Every new project since has been with Dream-cha. I\'m winning work I could never have taken on alone."',
     },
   },
+  {
+    id: "join-takuya",
+    date: "2025.06",
+    tag: { ja: "加入ストーリー", en: "Member Story" },
+    title: {
+      ja: "下請けの限界とデザインの壁を突破し、コアチームへ加入するまで",
+      en: "Breaking through the subcontracting ceiling and joining the core team",
+    },
+    intro: {
+      ja: "個人でクラウドソーシングから裏側だけを受注していたバックエンドエンジニアが、DreamChaの戦略に衝撃を受け、チームの一員になるまでの話。",
+      en: "A backend engineer who only took subcontract work from platforms discovered Dream-cha's strategy and decided to join from the inside.",
+    },
+    profile: {
+      ja: "岡田 拓也 氏 / バックエンドエンジニア。クラウドソーシングで下請け受注を続けていたが、デザインスキルのなさから常に買い叩かれる状況に疲弊していた。",
+      en: "Takuya O. / Backend Engineer. Took subcontract-only work via platforms, constantly undercut because of no design skills.",
+    },
+    despair: {
+      ja: "「個人でシステムの裏側だけを受注していましたが、デザインスキルがないため、常に制作会社の下請けとして買い叩かれ、心身ともに疲弊していました。」",
+      en: '"I only took backend subcontracts, and without design skills I was constantly undercut by agencies. It was exhausting mentally and physically."',
+    },
+    response: {
+      ja: "「あるWebアプリの案件でDreamChaチームと偶然マッチングし、共に開発を遂行する機会を得ました。彼らの『初期費用0円・完全成果報酬』という姿勢と、デザイナーをファン化して上流から高単価案件を引っ張ってくるという戦略に計り知れない衝撃を受けました。」",
+      en: '"A chance match on a web app project gave me my first look at how Dream-cha operated. Their zero-upfront, performance-based model and their strategy of turning designers into advocates — it was a revelation."',
+    },
+    future: {
+      ja: "「案件を完遂した段階で、私の実力と貢献度を100%評価したクリーンな報酬分配を受け取りました。このチームの頭脳と仕組みがあれば、個人の技術者は孤独や安買いから解放されると確信し、その場でメンバーへの参加を志願しました。現在はコアチームのバックエンドを支える一員として、誇りを持って開発に挑んでいます。」",
+      en: '"After completing the project I received a clean, 100% merit-based split. I was convinced this team could free any independent engineer from loneliness and low pay — and applied to join on the spot. I now proudly support the core team backend."',
+    },
+  },
+  {
+    id: "join-misaki",
+    date: "2025.06",
+    tag: { ja: "加入ストーリー", en: "Member Story" },
+    title: {
+      ja: "前払い外注リスクの恐怖から救われ、専属メンバーへの合流を決意した理由",
+      en: "Rescued from the fear of upfront outsourcing risk — why I decided to join as a dedicated member",
+    },
+    intro: {
+      ja: "高単価案件を前にバックエンド費用の立替リスクに怯えたデザイナーが、DreamChaの成果報酬モデルで初のフルパッケージ納品を成功させ、チームへ加入するまで。",
+      en: "A designer paralysed by upfront outsourcing costs on a high-value project used Dream-cha's performance model to deliver her first full package — and never looked back.",
+    },
+    profile: {
+      ja: "清水 美咲 氏 / Web・UIデザイナー。フリーランスとして活動中、高単価のフルパッケージ案件をバックエンドの知識不足と立替資金不足から断り続けていた。",
+      en: "Misaki S. / Web & UI Designer. Freelancing, but repeatedly forced to decline high-value full-package projects due to backend knowledge gaps and no upfront budget.",
+    },
+    despair: {
+      ja: "「エンドクライアントから独自決済とサブスク会員システムが必須の高単価案件を相談されましたが、バックエンドの知識がなく、企業に外注しようにも手元に数十万円の立替予算もありませんでした。本当に動くシステムが納品されるかも分からず、リスクに怯えて失注寸前でした。」",
+      en: '"My client needed custom payments and a subscription system, but I had no backend knowledge and no budget to outsource upfront. I had no idea if anything would actually get built. I was about to lose the deal entirely."',
+    },
+    response: {
+      ja: "「DreamChaに相談したところ、商談前の壁打ちからFigmaデータの解析まで、リスクゼロで並走してくれました。完全成果報酬制だったため、一円の身銭も切ることなく、無事クライアントへ完璧なフルパッケージを納品・検収まで繋ぐことができました。」",
+      en: '"Dream-cha ran alongside me from pre-pitch brainstorming to Figma analysis, all at zero risk to me. With full performance-based payment, I delivered a complete package to my client without spending a single yen of my own."',
+    },
+    future: {
+      ja: "「私のクリエイティブと立場を100%尊重し、最強のエンジンとして裏から支えてくれた恩義は忘れません。クリエイターをリスクから解放するという理念を、今度は自分が提供する側になりたいと考え、案件遂行後にチームへの加入を希望しました。デザインとバックエンドが等価に手を取り合う、最高の組織です。」",
+      en: '"I\'ll never forget how they respected my creativity 100% and powered everything from behind. I wanted to be the one offering that to others — so I applied after the project. Design and backend as true equals. It\'s the best team I know."',
+    },
+  },
+  {
+    id: "figma-api",
+    date: "2025.04",
+    tag: { ja: "外部デザイナー事例", en: "Partner Story" },
+    title: {
+      ja: "Figmaを渡しただけ。複雑なAPI連携と顧客管理システムを丸投げして受注成功",
+      en: "Just handed over the Figma. Complex API integration and CRM — fully delegated, project won",
+    },
+    intro: {
+      ja: "デザインとフロントしか持たないチームが、美容サロンの予約×CRM連携という大規模案件をDreamChaへの丸投げで完遂した話。",
+      en: "A design-and-frontend-only team tackled a large salon booking × CRM integration by delegating the entire backend to Dream-cha.",
+    },
+    profile: {
+      ja: "長谷川 亮 氏 / Webディレクター 兼 デザイナー（独立2年目）。デザインとフロントコーディングは得意だが、バックエンド連携の経験がない。",
+      en: "Ryo Hasegawa / Web Director & Designer (2nd year freelancing). Strong in design and frontend, no backend integration experience.",
+    },
+    despair: {
+      ja: "「美容系サロンから、店舗予約システムと独自CRMを連携させた大規模サイト制作を依頼されました。自社にはデザインとフロントコーディングのスタッフしかおらず、システムの繋ぎ込みをどう処理すべきか分からず、諦める一歩手前でした。」",
+      en: '"A beauty salon asked us to build a site connecting their booking system with a custom CRM. We only had design and frontend people — no idea how to handle the system integration. We were one step from giving up."',
+    },
+    response: {
+      ja: "「DreamChaに相談したところ、こちらで制作したFigmaのデータを渡しただけで、裏側の複雑なAPI連携やDB最適化をすべてノイズレスに仕上げてくれました。窓口が1つで済むため、難解な専門用語をぶつけられることもなく、仕様の翻訳から実装までワンストップ。」",
+      en: '"I passed them our Figma files and they handled every complex API connection and DB optimisation without any noise. One point of contact, no jargon, specification translation to implementation — completely seamless."',
+    },
+    future: {
+      ja: "「納品した成果物を見たクライアントからは『ここまでスムーズに動くシステムは初めてだ』と大絶賛され、そのまま月額の保守運用契約まで獲得できました。デザインの領域には一切口出しせず、裏方に徹してくれる最高のパートナーです。」",
+      en: '"The client said it was the smoothest system they\'d ever seen, and we walked away with a monthly maintenance retainer. They never touched our design — pure engine-room partners."',
+    },
+  },
+  {
+    id: "zero-budget",
+    date: "2025.04",
+    tag: { ja: "外部デザイナー事例", en: "Partner Story" },
+    title: {
+      ja: "初期費用0円・完全成果報酬だから踏み出せた、手元資金ゼロからの大逆転",
+      en: "Zero upfront, full performance-based — how a designer with no budget landed a ¥2M project",
+    },
+    intro: {
+      ja: "200万円の着手金見積もりに絶望した個人デザイナーが、成果報酬モデルで一円も払わずマッチングアプリを完成させた話。",
+      en: "A solo designer facing a ¥2M upfront quote used Dream-cha's performance model to build a matching app without paying a single yen.",
+    },
+    profile: {
+      ja: "佐々木 健太 氏 / フリーランスUIデザイナー（経験2年）。マッチングアプリのデザイン依頼を受けるも、バックエンド費用の工面ができず案件消化に頭を抱えていた。",
+      en: "Kenta Sasaki / Freelance UI Designer (2 years). Received a matching app design brief but had no way to fund the backend costs.",
+    },
+    despair: {
+      ja: "「マッチングアプリの設計と構築の相談を受けましたが、バックエンド開発のために他の開発企業から提示された見積もりは200万円。しかも着手金として前払いが必要でした。個人デザイナーの私にそんな予算があるはずもなく、案件を断るしかないと絶望していました。」",
+      en: '"The backend quote from agencies came in at ¥2M — with upfront payment required. As a solo designer I had no such budget. I had no choice but to turn the project down. Or so I thought."',
+    },
+    response: {
+      ja: "「DreamChaの『初期費用0円・完全成果報酬』というシステムに出会いました。クライアントから私に着金した段階での分配だったため、私の立替リスクは完全にゼロ。事前の契約書も非常にクリーンで、お金に関する不安が一切ない状態で開発を進めることができました。」",
+      en: '"Dream-cha\'s zero-upfront, performance-based model changed everything. Payment only triggers when my client pays me — zero cash advance risk. The contract was clean and clear. I moved forward with zero financial anxiety."',
+    },
+    future: {
+      ja: "「技術力の高さはもちろんですが、個人クリエイターの財布事情や心理的ハードルをここまで理解し、リスクを半分背負ってくれるチームは日本中どこを探しても他にありません。」",
+      en: '"The technical quality is outstanding, but what\'s truly rare is a team that deeply understands the financial reality and psychological barriers of solo creatives — and shares the risk. There\'s no other team like this in Japan."',
+    },
+  },
+  {
+    id: "studio-backend",
+    date: "2025.03",
+    tag: { ja: "外部デザイナー事例", en: "Partner Story" },
+    title: {
+      ja: "STUDIOの仕様限界を突破。ノーコードに「強力なバックエンド」を宿す手法",
+      en: "Breaking STUDIO's limits — how a no-code designer added a powerful backend to her workflow",
+    },
+    intro: {
+      ja: "STUDIOメインの制作者が、ノーコードでは絶対に実装できない在庫基幹システムとのリアルタイム同期をDreamChaとの連携で実現した話。",
+      en: "A STUDIO-first designer solved a real-time inventory sync requirement — impossible in no-code — by partnering with Dream-cha.",
+    },
+    profile: {
+      ja: "伊藤 舞 氏 / ホームページ制作・STUDIOデザイナー。ノーコードツールをメインに制作するが、システム連携案件では毎回壁にぶつかっていた。",
+      en: "Mai Ito / Homepage Creator & STUDIO Designer. Works mainly with no-code tools but hits a wall every time system integration is required.",
+    },
+    despair: {
+      ja: "「クライアントから『社内の在庫基幹システムとWebサイトのデータをリアルタイムで自動同期させたい』という、ノーコードの仕様上どうしても実装不可な要件を突きつけられて困り果てていました。」",
+      en: '"My client needed real-time auto-sync between their internal inventory system and the website. Completely impossible within no-code constraints. I had no idea what to do."',
+    },
+    response: {
+      ja: "「DreamChaとパートナー契約を結んで案件に挑んだところ、彼らが外部に独自のバックエンドサーバー（AWS/Python）を構築し、STUDIOと基幹システムを安全に中継するAPIシステムを組んでくれました。私はいつも通りSTUDIOでのデザインとフロント実装に集中するだけでした。」",
+      en: '"Dream-cha built a custom backend server on AWS with Python and created an API that safely bridged STUDIO and the inventory system. I just did what I always do — design and front-end in STUDIO."',
+    },
+    future: {
+      ja: "「ノーコードの限界を遥かに超えたシステムサイトが完成。今では『バックエンドにもめちゃくちゃ強いデザイナー』として、競合の制作会社と相見積もりになっても100%勝てるようになりました。」",
+      en: '"The result blew past every no-code limitation. Now I pitch myself as a designer with serious backend firepower — and I win every competitive quote against full agencies."',
+    },
+  },
 ];

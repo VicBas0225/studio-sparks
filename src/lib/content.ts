@@ -21,12 +21,12 @@ export const team: Member[] = [
     id: "leader",
     initials: "M",
     tone: "oklch(0.35 0.12 240 / 0.18)",
-    name: { ja: "村上 豪", en: "Go Murakami" },
+    name: { ja: "鈴木 雄平", en: "Suzuki Yuhei" },
     role: { ja: "リーダー / シニアバックエンドエンジニア", en: "Team Lead / Senior Backend Engineer" },
     location: { ja: "東京都・完全リモート", en: "Tokyo · Fully remote" },
-    birth: "1993.07.12",
+    birth: "1999.07.12",
     skills: ["Go", "Python / FastAPI", "AWS", "Docker", "DB設計", "要件定義"],
-    photo: "/members/murakami.jpg",
+    photo: "/members/suzuki.jpg",
     bio: {
       ja: "システム開発会社にてバックエンドの基幹システム構築に5年間従事後、フリーランスとして独立。大規模Webサービスのインフラ刷新やAPI設計を多数経験。非エンジニアの意図を日常の言葉に「翻訳」し、手戻りのない堅牢な要件定義を行うスキルに定評がある。本チームの発起人。",
       en: "5 years building core backend systems at an enterprise studio before going independent. Led API design and infra overhauls for large-scale services. Known for translating non-technical intent into precise, low-rework specifications. Founder of Dream-cha.",
@@ -331,93 +331,6 @@ export const caseStudies: CaseStudy[] = [
     hue: "oklch(0.44 0.12 280)",
     image: "/cases/lms-rebuild.jpg",
   },
-  {
-    id: "manyu-randoselu",
-    year: "2026",
-    category: { ja: "EC・ブランドサイト / ランドセルメーカー", en: "EC & Brand Site / Randoseru Maker" },
-    title: {
-      ja: "手づくりランドセルブランドのEC・予約基盤構築",
-      en: "EC & Reservation Platform for a Handmade Randoseru Brand",
-    },
-    before: {
-      ja: "職人による手づくりランドセルの世界観を保ちながら、カタログ請求・全国店舗案内・展示会予約・オンライン購入までを一つの導線でつなぐ必要があった。",
-      en: "The brand needed to preserve its artisan, handmade worldview while connecting catalog requests, a nationwide store guide, exhibition reservations and online purchase into one flow.",
-    },
-    solution: {
-      ja: "ブランドのビジュアルを最大限に活かしたUIの上に、会員・カート機能、カタログ請求フォーム、販売スケジュール、店舗・展示会情報を動的に管理できる仕組みを構築。",
-      en: "On a UI that showcases the brand's visuals, we built member/cart functionality, a catalog-request form, sales-schedule management and dynamic store/exhibition information.",
-    },
-    result: {
-      ja: "情報収集から予約・購入までを回遊できるサイトとして公開。繁忙期の販売スケジュールにも耐える運用体制を実現した。",
-      en: "Launched as a site that carries visitors from research through reservation and checkout, with an operation setup that holds up during peak sales seasons.",
-    },
-    stack: ["EC構築", "会員システム", "カタログ請求フォーム", "店舗・展示会管理"],
-    metrics: [
-      { label: { ja: "形態", en: "Format" }, value: "EC" },
-      { label: { ja: "カタログ請求", en: "Catalog" }, value: "Web" },
-      { label: { ja: "店舗案内", en: "Store locator" }, value: "◎" },
-    ],
-    hue: "oklch(0.58 0.10 45)",
-    image: "/cases/manyu-randoselu.png",
-  },
-  {
-    id: "libero-home",
-    year: "2026",
-    category: { ja: "コーポレート・ブランドサイト / 注文住宅", en: "Corporate & Brand Site / Custom Homes" },
-    title: {
-      ja: "工務店ブランドサイトとイベント予約導線の構築",
-      en: "Home-Builder Brand Site with Event Reservation Flow",
-    },
-    before: {
-      ja: "「山梨の暮らしをデザインする」という世界観を伝えながら、モデルハウス見学会や無料相談会の集客・予約をサイト上で完結させたかった。",
-      en: "The builder wanted to convey its \"designing life in Yamanashi\" worldview while handling model-house tours and free-consultation bookings entirely on the site.",
-    },
-    solution: {
-      ja: "大判ビジュアルによるブランド表現を軸に、イベント情報の更新・予約フォーム・完成見学会の告知を運用しやすいCMSとして構築。",
-      en: "Built around large-format brand visuals, with an easy-to-run CMS for event updates, reservation forms and model-house tour announcements.",
-    },
-    result: {
-      ja: "イベントごとに情報を差し替えられる集客基盤として公開。無料相談会予約への導線を明確化した。",
-      en: "Launched as a lead-generation base where each event's information can be swapped in, with a clear path to free-consultation bookings.",
-    },
-    stack: ["ブランドサイト", "イベントCMS", "予約フォーム", "レスポンシブ"],
-    metrics: [
-      { label: { ja: "相談予約", en: "Booking" }, value: "Web" },
-      { label: { ja: "イベント管理", en: "Events" }, value: "CMS" },
-      { label: { ja: "エリア", en: "Area" }, value: "Yamanashi" },
-    ],
-    hue: "oklch(0.55 0.08 150)",
-    image: "/cases/libero-home.png",
-  },
-  {
-    id: "art-asada",
-    year: "2026",
-    category: { ja: "医療・クリニックサイト / 予約", en: "Medical Clinic Site / Reservations" },
-    title: {
-      ja: "不妊治療クリニックの予約・診療案内サイト構築",
-      en: "Fertility Clinic Site with Reservations & Treatment Guide",
-    },
-    before: {
-      ja: "初診のハードルが高い不妊治療において、患者が安心して来院できるよう、診療時間・治療内容・アクセスと予約をわかりやすく整理する必要があった。",
-      en: "In fertility care, where the first visit is daunting, the clinic needed hours, treatments, access and reservations organized clearly so patients could visit with confidence.",
-    },
-    solution: {
-      ja: "落ち着いたトーンのデザインで、診療時間表・治療/検査の案内・Web予約・採用情報を動的に管理できる医療機関サイトを構築。",
-      en: "A calm, reassuring design with a medical-institution site that dynamically manages the hours table, treatment/exam guides, web reservations and recruitment.",
-    },
-    result: {
-      ja: "予約・診療案内・採用までを1サイトに集約し、来院前の不安を軽減する情報導線を実現した。",
-      en: "Consolidated reservations, treatment guidance and recruitment into one site, easing patients' pre-visit anxiety.",
-    },
-    stack: ["クリニックサイト", "Web予約", "診療案内", "採用情報", "レスポンシブ"],
-    metrics: [
-      { label: { ja: "予約", en: "Booking" }, value: "Web" },
-      { label: { ja: "対応エリア", en: "Areas" }, value: "4市" },
-      { label: { ja: "駅から", en: "From station" }, value: "2min" },
-    ],
-    hue: "oklch(0.72 0.11 70)",
-    image: "/cases/art-asada.png",
-  },
 ];
 
 export type BlogPost = {
@@ -433,6 +346,64 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    id: "designer-100man",
+    date: "2025.05",
+    tag: { ja: "お客様の声", en: "Client Story" },
+    title: {
+      ja: "「前払いナシで本当に動いてくれた」— フリーランスデザイナーAさんが初の100万円超え案件を獲得するまで",
+      en: '"No upfront — and they actually delivered" — How freelance designer A landed her first ¥1M+ project',
+    },
+    intro: {
+      ja: "WordPressのカスタマイズは得意だけど、決済機能は怖い。そんなAさんが Dream-cha を見つけて案件を一変させるまでのリアルな話。",
+      en: "Strong at WordPress, terrified of payment backends. Here's how A's project changed once she found Dream-cha.",
+    },
+    profile: {
+      ja: "Webデザイナー歴3年。主にWordPressで中小企業のサイト制作を受注。月単価20〜30万円が続いていた。",
+      en: "3 years as a web designer. Mostly WordPress sites for SMBs. Monthly billings stuck around ¥200–300k.",
+    },
+    despair: {
+      ja: "「会員サイトを作ってほしい。決済もStripeで」とクライアントに言われた時、正直頭が真っ白になりました。他の外注先に聞いたら70万円の見積もりで、クライアントの予算には合わなくて……」",
+      en: '"When my client said they wanted a membership site with Stripe payments, I went blank. A quote from another dev came in at ¥700k — way over budget."',
+    },
+    response: {
+      ja: "「LINEで相談したら、30分で仕様の方向性が出てきて驚きました。成果報酬なので、私の手出しはゼロ。バックエンドは全部Dream-chaさんに任せて、私はデザインだけに集中できました。」",
+      en: '"A 30-minute LINE chat and we had a direction. Zero upfront from me — all backend handled by Dream-cha, so I could focus purely on design."',
+    },
+    future: {
+      ja: "「総額110万円で検収完了。クライアントに大満足してもらえて、今は継続案件も2本走っています。もうシステム案件を怖がる必要がなくなりました。」",
+      en: '"Project signed off at ¥1.1M total. Client loved it, and I now have two ongoing retainers. I\'m not scared of system projects anymore."',
+    },
+  },
+  {
+    id: "emergency-bug",
+    date: "2025.03",
+    tag: { ja: "緊急対応事例", en: "Emergency Case" },
+    title: {
+      ja: "WordPressが画面真っ白に……深夜の緊急バグをバックエンドのプロが30分で救出した話",
+      en: "WordPress white screen at midnight — how a backend pro fixed a critical bug in 30 minutes",
+    },
+    intro: {
+      ja: "本番サイトが突然クラッシュ。自分では直せない、でも翌朝9時には締め切りがある。そんな夜に届いた1本のLINEから始まった話。",
+      en: "Production site down. Can't fix it myself. Deadline at 9am. The story that started with one LINE message late at night.",
+    },
+    profile: {
+      ja: "ノーコードディレクター歴2年。STUDIOとBubbleを使った制作が得意で、WordPressは「なんとかなる程度」の使い手。",
+      en: "2 years as a no-code director. Comfortable with STUDIO and Bubble, WordPress knowledge limited to 'just enough'.",
+    },
+    despair: {
+      ja: "「プラグインの更新後に画面が真っ白になって、FTPもよく分からなくて、本当にパニックでした。翌朝クライアントにデモがあって……」",
+      en: '"After a plugin update the whole site went white. I barely know FTP. Full panic — client demo at 9am next morning."',
+    },
+    response: {
+      ja: "「深夜0時にLINEを送ったら、15分後には繋いでもらえて。サーバーのエラーログを確認してもらったら、プラグインの競合が原因だとすぐ特定。30分で完全復旧しました。」",
+      en: '"Sent a LINE at midnight, got a reply in 15 minutes. Server error logs identified a plugin conflict immediately. Fully restored in 30 minutes."',
+    },
+    future: {
+      ja: "「以来、新規案件はすべてDream-chaさんと組んでいます。自分一人では取れなかった受注が、今は普通に取れるようになりました。」",
+      en: '"Every new project since has been with Dream-cha. I\'m winning work I could never have taken on alone."',
+    },
+  },
   {
     id: "join-takuya",
     date: "2025.06",

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
+import { Reveal } from "@/components/Reveal";
 import { ArrowUpRight, Lock, Server, ShieldCheck, FileText, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/security")({
@@ -90,20 +91,20 @@ function SecurityPage() {
     <>
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
-        <SectionLabel index="01">{t({ ja: "開発規約・セキュリティポリシー", en: "Development Policy & Security" })}</SectionLabel>
-        <h1 className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
+        <Reveal><SectionLabel index="01">{t({ ja: "開発規約・セキュリティポリシー", en: "Development Policy & Security" })}</SectionLabel></Reveal>
+        <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
           {t({
             ja: <>技術と信頼を、一切のブラックボックス<br />なしに透明化する。</>,
             en: <>Technology and trust — made fully<br />transparent, zero black boxes.</>,
           })}
-        </h1>
+        </Reveal>
         <div className="mt-10 max-w-2xl">
-          <p className="text-base leading-[1.8] text-muted-foreground">
+          <Reveal as="p" delay={160} className="text-base leading-[1.8] text-muted-foreground">
             {t({
               ja: "成果報酬型のチームにおいて最も軽視されがちなのが『セキュリティ』と『契約・権利トラブルの防止』です。Dream-chaは、初期からのシステムエキスパートと堅牢なインフラ体制を誇るからこそ、お互いの権利を守り、エンドクライアントのデータを死守するための規約とポリシーを事前にすべて開示します。",
               en: "In performance-based teams, security and contract-rights issues are the most commonly overlooked risks. Because Dream-cha was built on system expertise and robust infrastructure from day one, we disclose all policies and standards upfront — to protect everyone's rights and safeguard end-client data.",
             })}
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -111,25 +112,25 @@ function SecurityPage() {
 
       {/* Security policy */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
-        <SectionLabel index="02">{t({ ja: "セキュリティポリシー", en: "Security Policy" })}</SectionLabel>
-        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+        <Reveal><SectionLabel index="02">{t({ ja: "セキュリティポリシー", en: "Security Policy" })}</SectionLabel></Reveal>
+        <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
           {t({ ja: "5つの技術的防衛基準。", en: "Five technical defence standards." })}
-        </h2>
-        <p className="mt-4 max-w-xl text-sm leading-[1.8] text-muted-foreground">
+        </Reveal>
+        <Reveal as="p" delay={140} className="mt-4 max-w-xl text-sm leading-[1.8] text-muted-foreground">
           {t({
             ja: "「DreamChaになら、クライアントの個人情報が絡むシステムを任せられる」と確信していただくための、技術的な約束です。",
             en: "Our technical commitments — so you can trust Dream-cha with systems that handle client personal data.",
           })}
-        </p>
+        </Reveal>
         <dl className="mt-14 space-y-0 divide-y divide-border border-t border-border">
           {securityItems.map((item, i) => (
-            <div key={i} className="grid gap-6 py-8 md:grid-cols-12">
+            <Reveal key={i} delay={i * 70} className="grid gap-6 py-8 md:grid-cols-12">
               <div className="flex items-start gap-3 md:col-span-5">
                 <div className="mt-0.5 shrink-0">{item.icon}</div>
                 <dt className="font-serif text-lg leading-snug">{t(item.title)}</dt>
               </div>
               <dd className="text-sm leading-[1.8] text-muted-foreground md:col-span-7">{t(item.body)}</dd>
-            </div>
+            </Reveal>
           ))}
         </dl>
       </section>
@@ -137,23 +138,23 @@ function SecurityPage() {
       {/* Development policy */}
       <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <SectionLabel index="03">{t({ ja: "開発・権利の規約", en: "Development & Rights Policy" })}</SectionLabel>
-          <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+          <Reveal><SectionLabel index="03">{t({ ja: "開発・権利の規約", en: "Development & Rights Policy" })}</SectionLabel></Reveal>
+          <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
             {t({ ja: "等価交換のクリーンルール。", en: "The clean rules of equal exchange." })}
-          </h2>
-          <p className="mt-4 max-w-xl text-sm leading-[1.8] text-muted-foreground">
+          </Reveal>
+          <Reveal as="p" delay={140} className="mt-4 max-w-xl text-sm leading-[1.8] text-muted-foreground">
             {t({
               ja: "お金・権利・レスポンスに関するトラブルを未然に防ぐ、ビジネスライクな規約の明文化です。",
               en: "A clear, business-like codification of rules to prevent disputes over money, rights and response times.",
             })}
-          </p>
+          </Reveal>
           <dl className="mt-12 space-y-0 divide-y divide-border border-t border-border">
-            {policyItems.map((p) => (
-              <div key={p.n} className="grid gap-6 py-10 md:grid-cols-12">
+            {policyItems.map((p, i) => (
+              <Reveal key={p.n} delay={i * 80} className="grid gap-6 py-10 md:grid-cols-12">
                 <div className="font-mono text-xs text-muted-foreground md:col-span-1">{p.n}</div>
                 <dt className="font-serif text-xl md:col-span-4">{t(p.title)}</dt>
                 <dd className="text-sm leading-[1.8] text-muted-foreground md:col-span-7">{t(p.body)}</dd>
-              </div>
+              </Reveal>
             ))}
           </dl>
         </div>
@@ -161,7 +162,7 @@ function SecurityPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
-        <div className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
             {t({ ja: "規約を確認の上、無料壁打ち相談へ進む。", en: "Policies reviewed. Ready to talk." })}
           </h2>
@@ -174,10 +175,10 @@ function SecurityPage() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
               {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })}
-              <ArrowUpRight size={15} />
+              <ArrowUpRight size={15} className="cta-arrow" />
             </Link>
             <a
               href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
@@ -188,7 +189,7 @@ function SecurityPage() {
               {t({ ja: "LINEで相談（24時間受付）", en: "Chat on LINE (24h)" })}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

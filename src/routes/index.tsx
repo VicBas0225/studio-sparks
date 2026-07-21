@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
+import { Reveal } from "@/components/Reveal";
 import { caseStudies, team } from "@/lib/content";
 import { Avatar } from "@/components/Avatar";
 import { ArrowUpRight, ShieldCheck, Layers, Paintbrush } from "lucide-react";
@@ -17,31 +18,31 @@ function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-background">
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-20 md:px-10 md:pb-32 md:pt-28">
-          <SectionLabel index="01">Dream-cha · ドリームチャ</SectionLabel>
-          <h1 className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5.5vw,4rem)] leading-[1.08] tracking-tight">
+          <Reveal><SectionLabel index="01">Dream-cha · ドリームチャ</SectionLabel></Reveal>
+          <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5.5vw,4rem)] leading-[1.08] tracking-tight">
             {t({
               ja: <>デザインはできる。<br />でも、システムが組めないから、<br />その高単価案件を諦めますか？</>,
               en: <>Great design, zero backend fear.<br />We are your complete tech partner.</>,
             })}
-          </h1>
-          <p className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
+          </Reveal>
+          <Reveal as="p" delay={180} className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
             {t({
               ja: "『Dream-cha（ドリームチャ＝Dream Challenge）』は、デザイナーのシステム不安とエンジニアのデザイン不安を相殺する、完全成果報酬型の共同開発チームです。あなたの挑戦リスクをゼロにします。",
               en: "Dream-cha is a performance-based co-development team that eliminates the gap between design and engineering. We take on the technical risk so you can focus on winning the work.",
             })}
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          </Reveal>
+          <Reveal delay={280} className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
               {t({ ja: "⚡ 30分・無料壁打ち相談", en: "⚡ Free 30-min consult" })}
-              <ArrowUpRight size={15} />
+              <ArrowUpRight size={15} className="cta-arrow" />
             </Link>
             <Link to="/projects" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
               {t({ ja: "解決実績を見る →", en: "See our case studies →" })}
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -50,10 +51,10 @@ function HomePage() {
       {/* Pain points */}
       <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <SectionLabel index="02">{t({ ja: "よくある悩み", en: "Sound familiar?" })}</SectionLabel>
-          <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+          <Reveal><SectionLabel index="02">{t({ ja: "よくある悩み", en: "Sound familiar?" })}</SectionLabel></Reveal>
+          <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
             {t({ ja: "皆さんには、このような経験はありませんか？", en: "Have you ever been here?" })}
-          </h2>
+          </Reveal>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {[
               {
@@ -77,14 +78,15 @@ function HomePage() {
                   en: "Agency quotes blow the budget. Freelancer platforms require upfront payment before you see a single line of code. Neither option works.",
                 },
               },
-            ].map((c) => (
-              <div
+            ].map((c, i) => (
+              <Reveal
                 key={c.label.ja}
-                className="rounded-sm border border-border bg-background p-8"
+                delay={i * 90}
+                className="card-lift rounded-sm border border-border bg-background p-8"
               >
                 <div className="label-jp text-[var(--dreamblue)]">{t(c.label)}</div>
                 <p className="mt-4 text-sm leading-[1.8] text-muted-foreground">{t(c.body)}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -92,10 +94,10 @@ function HomePage() {
 
       {/* Benefits */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <SectionLabel index="03">{t({ ja: "私たちの約束", en: "What we promise" })}</SectionLabel>
-        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+        <Reveal><SectionLabel index="03">{t({ ja: "私たちの約束", en: "What we promise" })}</SectionLabel></Reveal>
+        <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
           {t({ ja: "3つのメリット。", en: "Three guarantees." })}
-        </h2>
+        </Reveal>
         <div className="mt-14 grid gap-10 md:grid-cols-3">
           {[
             {
@@ -122,12 +124,12 @@ function HomePage() {
                 en: "Your creative vision and brand identity are untouchable. We build the engine that powers it from behind — nothing more, nothing less.",
               },
             },
-          ].map((b) => (
-            <div key={b.title.ja} className="border-t-2 border-[var(--dreamblue)] pt-8">
+          ].map((b, i) => (
+            <Reveal key={b.title.ja} delay={i * 110} className="border-t-2 border-[var(--dreamblue)] pt-8">
               {b.icon}
               <h3 className="mt-4 font-serif text-xl leading-snug">{t(b.title)}</h3>
               <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{t(b.body)}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -137,7 +139,7 @@ function HomePage() {
       {/* Case study preview */}
       <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="flex items-end justify-between">
+          <Reveal className="flex items-end justify-between">
             <div>
               <SectionLabel index="04">{t({ ja: "解決事例", en: "Case Studies" })}</SectionLabel>
               <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
@@ -147,10 +149,10 @@ function HomePage() {
             <Link to="/projects" className="hidden text-sm text-muted-foreground hover:text-foreground md:block">
               {t({ ja: "すべての実績 →", en: "All projects →" })}
             </Link>
-          </div>
+          </Reveal>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {[caseStudies[0], caseStudies[3]].map((c) => (
-              <div key={c.id} className="rounded-sm border border-border bg-background overflow-hidden">
+            {[caseStudies[0], caseStudies[3]].map((c, i) => (
+              <Reveal key={c.id} delay={i * 120} className="card-lift rounded-sm border border-border bg-background overflow-hidden">
                 {c.image ? (
                   <img
                     src={c.image}
@@ -176,36 +178,36 @@ function HomePage() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
       {/* Team preview */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <SectionLabel index="05">{t({ ja: "チーム", en: "The Team" })}</SectionLabel>
-        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+        <Reveal><SectionLabel index="05">{t({ ja: "チーム", en: "The Team" })}</SectionLabel></Reveal>
+        <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
           {t({ ja: "8名の専門家が、あなたの案件を守る。", en: "Eight specialists dedicated to your project." })}
-        </h2>
+        </Reveal>
         <div className="mt-14 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-          {team.map((m) => (
-            <div key={m.id} className={`flex flex-col items-center text-center border-t border-border pt-6 ${m.id.includes('m2') || m.id.includes('m3')}`}>
+          {team.map((m, i) => (
+            <Reveal key={m.id} delay={(i % 4) * 80} className="flex flex-col items-center text-center border-t border-border pt-6">
               <Avatar initials={m.initials} tone={m.tone} size={72} photo={m.photo} name={t(m.name)} />
               <div className="mt-3 font-serif text-base leading-tight">{t(m.name)}</div>
               <div className="mt-1 text-[11px] text-muted-foreground leading-snug">{t(m.role)}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
-        <div className="mt-10">
+        <Reveal className="mt-10">
           <Link to="/about" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
             {t({ ja: "詳しいプロフィールを見る →", en: "Full profiles →" })}
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
-        <div className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-16 text-center md:px-16 md:py-24">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-16 text-center md:px-16 md:py-24">
           <span className="label-jp text-[var(--dreamblue)]">{t({ ja: "ご相談はいつでも・無料", en: "Always free to ask" })}</span>
           <h2 className="mt-6 font-serif text-3xl md:text-4xl">
             {t({ ja: "「こんな相談でいいのかな？」は不要です。", en: "No such thing as a stupid question here." })}
@@ -219,10 +221,10 @@ function HomePage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
               {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })}
-              <ArrowUpRight size={15} />
+              <ArrowUpRight size={15} className="cta-arrow" />
             </Link>
             <a
               href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
@@ -233,7 +235,7 @@ function HomePage() {
               {t({ ja: "LINEで今すぐ相談（24時間受付）", en: "Chat on LINE (24h)" })}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

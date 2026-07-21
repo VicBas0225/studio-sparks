@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
+import { Reveal } from "@/components/Reveal";
 import { caseStudies } from "@/lib/content";
 import { ArrowUpRight } from "lucide-react";
 
@@ -21,16 +22,16 @@ function ProjectsPage() {
     <>
       {/* Header */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
-        <SectionLabel index="01">Projects</SectionLabel>
-        <h1 className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
+        <Reveal><SectionLabel index="01">Projects</SectionLabel></Reveal>
+        <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
           {t({ ja: "Before / After の数字で語る。", en: "The numbers tell the story." })}
-        </h1>
-        <p className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
+        </Reveal>
+        <Reveal as="p" delay={160} className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
           {t({
             ja: "きらびやかな宣伝文句は置き、技術構成と成果数値だけを淡々と並べます。詳細な資料はご相談時にお渡しできます。",
             en: "We skip the marketing language and lay out the stack and the numbers. Deeper case decks available on request.",
           })}
-        </p>
+        </Reveal>
       </section>
 
       <div className="hairline mx-auto max-w-7xl" />    
@@ -38,27 +39,27 @@ function ProjectsPage() {
       {/* Revenue model explainer */}
       <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <SectionLabel index="02">{t({ ja: "成果報酬の仕組み", en: "How performance-based payment works" })}</SectionLabel>
-          <h2 className="mt-6 font-serif text-2xl md:text-3xl">
+          <Reveal><SectionLabel index="02">{t({ ja: "成果報酬の仕組み", en: "How performance-based payment works" })}</SectionLabel></Reveal>
+          <Reveal as="h2" delay={80} className="mt-6 font-serif text-2xl md:text-3xl">
             {t({ ja: "なぜ、私たちは「完全成果報酬」で動けるのか？", en: "Why can we work on performance-based terms?" })}
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-[1.8] text-muted-foreground">
+          </Reveal>
+          <Reveal as="p" delay={140} className="mt-4 max-w-2xl text-sm leading-[1.8] text-muted-foreground">
             {t({
               ja: "私たちは、あなたの外注先ではなく、案件を共に成功させる『パートナー』だからです。前払いも立替も不要。クライアントからあなたへ報酬が支払われた段階で、事前に決めた配分率（％）に応じて私たちの報酬をいただきます。リスクは私たちが半分背負います。だからこそ、本気でクリーンな開発を行います。",
               en: "We are not your subcontractor — we are your co-owner of the project outcome. No prepayment, no advances. Once your client pays you, we take our agreed percentage. We carry half the risk, which is exactly why we ship serious work.",
             })}
-          </p>
+          </Reveal>
           <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-3">
             {[
               { step: "Step 1", ja: "案件受注", en: "You win the project", sub: { ja: "Dream-chaと分配率を事前合意", en: "Agree revenue split upfront" } },
               { step: "Step 2", ja: "共同開発・納品", en: "We build together", sub: { ja: "フロント・バックエンドを並行開発", en: "Design & backend developed in parallel" } },
               { step: "Step 3", ja: "着金後に精算", en: "Settle after client pays", sub: { ja: "あなたの手出しゼロ・前払いなし", en: "Zero upfront from you" } },
-            ].map((s) => (
-              <div key={s.step} className="bg-background p-8">
+            ].map((s, i) => (
+              <Reveal key={s.step} delay={i * 90} className="bg-background p-8">
                 <div className="font-mono text-xs text-[var(--dreamblue)]">{s.step}</div>
                 <div className="mt-3 font-serif text-xl">{t({ ja: s.ja, en: s.en })}</div>
                 <div className="mt-2 text-sm text-muted-foreground">{t(s.sub)}</div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -66,10 +67,10 @@ function ProjectsPage() {
 
       {/* Case studies */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
-        <SectionLabel index="03">{t({ ja: "解決事例", en: "Case Studies" })}</SectionLabel>
+        <Reveal><SectionLabel index="03">{t({ ja: "解決事例", en: "Case Studies" })}</SectionLabel></Reveal>
         <div className="mt-12 space-y-20">
           {caseStudies.map((c, i) => (
-            <article key={c.id} className="grid gap-10 border-t border-border pt-12 md:grid-cols-12">
+            <Reveal as="article" key={c.id} className="grid gap-10 border-t border-border pt-12 md:grid-cols-12">
               {/* visual */}
               <div className="md:col-span-4">
                 <div className="overflow-hidden rounded-sm">
@@ -128,14 +129,14 @@ function ProjectsPage() {
                   ))}
                 </div>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
-        <div className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
             {t({ ja: "あなたの案件も、解決できます。", en: "We can solve your project too." })}
           </h2>
@@ -145,12 +146,12 @@ function ProjectsPage() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              {t({ ja: "無料相談を申し込む", en: "Book free consult" })} <ArrowUpRight size={15} />
+              {t({ ja: "無料相談を申し込む", en: "Book free consult" })} <ArrowUpRight size={15} className="cta-arrow" />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

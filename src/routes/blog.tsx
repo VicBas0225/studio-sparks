@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
+import { Reveal } from "@/components/Reveal";
 import { blogPosts } from "@/lib/content";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
@@ -22,24 +23,24 @@ function BlogPage() {
   return (
     <>
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
-        <SectionLabel index="01">{t({ ja: "お客様の声", en: "Client Stories" })}</SectionLabel>
-        <h1 className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
+        <Reveal><SectionLabel index="01">{t({ ja: "お客様の声", en: "Client Stories" })}</SectionLabel></Reveal>
+        <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
           {t({ ja: "「成果報酬って、本当に大丈夫？」— 実際に使った人の声。", en: "\"Is performance-based pay actually safe?\" — from people who tried it." })}
-        </h1>
-        <p className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
+        </Reveal>
+        <Reveal as="p" delay={160} className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
           {t({
             ja: "成果報酬型は魅力的な反面、「本当にトラブルはないの？」という不安もあります。実際に課題を解決したクリエイターのリアルな声をそのまま掲載します。",
             en: "Performance-based pay sounds great — but \"will it actually work?\" is a fair concern. Here are real stories from creators who found out.",
           })}
-        </p>
+        </Reveal>
       </section>
 
       <div className="hairline mx-auto max-w-7xl h-[2px]" />
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
         <div className="grid gap-8 md:grid-cols-2">
-          {blogPosts.map((post) => (
-            <article key={post.id} className="rounded-sm border border-border overflow-hidden">
+          {blogPosts.map((post, i) => (
+            <Reveal as="article" key={post.id} delay={(i % 2) * 100} className="card-lift rounded-sm border border-border overflow-hidden">
               {/* Card header */}
               <div className="bg-[#F5F5F7] dark:bg-secondary/40 px-8 pt-8 pb-6">
                 <div className="flex items-center gap-3">
@@ -95,14 +96,14 @@ function BlogPage() {
                   </button>
                 )}
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
-        <div className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
             {t({ ja: "次はあなたの番です。", en: "You could be the next story." })}
           </h2>
@@ -112,9 +113,9 @@ function BlogPage() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })} <ArrowUpRight size={15} />
+              {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })} <ArrowUpRight size={15} className="cta-arrow" />
             </Link>
             <a
               href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
@@ -125,7 +126,7 @@ function BlogPage() {
               {t({ ja: "LINEで相談（24時間受付）", en: "Chat on LINE (24h)" })}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

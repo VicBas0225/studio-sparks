@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
+import { Reveal } from "@/components/Reveal";
 import { useState, useRef } from "react";
 import { ArrowUpRight, Check, Loader2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -79,20 +80,20 @@ function ContactPage() {
       {/* Header */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel index="01">Contact</SectionLabel>
-          <h1 className="mt-8 font-serif text-[clamp(1.75rem,4vw,3rem)] leading-[1.1]">
+          <Reveal><SectionLabel index="01">Contact</SectionLabel></Reveal>
+          <Reveal as="h1" delay={80} className="mt-8 font-serif text-[clamp(1.75rem,4vw,3rem)] leading-[1.1]">
             {t({ ja: "「こんな相談でいいのかな？」は不要です。", en: "No such thing as a question too small." })}
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.8] text-muted-foreground">
+          </Reveal>
+          <Reveal as="p" delay={160} className="mx-auto mt-6 max-w-2xl text-base leading-[1.8] text-muted-foreground">
             {t({
               ja: "クライアントから具体的な要望を聞く前でも、仕様書がない状態でも全く問題ありません。「こんな機能、バックエンドで実装可能？」「この要件なら、いくらで提案すれば失注しない？」といった、商談前の無料壁打ち相談（30分）としてお気軽にご利用ください。あなたの身銭を切るリスクは一切ありません。",
               en: "No brief, no spec needed. \"Is this feature buildable on the backend?\" or \"What should I charge to win this deal?\" — a free 30-minute session handles all of it. Zero financial risk to you.",
             })}
-          </p>
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#06C755]/40 bg-[#06C755]/10 px-5 py-2.5 text-sm text-[#06C755]">
-            <span className="h-2 w-2 rounded-full bg-[#06C755]" />
+          </Reveal>
+          <Reveal delay={240} className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#06C755]/40 bg-[#06C755]/10 px-5 py-2.5 text-sm text-[#06C755]">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[#06C755]" />
             {t({ ja: "24時間受付 · 初回無料", en: "24h available · First consult free" })}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -100,6 +101,7 @@ function ContactPage() {
 
       {/* Form */}
       <section className="mx-auto max-w-3xl px-6 py-16 md:px-10 md:py-24">
+        <Reveal>
         {sent ? (
           <div className="rounded-sm border border-border bg-secondary/50 px-6 py-14 text-center">
             <Check className="mx-auto text-[var(--dreamblue)]" size={32} />
@@ -252,17 +254,18 @@ function ContactPage() {
               <button
                 type="submit"
                 disabled={!occupation || !situation || sending}
-                className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-40"
+                className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-40"
               >
                 {sending ? (
                   <><Loader2 size={15} className="animate-spin" /> {t({ ja: "送信中…", en: "Sending…" })}</>
                 ) : (
-                  <>{t({ ja: "⚡ 無料壁打ち相談を申し込む", en: "⚡ Book free session" })} <ArrowUpRight size={15} /></>
+                  <>{t({ ja: "⚡ 無料壁打ち相談を申し込む", en: "⚡ Book free session" })} <ArrowUpRight size={15} className="cta-arrow" /></>
                 )}
               </button>
             </div>
           </form>
         )}
+        </Reveal>
       </section>
     </>
   );

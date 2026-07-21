@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
+import { Reveal } from "@/components/Reveal";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
@@ -104,21 +105,23 @@ function RecruitPage() {
       {/* Hero — dark navy */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <div>
-          <SectionLabel index="01">
-            <span className="text-white/60">Careers</span>
-          </SectionLabel>
-          <h1 className="mt-8 max-w-3xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1] tracking-tight">
+          <Reveal>
+            <SectionLabel index="01">
+              <span className="text-white/60">Careers</span>
+            </SectionLabel>
+          </Reveal>
+          <Reveal as="h1" delay={80} className="mt-8 max-w-3xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1] tracking-tight">
             {t({
               ja: <>互いの限界を相殺し、<br />ひとつの完璧なプロダクトを創る。</>,
               en: <>Eliminate each other's limits.<br />Build one perfect product.</>,
             })}
-          </h1>
-          <p className="mt-8 max-w-2xl text-base leading-[1.8] text-white/60 md:text-lg">
+          </Reveal>
+          <Reveal as="p" delay={160} className="mt-8 max-w-2xl text-base leading-[1.8] text-white/60 md:text-lg">
             {t({
               ja: "Dream-chaは、エンジニアとデザイナーが対等に手を取り合い、個人では到達できない大規模案件を完遂するプロフェッショナルチームです。あなたの技術力が、チーム全体の可能性を拡張します。",
               en: "Dream-cha is a professional team where engineers and designers collaborate as equals to complete large-scale projects neither could achieve alone. Your technical depth expands what the whole team can reach.",
             })}
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -127,10 +130,10 @@ function RecruitPage() {
       {/* Job listings — accordion */}
       <section className="bg-background py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <SectionLabel index="02">{t({ ja: "募集職種", en: "Open Positions" })}</SectionLabel>
+          <Reveal><SectionLabel index="02">{t({ ja: "募集職種", en: "Open Positions" })}</SectionLabel></Reveal>
           <div className="mt-12 divide-y divide-border border-t border-border">
-            {jobs.map((job) => (
-              <div key={job.id}>
+            {jobs.map((job, i) => (
+              <Reveal key={job.id} delay={i * 80}>
                 <button
                   onClick={() => setOpen(open === job.id ? null : job.id)}
                   className="flex w-full items-center justify-between py-7 text-left"
@@ -169,7 +172,7 @@ function RecruitPage() {
                     </div>
                   </div>
                 )}
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -178,10 +181,10 @@ function RecruitPage() {
       {/* Compensation philosophy */}
       <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <SectionLabel index="03">{t({ ja: "報酬の思想", en: "Compensation Philosophy" })}</SectionLabel>
-          <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+          <Reveal><SectionLabel index="03">{t({ ja: "報酬の思想", en: "Compensation Philosophy" })}</SectionLabel></Reveal>
+          <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
             {t({ ja: "中抜きのない、プロ同士の等価交換。", en: "Zero middlemen. Pure peer-to-peer value exchange." })}
-          </h2>
+          </Reveal>
           <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-3">
             {[
               {
@@ -199,12 +202,12 @@ function RecruitPage() {
                 title: { ja: "着金後にクリーンな分配", en: "Clean split after client pays" },
                 body: { ja: "クライアントからの着金を確認後、事前合意の配分率で各メンバーへ即時分配。前払い・立替は一切不要。", en: "Once client payment clears, each member receives their agreed share immediately. No advances, no holdbacks." },
               },
-            ].map((s) => (
-              <div key={s.step} className="bg-background p-8">
+            ].map((s, i) => (
+              <Reveal key={s.step} delay={i * 90} className="bg-background p-8">
                 <div className="font-mono text-xs text-[var(--dreamblue)]">{s.step}</div>
                 <div className="mt-3 font-serif text-xl">{t(s.title)}</div>
                 <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{t(s.body)}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -212,7 +215,7 @@ function RecruitPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
-        <div className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
             {t({ ja: "ポートフォリオを添えてエントリーする。", en: "Apply with your portfolio." })}
           </h2>
@@ -225,13 +228,13 @@ function RecruitPage() {
           <div className="mt-8">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-8 py-4 text-sm font-medium tracking-wider text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-8 py-4 text-sm font-medium tracking-wider text-white transition-opacity hover:opacity-90"
             >
               {t({ ja: "ポートフォリオを添付してエントリーする", en: "Apply with portfolio" })}
-              <ArrowUpRight size={15} />
+              <ArrowUpRight size={15} className="cta-arrow" />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

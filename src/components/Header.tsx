@@ -38,7 +38,7 @@ export function Header() {
               key={n.to}
               to={n.to}
               activeOptions={{ exact: n.to === "/" }}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground [&.active]:text-foreground"
+              className="nav-underline text-sm text-muted-foreground transition-colors hover:text-foreground [&.active]:text-foreground"
             >
               {n.label}
             </Link>
@@ -66,14 +66,14 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border lg:hidden">
+        <div className="border-t border-border duration-200 animate-in fade-in slide-in-from-top-2 lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-sm text-muted-foreground [&.active]:text-foreground"
+                className="py-3 text-sm text-muted-foreground transition-colors hover:text-foreground [&.active]:text-foreground"
               >
                 {n.label}
               </Link>

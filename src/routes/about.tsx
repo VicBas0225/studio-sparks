@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
+import { Reveal } from "@/components/Reveal";
 import { Avatar } from "@/components/Avatar";
 import { team } from "@/lib/content";
 import { ArrowUpRight } from "lucide-react";
@@ -22,26 +23,26 @@ function AboutPage() {
     <>
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
-        <SectionLabel index="01">About</SectionLabel>
-        <h1 className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
+        <Reveal><SectionLabel index="01">About</SectionLabel></Reveal>
+        <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
           {t({
             ja: <>孤独なクリエイターを、<br />リスクと限界から解放するために。</>,
             en: <>Built to free solo creators<br />from risk and technical walls.</>,
           })}
-        </h1>
+        </Reveal>
         <div className="mt-12 grid gap-10 md:grid-cols-2">
-          <p className="text-base leading-[1.8] text-muted-foreground">
+          <Reveal as="p" delay={160} className="text-base leading-[1.8] text-muted-foreground">
             {t({
               ja: "私たち自身も、かつては全く同じ壁にぶつかっていました。デザインのプロと、バックエンドのプロ。お互いに1人では、クライアントの『フルパッケージの要求』に応えられず、悔しい思いをしてきました。",
               en: "We hit the same walls ourselves. A design expert and a backend expert — each alone, each unable to answer a client's full-package demand. Both frustrated.",
             })}
-          </p>
-          <p className="text-base leading-[1.8] text-muted-foreground">
+          </Reveal>
+          <Reveal as="p" delay={240} className="text-base leading-[1.8] text-muted-foreground">
             {t({
               ja: "「それぞれの得意を等価交換し、リスクも等価交換すれば、個人でも企業に負けない開発ができるのではないか？」この問いから、Dream-chaは結成されました。あなたが持つクリエイティブの可能性を、システムの壁で終わらせないために。",
               en: "\"What if we traded skills equally and shared risk equally — could independents compete with agencies?\" That question formed Dream-cha. We exist so your creative potential never ends at a technical wall.",
             })}
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -50,10 +51,10 @@ function AboutPage() {
       {/* Pain points — empathy section */}
       <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <SectionLabel index="02">{t({ ja: "共感の起点", en: "Where we started" })}</SectionLabel>
-          <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+          <Reveal><SectionLabel index="02">{t({ ja: "共感の起点", en: "Where we started" })}</SectionLabel></Reveal>
+          <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
             {t({ ja: "あなたは今、どちらの壁の前にいますか？", en: "Which wall are you standing in front of?" })}
-          </h2>
+          </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               {
@@ -77,11 +78,11 @@ function AboutPage() {
                   en: "Agency quotes blow the budget. Freelancer platforms demand cash upfront before a line of code is written. No budget, no trust, no good options.",
                 },
               },
-            ].map((c) => (
-              <div key={c.tag.ja} className="rounded-sm border border-border bg-background p-8">
+            ].map((c, i) => (
+              <Reveal key={c.tag.ja} delay={i * 90} className="card-lift rounded-sm border border-border bg-background p-8">
                 <div className="label-jp text-[var(--dreamblue)]">{t(c.tag)}</div>
                 <p className="mt-4 text-sm leading-[1.8] text-muted-foreground">{t(c.body)}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -89,10 +90,10 @@ function AboutPage() {
 
       {/* Benefits */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <SectionLabel index="03">{t({ ja: "チームのメリット", en: "What working with us looks like" })}</SectionLabel>
-        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+        <Reveal><SectionLabel index="03">{t({ ja: "チームのメリット", en: "What working with us looks like" })}</SectionLabel></Reveal>
+        <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
           {t({ ja: "3つの約束。", en: "Three promises." })}
-        </h2>
+        </Reveal>
         <dl className="mt-14 space-y-0 divide-y divide-border">
           {[
             {
@@ -120,11 +121,11 @@ function AboutPage() {
               },
             },
           ].map((p) => (
-            <div key={p.n} className="grid gap-6 py-10 md:grid-cols-12">
+            <Reveal key={p.n} className="grid gap-6 py-10 md:grid-cols-12">
               <div className="font-mono text-xs text-muted-foreground md:col-span-1">{p.n}</div>
               <dt className="font-serif text-xl md:col-span-4">{t(p.title)}</dt>
               <dd className="text-sm leading-[1.8] text-muted-foreground md:col-span-7">{t(p.body)}</dd>
-            </div>
+            </Reveal>
           ))}
         </dl>
       </section>
@@ -133,13 +134,13 @@ function AboutPage() {
 
       {/* Member profiles */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <SectionLabel index="04">{t({ ja: "メンバー紹介", en: "Meet the team" })}</SectionLabel>
-        <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+        <Reveal><SectionLabel index="04">{t({ ja: "メンバー紹介", en: "Meet the team" })}</SectionLabel></Reveal>
+        <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
           {t({ ja: "2名の専門家が、あなたを支える。", en: "Two specialists. One complete team." })}
-        </h2>
+        </Reveal>
         <div className="mt-14 grid gap-12 md:grid-cols-2">
           {team.map((m, i) => (
-            <article key={m.id} className={`border border-border p-8 rounded-sm ${m.id.includes('m2') || m.id.includes('m3')}`}>
+            <Reveal as="article" key={m.id} delay={(i % 2) * 100} className="card-lift border border-border p-8 rounded-sm">
               <div className="flex items-start gap-6">
                 <Avatar initials={m.initials} tone={m.tone} size={88} photo={m.photo} name={t(m.name)} />
                 <div>
@@ -169,7 +170,7 @@ function AboutPage() {
               ) : (
                 <p className="mt-6 text-sm text-muted-foreground italic">{t({ ja: "プロフィール準備中", en: "Profile coming soon" })}</p>
               )}
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -178,7 +179,7 @@ function AboutPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
-        <div className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
             {t({ ja: "まずは、30分話してみませんか？", en: "Start with a free 30-minute chat." })}
           </h2>
@@ -191,9 +192,9 @@ function AboutPage() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              {t({ ja: "無料相談を申し込む", en: "Book free consult" })} <ArrowUpRight size={15} />
+              {t({ ja: "無料相談を申し込む", en: "Book free consult" })} <ArrowUpRight size={15} className="cta-arrow" />
             </Link>
             <a
               href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
@@ -204,7 +205,7 @@ function AboutPage() {
               {t({ ja: "LINEで相談（24時間受付）", en: "Chat on LINE (24h)" })}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

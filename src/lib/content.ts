@@ -331,6 +331,93 @@ export const caseStudies: CaseStudy[] = [
     hue: "oklch(0.44 0.12 280)",
     image: "/cases/lms-rebuild.jpg",
   },
+  {
+    id: "manyu-randoselu",
+    year: "2026",
+    category: { ja: "EC・ブランドサイト / ランドセルメーカー", en: "EC & Brand Site / Randoseru Maker" },
+    title: {
+      ja: "手づくりランドセルブランドのEC・予約基盤構築",
+      en: "EC & Reservation Platform for a Handmade Randoseru Brand",
+    },
+    before: {
+      ja: "職人による手づくりランドセルの世界観を保ちながら、カタログ請求・全国店舗案内・展示会予約・オンライン購入までを一つの導線でつなぐ必要があった。",
+      en: "The brand needed to preserve its artisan, handmade worldview while connecting catalog requests, a nationwide store guide, exhibition reservations and online purchase into one flow.",
+    },
+    solution: {
+      ja: "ブランドのビジュアルを最大限に活かしたUIの上に、会員・カート機能、カタログ請求フォーム、販売スケジュール、店舗・展示会情報を動的に管理できる仕組みを構築。",
+      en: "On a UI that showcases the brand's visuals, we built member/cart functionality, a catalog-request form, sales-schedule management and dynamic store/exhibition information.",
+    },
+    result: {
+      ja: "情報収集から予約・購入までを回遊できるサイトとして公開。繁忙期の販売スケジュールにも耐える運用体制を実現した。",
+      en: "Launched as a site that carries visitors from research through reservation and checkout, with an operation setup that holds up during peak sales seasons.",
+    },
+    stack: ["EC構築", "会員システム", "カタログ請求フォーム", "店舗・展示会管理"],
+    metrics: [
+      { label: { ja: "形態", en: "Format" }, value: "EC" },
+      { label: { ja: "カタログ請求", en: "Catalog" }, value: "Web" },
+      { label: { ja: "店舗案内", en: "Store locator" }, value: "◎" },
+    ],
+    hue: "oklch(0.58 0.10 45)",
+    image: "/cases/manyu-randoselu.png",
+  },
+  {
+    id: "libero-home",
+    year: "2026",
+    category: { ja: "コーポレート・ブランドサイト / 注文住宅", en: "Corporate & Brand Site / Custom Homes" },
+    title: {
+      ja: "工務店ブランドサイトとイベント予約導線の構築",
+      en: "Home-Builder Brand Site with Event Reservation Flow",
+    },
+    before: {
+      ja: "「山梨の暮らしをデザインする」という世界観を伝えながら、モデルハウス見学会や無料相談会の集客・予約をサイト上で完結させたかった。",
+      en: "The builder wanted to convey its \"designing life in Yamanashi\" worldview while handling model-house tours and free-consultation bookings entirely on the site.",
+    },
+    solution: {
+      ja: "大判ビジュアルによるブランド表現を軸に、イベント情報の更新・予約フォーム・完成見学会の告知を運用しやすいCMSとして構築。",
+      en: "Built around large-format brand visuals, with an easy-to-run CMS for event updates, reservation forms and model-house tour announcements.",
+    },
+    result: {
+      ja: "イベントごとに情報を差し替えられる集客基盤として公開。無料相談会予約への導線を明確化した。",
+      en: "Launched as a lead-generation base where each event's information can be swapped in, with a clear path to free-consultation bookings.",
+    },
+    stack: ["ブランドサイト", "イベントCMS", "予約フォーム", "レスポンシブ"],
+    metrics: [
+      { label: { ja: "相談予約", en: "Booking" }, value: "Web" },
+      { label: { ja: "イベント管理", en: "Events" }, value: "CMS" },
+      { label: { ja: "エリア", en: "Area" }, value: "Yamanashi" },
+    ],
+    hue: "oklch(0.55 0.08 150)",
+    image: "/cases/libero-home.png",
+  },
+  {
+    id: "art-asada",
+    year: "2026",
+    category: { ja: "医療・クリニックサイト / 予約", en: "Medical Clinic Site / Reservations" },
+    title: {
+      ja: "不妊治療クリニックの予約・診療案内サイト構築",
+      en: "Fertility Clinic Site with Reservations & Treatment Guide",
+    },
+    before: {
+      ja: "初診のハードルが高い不妊治療において、患者が安心して来院できるよう、診療時間・治療内容・アクセスと予約をわかりやすく整理する必要があった。",
+      en: "In fertility care, where the first visit is daunting, the clinic needed hours, treatments, access and reservations organized clearly so patients could visit with confidence.",
+    },
+    solution: {
+      ja: "落ち着いたトーンのデザインで、診療時間表・治療/検査の案内・Web予約・採用情報を動的に管理できる医療機関サイトを構築。",
+      en: "A calm, reassuring design with a medical-institution site that dynamically manages the hours table, treatment/exam guides, web reservations and recruitment.",
+    },
+    result: {
+      ja: "予約・診療案内・採用までを1サイトに集約し、来院前の不安を軽減する情報導線を実現した。",
+      en: "Consolidated reservations, treatment guidance and recruitment into one site, easing patients' pre-visit anxiety.",
+    },
+    stack: ["クリニックサイト", "Web予約", "診療案内", "採用情報", "レスポンシブ"],
+    metrics: [
+      { label: { ja: "予約", en: "Booking" }, value: "Web" },
+      { label: { ja: "対応エリア", en: "Areas" }, value: "4市" },
+      { label: { ja: "駅から", en: "From station" }, value: "2min" },
+    ],
+    hue: "oklch(0.72 0.11 70)",
+    image: "/cases/art-asada.png",
+  },
 ];
 
 export type BlogPost = {

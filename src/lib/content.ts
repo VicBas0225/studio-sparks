@@ -347,64 +347,6 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: "designer-100man",
-    date: "2025.05",
-    tag: { ja: "お客様の声", en: "Client Story" },
-    title: {
-      ja: "「前払いナシで本当に動いてくれた」— フリーランスデザイナーAさんが初の100万円超え案件を獲得するまで",
-      en: '"No upfront — and they actually delivered" — How freelance designer A landed her first ¥1M+ project',
-    },
-    intro: {
-      ja: "WordPressのカスタマイズは得意だけど、決済機能は怖い。そんなAさんが Dream-cha を見つけて案件を一変させるまでのリアルな話。",
-      en: "Strong at WordPress, terrified of payment backends. Here's how A's project changed once she found Dream-cha.",
-    },
-    profile: {
-      ja: "Webデザイナー歴3年。主にWordPressで中小企業のサイト制作を受注。月単価20〜30万円が続いていた。",
-      en: "3 years as a web designer. Mostly WordPress sites for SMBs. Monthly billings stuck around ¥200–300k.",
-    },
-    despair: {
-      ja: "「会員サイトを作ってほしい。決済もStripeで」とクライアントに言われた時、正直頭が真っ白になりました。他の外注先に聞いたら70万円の見積もりで、クライアントの予算には合わなくて……」",
-      en: '"When my client said they wanted a membership site with Stripe payments, I went blank. A quote from another dev came in at ¥700k — way over budget."',
-    },
-    response: {
-      ja: "「LINEで相談したら、30分で仕様の方向性が出てきて驚きました。成果報酬なので、私の手出しはゼロ。バックエンドは全部Dream-chaさんに任せて、私はデザインだけに集中できました。」",
-      en: '"A 30-minute LINE chat and we had a direction. Zero upfront from me — all backend handled by Dream-cha, so I could focus purely on design."',
-    },
-    future: {
-      ja: "「総額110万円で検収完了。クライアントに大満足してもらえて、今は継続案件も2本走っています。もうシステム案件を怖がる必要がなくなりました。」",
-      en: '"Project signed off at ¥1.1M total. Client loved it, and I now have two ongoing retainers. I\'m not scared of system projects anymore."',
-    },
-  },
-  {
-    id: "emergency-bug",
-    date: "2025.03",
-    tag: { ja: "緊急対応事例", en: "Emergency Case" },
-    title: {
-      ja: "WordPressが画面真っ白に……深夜の緊急バグをバックエンドのプロが30分で救出した話",
-      en: "WordPress white screen at midnight — how a backend pro fixed a critical bug in 30 minutes",
-    },
-    intro: {
-      ja: "本番サイトが突然クラッシュ。自分では直せない、でも翌朝9時には締め切りがある。そんな夜に届いた1本のLINEから始まった話。",
-      en: "Production site down. Can't fix it myself. Deadline at 9am. The story that started with one LINE message late at night.",
-    },
-    profile: {
-      ja: "ノーコードディレクター歴2年。STUDIOとBubbleを使った制作が得意で、WordPressは「なんとかなる程度」の使い手。",
-      en: "2 years as a no-code director. Comfortable with STUDIO and Bubble, WordPress knowledge limited to 'just enough'.",
-    },
-    despair: {
-      ja: "「プラグインの更新後に画面が真っ白になって、FTPもよく分からなくて、本当にパニックでした。翌朝クライアントにデモがあって……」",
-      en: '"After a plugin update the whole site went white. I barely know FTP. Full panic — client demo at 9am next morning."',
-    },
-    response: {
-      ja: "「深夜0時にLINEを送ったら、15分後には繋いでもらえて。サーバーのエラーログを確認してもらったら、プラグインの競合が原因だとすぐ特定。30分で完全復旧しました。」",
-      en: '"Sent a LINE at midnight, got a reply in 15 minutes. Server error logs identified a plugin conflict immediately. Fully restored in 30 minutes."',
-    },
-    future: {
-      ja: "「以来、新規案件はすべてDream-chaさんと組んでいます。自分一人では取れなかった受注が、今は普通に取れるようになりました。」",
-      en: '"Every new project since has been with Dream-cha. I\'m winning work I could never have taken on alone."',
-    },
-  },
-  {
     id: "join-takuya",
     date: "2025.06",
     tag: { ja: "加入ストーリー", en: "Member Story" },

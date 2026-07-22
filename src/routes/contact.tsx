@@ -107,7 +107,7 @@ function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
+      <section className="hero-bg mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal><SectionLabel index="01">Contact</SectionLabel></Reveal>
           <Reveal as="h1" delay={80} className="mt-8 hero-title mx-auto">

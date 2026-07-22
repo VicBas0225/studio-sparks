@@ -21,7 +21,7 @@ function ProjectsPage() {
   return (
     <>
       {/* Header */}
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
+      <section className="hero-bg mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <Reveal><SectionLabel index="01">Projects</SectionLabel></Reveal>
         <Reveal as="h1" delay={80} className="mt-8 hero-title">
           {t({ ja: "Before / After の数字で語る。", en: "The numbers tell the story." })}
@@ -148,7 +148,7 @@ function ProjectsPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
-        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 cta-bg px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
             {t({ ja: "皆様のデザインも、私たちが形にします。", en: "We'll bring your design to life, too." })}
           </h2>

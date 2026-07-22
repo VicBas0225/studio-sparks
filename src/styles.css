@@ -236,6 +236,42 @@ a:hover .form-arrow {
   }
 }
 
+/* Full-bleed hero background (monotone grid image). The ::before extends to
+   the full viewport width even inside a max-width section, and sits behind
+   the content. background-size:cover keeps the image from distorting at any
+   hero height (tall home hero or compact sub-page heroes alike). */
+.hero-bg {
+  position: relative;
+}
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  z-index: -1;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(10, 10, 12, 0.4), rgba(10, 10, 12, 0.82)),
+    url("/bg-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Bottom CTA banner background (3D glass / ice-blue image) with a dark
+   overlay layered on top so the copy and LINE button stay 100% legible. */
+.cta-bg {
+  background-color: #0a0a0c;
+  background-image:
+    linear-gradient(rgba(6, 8, 16, 0.72), rgba(6, 8, 16, 0.86)),
+    url("/bg-cta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Sweeping underline for nav links (respects reduced motion via transition only) */
 .nav-underline {
   position: relative;

@@ -22,7 +22,7 @@ function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
+      <section className="hero-bg mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <Reveal><SectionLabel index="01">About</SectionLabel></Reveal>
         <Reveal as="h1" delay={80} className="mt-8 hero-title">
           {t({
@@ -179,7 +179,7 @@ function AboutPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
-        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 cta-bg px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
             {t({ ja: "システム要件の策定から、技術仕様のご相談まで。", en: "From defining system requirements to technical specs." })}
           </h2>

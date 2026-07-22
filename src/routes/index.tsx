@@ -16,7 +16,7 @@ function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background">
+      <section className="relative overflow-hidden hero-bg">
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-20 md:px-10 md:pb-32 md:pt-28">
           <Reveal><SectionLabel index="01">Dream-cha · ドリームチャ</SectionLabel></Reveal>
           <Reveal as="h1" delay={80} className="mt-8 hero-title">
@@ -211,7 +211,7 @@ function HomePage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
-        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-16 text-center md:px-16 md:py-24">
+        <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 cta-bg px-8 py-16 text-center md:px-16 md:py-24">
           <span className="label-jp text-[var(--dreamblue)]">{t({ ja: "お問い合わせ", en: "Contact" })}</span>
           <h2 className="mt-6 font-serif text-3xl md:text-4xl">
             {t({ ja: "システム要件の策定から、技術仕様のご相談まで。", en: "From defining system requirements to technical specs." })}

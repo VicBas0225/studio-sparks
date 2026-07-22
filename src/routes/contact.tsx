@@ -110,7 +110,7 @@ function ContactPage() {
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal><SectionLabel index="01">Contact</SectionLabel></Reveal>
-          <Reveal as="h1" delay={80} className="mt-8 font-serif text-[clamp(1.75rem,4vw,3rem)] leading-[1.1]">
+          <Reveal as="h1" delay={80} className="mt-8 hero-title mx-auto">
             {t({ ja: "システム要件・技術仕様のご相談窓口。", en: "For system requirements & technical specifications." })}
           </Reveal>
           <Reveal as="p" delay={160} className="mx-auto mt-6 max-w-2xl text-base leading-[1.8] text-muted-foreground">

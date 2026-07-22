@@ -19,7 +19,7 @@ function HomePage() {
       <section className="relative overflow-hidden bg-background">
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-20 md:px-10 md:pb-32 md:pt-28">
           <Reveal><SectionLabel index="01">Dream-cha · ドリームチャ</SectionLabel></Reveal>
-          <Reveal as="h1" delay={80} className="mt-8 max-w-5xl font-serif text-[clamp(1.9rem,5.2vw,4rem)] leading-[1.08] tracking-tight">
+          <Reveal as="h1" delay={80} className="mt-8 hero-title">
             {t({
               ja: <>デザインはできる。<br />でも、システムが組めないから、<br />その高単価案件を諦めますか？</>,
               en: <>Great design, zero backend fear.<br />We are your complete tech partner.</>,

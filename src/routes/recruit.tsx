@@ -110,7 +110,7 @@ function RecruitPage() {
               <span className="text-white/60">Careers</span>
             </SectionLabel>
           </Reveal>
-          <Reveal as="h1" delay={80} className="mt-8 max-w-3xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1] tracking-tight">
+          <Reveal as="h1" delay={80} className="mt-8 hero-title">
             {t({
               ja: <>互いの限界を相殺し、<br />ひとつの完璧なプロダクトを創る。</>,
               en: <>Eliminate each other's limits.<br />Build one perfect product.</>,

@@ -141,6 +141,17 @@
   height: 1px;
 }
 
+/* Shared hero title — identical size on every page, wraps at phrase
+   boundaries so Japanese words never split, wide enough to avoid lonely lines. */
+@utility hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4.4vw, 3.25rem);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  max-width: 62rem;
+  word-break: auto-phrase;
+}
+
 @utility grain {
   position: relative;
 }

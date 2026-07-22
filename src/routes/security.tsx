@@ -92,7 +92,7 @@ function SecurityPage() {
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <Reveal><SectionLabel index="01">{t({ ja: "開発規約・セキュリティポリシー", en: "Development Policy & Security" })}</SectionLabel></Reveal>
-        <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
+        <Reveal as="h1" delay={80} className="mt-8 hero-title">
           {t({
             ja: <>技術と信頼を、一切のブラックボックス<br />なしに透明化する。</>,
             en: <>Technology and trust — made fully<br />transparent, zero black boxes.</>,

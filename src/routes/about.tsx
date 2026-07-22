@@ -24,7 +24,7 @@ function AboutPage() {
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <Reveal><SectionLabel index="01">About</SectionLabel></Reveal>
-        <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
+        <Reveal as="h1" delay={80} className="mt-8 hero-title">
           {t({
             ja: <>孤独なクリエイターを、<br />リスクと限界から解放するために。</>,
             en: <>Built to free solo creators<br />from risk and technical walls.</>,

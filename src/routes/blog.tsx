@@ -24,7 +24,7 @@ function BlogPage() {
     <>
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <Reveal><SectionLabel index="01">{t({ ja: "お客様の声", en: "Client Stories" })}</SectionLabel></Reveal>
-        <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
+        <Reveal as="h1" delay={80} className="mt-8 hero-title">
           {t({ ja: "デザインを守り抜いた、開発パートナーとしてのお客様の声。", en: "Client voices — from designers whose work we protected." })}
         </Reveal>
         <Reveal as="p" delay={160} className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">

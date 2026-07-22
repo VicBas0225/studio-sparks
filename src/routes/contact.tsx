@@ -44,14 +44,41 @@ function ContactPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!formRef.current) return;
+    const form = formRef.current;
+    if (!form) return;
     setSending(true);
     setError(false);
+
+    const data = new FormData(form);
+    const nameVal = String(data.get("from_name") ?? "");
+    const emailVal = String(data.get("reply_to") ?? "");
+    const occVal = String(data.get("occupation") ?? "");
+    const sitVal = String(data.get("situation") ?? "");
+    const msgVal = String(data.get("message") ?? "");
+
+    // Send each value under every common EmailJS variable name so the
+    // template populates regardless of which variable names it uses.
+    const params: Record<string, string> = {
+      from_name: nameVal,
+      name: nameVal,
+      user_name: nameVal,
+      title: nameVal,
+      reply_to: emailVal,
+      email: emailVal,
+      user_email: emailVal,
+      occupation: occVal,
+      job: occVal,
+      role: occVal,
+      situation: sitVal,
+      status: sitVal,
+      message: msgVal,
+    };
+
     try {
-      await emailjs.sendForm(
+      await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formRef.current,
+        params,
         EMAILJS_PUBLIC_KEY
       );
       setSent(true);
@@ -86,8 +113,8 @@ function ContactPage() {
           </Reveal>
           <Reveal as="p" delay={160} className="mx-auto mt-6 max-w-2xl text-base leading-[1.8] text-muted-foreground">
             {t({
-              ja: "「この機能はバックエンドで実装可能か？」「セキュリティの仕様はどうすべきか？」といった、システム要件の策定や技術的な仕様に関するご相談を承ります。デザインを1ミリも崩さず、裏側の開発をトータルで引き受けます。",
-              en: "\"Can this feature be built on the backend?\" \"What should the security spec be?\" — we take on consultations about system requirements and technical specifications, handling the backend end to end without altering your design at all.",
+              ja: "要件定義書・仕様書・Figmaデータなどの資料を共有して、すぐに具体的な相談を進めたい方は、こちらのお問い合わせフォームからご連絡ください。システム要件の策定から技術的な仕様まで、詳細をお伺いした上で最適なご提案をいたします。",
+              en: "If you'd like to share materials — requirements docs, specs, Figma data — and move straight into a detailed discussion, use this contact form. We'll review everything and propose the best path, from defining system requirements to technical specs.",
             })}
           </Reveal>
           <Reveal delay={240} className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#06C755]/40 bg-[#06C755]/10 px-5 py-2.5 text-sm text-[#06C755]">
@@ -246,8 +273,8 @@ function ContactPage() {
               <div className="rounded-sm border border-[#06C755]/30 bg-[#06C755]/5 px-6 py-5">
                 <p className="text-sm leading-[1.8] text-muted-foreground">
                   {t({
-                    ja: "LINE公式アカウントからも、システム要件・技術仕様に関するご相談を承っています。",
-                    en: "You can also consult us about system requirements and technical specs via our LINE Official Account.",
+                    ja: "メッセージで気軽に技術的な質問や、概算のお見積もりを相談したい方は、こちらのLINE公式アカウントからどうぞ。",
+                    en: "If you'd like to ask a quick technical question or get a rough estimate by message, our LINE Official Account is the fastest way.",
                   })}
                 </p>
                 <a

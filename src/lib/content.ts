@@ -22,7 +22,7 @@ export const team: Member[] = [
     initials: "S",
     tone: "oklch(0.55 0.16 250 / 0.28)",
     name: { ja: "鈴木 雄平", en: "Suzuki Yuhei" },
-    role: { ja: "チーム統括 / テクニカルディレクター", en: "Team Director / Technical Director" },
+    role: { ja: "チームリーダー / テクニカルディレクター", en: "Team Leader / Technical Director" },
     location: { ja: "東京都", en: "Tokyo" },
     birth: "1999.07.12",
     skills: ["Go", "Python / FastAPI", "AWS", "Docker", "DB設計", "要件定義"],
@@ -98,7 +98,7 @@ export const team: Member[] = [
     initials: "N",
     tone: "oklch(0.5 0.14 190 / 0.28)",
     name: { ja: "中村 蓮", en: "Ren Nakamura" },
-    role: { ja: "バックエンドエンジニア / データベース", en: "Backend & Database Engineer" },
+    role: { ja: "バックエンドエンジニア / インフラ", en: "Backend & Infrastructure Engineer" },
     location: { ja: "北海道", en: "Hokkaido" },
     birth: "1991.09.30",
     skills: ["Go", "PostgreSQL", "Redis", "Docker", "GitHub Actions"],
@@ -214,6 +214,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "受注単価", en: "Rate" }, value: "×3" },
     ],
     hue: "oklch(0.5 0.14 250)",
+    image: "/cases/wordpress-video.jpg",
   },
   {
     id: "subscription-ec",
@@ -242,6 +243,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "納品後バグ", en: "Post-launch bugs" }, value: "0" },
     ],
     hue: "oklch(0.5 0.13 190)",
+    image: "/cases/ec-fullscratch.jpg",
   },
   {
     id: "realestate-portal",
@@ -270,6 +272,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "崩れ", en: "Breakage" }, value: "0" },
     ],
     hue: "oklch(0.5 0.13 160)",
+    image: "/cases/aws-matching.jpg",
   },
   {
     id: "salon-booking",
@@ -298,6 +301,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "重複", en: "Conflicts" }, value: "0" },
     ],
     hue: "oklch(0.5 0.14 300)",
+    image: "/cases/salon-booking.png",
   },
   {
     id: "studio-stripe",
@@ -326,6 +330,7 @@ export const caseStudies: CaseStudy[] = [
       { label: { ja: "公開", en: "Live" }, value: "◎" },
     ],
     hue: "oklch(0.52 0.15 245)",
+    image: "/cases/lms-rebuild.jpg",
     link: "https://studio.design",
   },
   {

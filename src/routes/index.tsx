@@ -218,8 +218,8 @@ function HomePage() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-[1.8] text-muted-foreground md:text-base">
             {t({
-              ja: "システム要件の策定や技術的な仕様に関するご相談を承ります。LINE公式アカウントより、お気軽にお問い合わせください。",
-              en: "We take on consultations about system requirements and technical specifications. Reach us anytime via our LINE Official Account.",
+              ja: "気軽な技術的なご質問や概算のお見積もりは、LINE公式アカウントへ。要件定義書やFigmaデータを添えた詳しいご相談は、お問い合わせフォームからどうぞ。",
+              en: "For quick technical questions or a rough estimate, use our LINE Official Account. For a detailed discussion with your requirements docs or Figma data, use the contact form.",
             })}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

@@ -67,9 +67,11 @@ function ContactPage() {
       email: emailVal,
       user_email: emailVal,
       occupation: occVal,
+      user_occupation: occVal,
       job: occVal,
       role: occVal,
       situation: sitVal,
+      current_situation: sitVal,
       status: sitVal,
       message: msgVal,
     };
@@ -197,7 +199,7 @@ function ContactPage() {
                     <button
                       key={o.value}
                       type="button"
-                      onClick={() => setOccupation(o.value)}
+                      onClick={() => setOccupation((prev) => (prev === o.value ? null : o.value))}
                       className={`rounded-sm border px-4 py-3 text-left text-sm transition-colors ${occupation === o.value
                           ? "border-[var(--dreamblue)] bg-[var(--dreamblue)]/10 text-foreground"
                           : "border-border text-muted-foreground hover:border-foreground/40"
@@ -219,7 +221,7 @@ function ContactPage() {
                     <button
                       key={s.value}
                       type="button"
-                      onClick={() => setSituation(s.value)}
+                      onClick={() => setSituation((prev) => (prev === s.value ? null : s.value))}
                       className={`w-full rounded-sm border px-4 py-3 text-left text-sm transition-colors ${situation === s.value
                           ? "border-[var(--dreamblue)] bg-[var(--dreamblue)]/10 text-foreground"
                           : "border-border text-muted-foreground hover:border-foreground/40"

@@ -154,7 +154,7 @@ function HomePage() {
               {t({ ja: "すべての実績 →", en: "All projects →" })}
             </Link>
           </Reveal>
-          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {[caseStudies[0], caseStudies[3]].map((c, i) => (
               <Reveal key={c.id} delay={i * 120} className="card-lift rounded-sm border border-border bg-background overflow-hidden">
                 {c.image ? (

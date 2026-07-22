@@ -70,9 +70,9 @@ function ProjectsPage() {
         <Reveal><SectionLabel index="03">{t({ ja: "解決事例", en: "Case Studies" })}</SectionLabel></Reveal>
         <div className="mt-12 space-y-20">
           {caseStudies.map((c, i) => (
-            <Reveal as="article" key={c.id} className="grid gap-10 border-t border-border pt-12 md:grid-cols-12">
+            <Reveal as="article" key={c.id} className="grid grid-cols-1 gap-10 border-t border-border pt-12 md:grid-cols-12">
               {/* visual */}
-              <div className="md:col-span-4">
+              <div className="min-w-0 md:col-span-4">
                 <div className="overflow-hidden rounded-sm">
                   {c.image ? (
                     <img
@@ -97,7 +97,7 @@ function ProjectsPage() {
               </div>
 
               {/* content */}
-              <div className="md:col-span-8">
+              <div className="min-w-0 md:col-span-8">
                 <div className="flex items-center gap-4 label-jp">
                   <span>{c.year}</span>
                   <span className="h-px w-6 bg-border" />

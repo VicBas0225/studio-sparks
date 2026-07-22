@@ -161,11 +161,11 @@ function HomePage() {
                   <img
                     src={c.image}
                     alt={c.title.ja}
-                    className="w-full h-48 object-cover object-top"
+                    className="aspect-[16/10] w-full object-cover object-top"
                   />
                 ) : (
                   <div
-                    className="w-full h-48"
+                    className="aspect-[16/10] w-full"
                     style={{ background: `linear-gradient(135deg, ${c.hue} 0%, oklch(0.85 0.02 80) 100%)` }}
                   />
                 )}
@@ -236,7 +236,7 @@ function HomePage() {
               to="/contact"
               className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm"
             >
-              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
+              {t({ ja: "お問い合わせフォーム", en: "Contact form" })}<span className="form-arrow">→</span>
             </Link>
           </div>
         </Reveal>

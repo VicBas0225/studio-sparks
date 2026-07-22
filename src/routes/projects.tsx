@@ -78,11 +78,11 @@ function ProjectsPage() {
                     <img
                       src={c.image}
                       alt={c.title.ja}
-                      className="w-full h-52 object-cover object-top"
+                      className="aspect-[16/10] w-full object-cover object-top"
                     />
                   ) : (
                     <div
-                      className="flex h-52 items-center justify-center"
+                      className="flex aspect-[16/10] w-full items-center justify-center"
                       style={{ background: `linear-gradient(135deg, ${c.hue} 0%, oklch(0.92 0.01 80) 100%)` }}
                     >
                       <span className="font-mono text-xs tracking-widest text-white/80">CASE 0{i + 1}</span>
@@ -165,7 +165,7 @@ function ProjectsPage() {
               {t({ ja: "LINE公式アカウントでテクニカル相談をする（無料）", en: "Technical consult on our LINE Official Account (free)" })} <ArrowUpRight size={16} className="cta-arrow" />
             </a>
             <Link to="/contact" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
-              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
+              {t({ ja: "お問い合わせフォーム", en: "Contact form" })}<span className="form-arrow">→</span>
             </Link>
           </div>
         </Reveal>

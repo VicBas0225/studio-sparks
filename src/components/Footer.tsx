@@ -43,7 +43,6 @@ export function Footer() {
         <div>
           <div className="label-jp">Contact</div>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li>hello@dream-cha.jp</li>
             <li>{t({ ja: "LINE公式アカウント", en: "LINE Official Account" })}</li>
             <li>{t({ ja: "システム要件・技術仕様のご相談", en: "System requirements & tech spec consulting" })}</li>
           </ul>

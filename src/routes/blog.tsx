@@ -120,7 +120,7 @@ function BlogPage() {
               {t({ ja: "LINE公式アカウントでテクニカル相談をする（無料）", en: "Technical consult on our LINE Official Account (free)" })} <ArrowUpRight size={16} className="cta-arrow" />
             </a>
             <Link to="/contact" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
-              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
+              {t({ ja: "お問い合わせフォーム", en: "Contact form" })}<span className="form-arrow">→</span>
             </Link>
           </div>
         </Reveal>

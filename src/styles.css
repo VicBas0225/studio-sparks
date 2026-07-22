@@ -212,6 +212,21 @@ html {
   }
 }
 
+/* "お問い合わせフォーム →" — arrow slides on hover */
+.form-arrow {
+  display: inline-block;
+  margin-left: 0.35rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+a:hover .form-arrow {
+  transform: translateX(4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-arrow {
+    transition: none;
+  }
+}
+
 /* Sweeping underline for nav links (respects reduced motion via transition only) */
 .nav-underline {
   position: relative;

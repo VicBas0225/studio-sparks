@@ -202,7 +202,7 @@ function AboutPage() {
               to="/contact"
               className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm"
             >
-              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
+              {t({ ja: "お問い合わせフォーム", en: "Contact form" })}<span className="form-arrow">→</span>
             </Link>
           </div>
         </Reveal>

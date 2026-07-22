@@ -15,17 +15,17 @@ export function Footer() {
           />
           <p className="mt-4 max-w-sm text-sm leading-[1.8] text-muted-foreground">
             {t({
-              ja: "理想の未来へ、技術で挑み続ける。デザイナーとエンジニアが組む完全成果報酬型の共同開発チームです。",
-              en: "Challenging toward your ideal future through technology. A performance-based co-development team of designer and engineer.",
+              ja: "皆様のデザインを、強固なシステムインフラと高度なUI実装で形にする。デザイナーのための開発パートナーチームです。",
+              en: "Turning your design into reality with robust system infrastructure and advanced UI implementation. A development partner team for designers.",
             })}
           </p>
           <a
-            href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+            href="https://lin.ee/ncRMNzs"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
           >
-            {t({ ja: "LINEで無料相談（24時間受付）", en: "Free LINE consult (24h)" })} <ArrowUpRight size={13} />
+            {t({ ja: "LINE公式アカウントで相談する", en: "Chat on our LINE Official Account" })} <ArrowUpRight size={13} />
           </a>
         </div>
         <div>
@@ -44,8 +44,8 @@ export function Footer() {
           <div className="label-jp">Contact</div>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li>hello@dream-cha.jp</li>
-            <li>{t({ ja: "24時間受付（LINEにて）", en: "24h via LINE" })}</li>
-            <li>{t({ ja: "完全リモート対応", en: "Fully remote" })}</li>
+            <li>{t({ ja: "LINE公式アカウント", en: "LINE Official Account" })}</li>
+            <li>{t({ ja: "システム要件・技術仕様のご相談", en: "System requirements & tech spec consulting" })}</li>
           </ul>
         </div>
       </div>

@@ -78,13 +78,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className="dark">
       <head>
         <HeadContent />
-        {/* Prevent flash of wrong theme */}
+        {/* Google Analytics (GA4) — silent, for the team only */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-03SHWD8Y9P" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})()`,
+            __html:
+              "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-03SHWD8Y9P');",
+          }}
+        />
+        {/* Dark is the default; switch to light only if the visitor toggled it. Prevents theme flash. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('theme')==='light'){document.documentElement.classList.remove('dark')}}catch(e){}`,
           }}
         />
       </head>

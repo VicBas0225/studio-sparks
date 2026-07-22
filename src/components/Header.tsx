@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { LangToggle } from "./LangToggle";
 import { ThemeToggle } from "./ThemeToggle";
-import { VisitorCounter } from "./VisitorCounter";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -46,13 +45,11 @@ export function Header() {
           <div className="ml-2 flex items-center gap-3 border-l border-border pl-5">
             <LangToggle />
             <ThemeToggle />
-            <VisitorCounter />
           </div>
         </nav>
 
         {/* Mobile/tablet toolbar — shown below lg */}
         <div className="flex items-center gap-2 lg:hidden">
-          <VisitorCounter />
           <LangToggle />
           <ThemeToggle />
           <button

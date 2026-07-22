@@ -34,7 +34,7 @@ function ProjectsPage() {
         </Reveal>
       </section>
 
-      <div className="hairline mx-auto max-w-7xl" />    
+      <div className="hairline mx-auto max-w-7xl" />
 
       {/* Revenue model explainer */}
       <section className="bg-[#F5F5F7] dark:bg-secondary/40 py-16 md:py-20">
@@ -128,6 +128,18 @@ function ProjectsPage() {
                     </div>
                   ))}
                 </div>
+
+                {c.link && (
+                  <a
+                    href={c.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--dreamblue)] underline underline-offset-4 transition-opacity hover:opacity-80"
+                  >
+                    {t({ ja: "実際の動作を確認する（別タブで開く）", en: "View the live evidence (new tab)" })}
+                    <ArrowUpRight size={14} />
+                  </a>
+                )}
               </div>
             </Reveal>
           ))}
@@ -138,17 +150,22 @@ function ProjectsPage() {
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
         <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
-            {t({ ja: "あなたの案件も、解決できます。", en: "We can solve your project too." })}
+            {t({ ja: "皆様のデザインも、私たちが形にします。", en: "We'll bring your design to life, too." })}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm leading-[1.8] text-muted-foreground">
-            {t({ ja: "まずは30分の無料壁打ち相談から。仕様書不要・商談前でも歓迎です。", en: "Start with a free 30-minute session. No spec needed, pre-pitch is fine." })}
+            {t({ ja: "システム要件の策定や技術的な仕様に関するご相談を承ります。", en: "We take on consultations about system requirements and technical specifications." })}
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link
-              to="/contact"
-              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+            <a
+              href="https://lin.ee/ncRMNzs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-8 py-4 text-base font-medium text-white shadow-lg shadow-[#06C755]/20 transition-opacity hover:opacity-90"
             >
-              {t({ ja: "無料相談を申し込む", en: "Book free consult" })} <ArrowUpRight size={15} className="cta-arrow" />
+              {t({ ja: "LINE公式アカウントでテクニカル相談をする（無料）", en: "Technical consult on our LINE Official Account (free)" })} <ArrowUpRight size={16} className="cta-arrow" />
+            </a>
+            <Link to="/contact" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
+              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
             </Link>
           </div>
         </Reveal>

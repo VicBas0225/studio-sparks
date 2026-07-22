@@ -136,7 +136,7 @@ function AboutPage() {
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <Reveal><SectionLabel index="04">{t({ ja: "メンバー紹介", en: "Meet the team" })}</SectionLabel></Reveal>
         <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
-          {t({ ja: "2名の専門家が、あなたを支える。", en: "Two specialists. One complete team." })}
+          {t({ ja: "8名の開発陣が、あなたのデザインを支える。", en: "Eight engineers behind your design." })}
         </Reveal>
         <div className="mt-14 grid gap-12 md:grid-cols-2">
           {team.map((m, i) => (
@@ -181,29 +181,29 @@ function AboutPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
         <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
-            {t({ ja: "まずは、30分話してみませんか？", en: "Start with a free 30-minute chat." })}
+            {t({ ja: "システム要件の策定から、技術仕様のご相談まで。", en: "From defining system requirements to technical specs." })}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm leading-[1.8] text-muted-foreground">
             {t({
-              ja: "仕様書がない状態でも、商談前でも全く問題ありません。",
-              en: "No brief, no spec needed. Just bring your problem.",
+              ja: "システム要件の策定や技術的な仕様に関するご相談を承ります。",
+              en: "We take on consultations about system requirements and technical specifications.",
             })}
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link
-              to="/contact"
-              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
-            >
-              {t({ ja: "無料相談を申し込む", en: "Book free consult" })} <ArrowUpRight size={15} className="cta-arrow" />
-            </Link>
             <a
-              href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+              href="https://lin.ee/ncRMNzs"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-8 py-4 text-base font-medium text-white shadow-lg shadow-[#06C755]/20 transition-opacity hover:opacity-90"
             >
-              {t({ ja: "LINEで相談（24時間受付）", en: "Chat on LINE (24h)" })}
+              {t({ ja: "LINE公式アカウントでテクニカル相談をする（無料）", en: "Technical consult on our LINE Official Account (free)" })} <ArrowUpRight size={16} className="cta-arrow" />
             </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm"
+            >
+              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
+            </Link>
           </div>
         </Reveal>
       </section>

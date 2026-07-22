@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type Props = {
   initials: string;
   tone: string;
@@ -7,11 +9,14 @@ type Props = {
 };
 
 export function Avatar({ initials, tone, size = 96, photo, name }: Props) {
-  if (photo) {
+  const [failed, setFailed] = useState(false);
+
+  if (photo && !failed) {
     return (
       <img
         src={photo}
         alt={name ?? initials}
+        onError={() => setFailed(true)}
         className="shrink-0 rounded-full object-cover object-top ring-2 ring-[var(--dreamgold)] ring-offset-2 ring-offset-background"
         style={{ width: size, height: size }}
       />

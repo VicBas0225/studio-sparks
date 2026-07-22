@@ -27,8 +27,8 @@ function HomePage() {
           </Reveal>
           <Reveal as="p" delay={180} className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
             {t({
-              ja: "『Dream-cha（ドリームチャ＝Dream Challenge）』は、デザイナーのシステム不安とエンジニアのデザイン不安を相殺する、完全成果報酬型の共同開発チームです。あなたの挑戦リスクをゼロにします。",
-              en: "Dream-cha is a performance-based co-development team that eliminates the gap between design and engineering. We take on the technical risk so you can focus on winning the work.",
+              ja: "DreamCha（ドリームチャ）は、皆様のデザインを、強固なシステムインフラと高度なUI実装で形にする開発パートナーチームです。技術商談の窓口からバグの保証まで、裏側をトータルで引き受けます。",
+              en: "DreamCha turns your design into reality with robust system infrastructure and advanced UI implementation. From technical negotiation to bug guarantees, we handle the backend end to end.",
             })}
           </Reveal>
           <Reveal delay={280} className="mt-10 flex flex-wrap items-center gap-4">
@@ -36,7 +36,7 @@ function HomePage() {
               to="/contact"
               className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              {t({ ja: "⚡ 30分・無料壁打ち相談", en: "⚡ Free 30-min consult" })}
+              {t({ ja: "システム要件について相談する", en: "Discuss your system requirements" })}
               <ArrowUpRight size={15} className="cta-arrow" />
             </Link>
             <Link to="/projects" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
@@ -55,27 +55,22 @@ function HomePage() {
           <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
             {t({ ja: "皆さんには、このような経験はありませんか？", en: "Have you ever been here?" })}
           </Reveal>
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
             {[
               {
-                label: { ja: "デザイナーの限界", en: "The designer's wall" },
+                num: "01",
+                label: { ja: "システム要件での失注", en: "Losing the deal over system requirements" },
                 body: {
-                  ja: "クライアントから会員サイトや独自決済を頼まれた。デザインやWordPressは得意だけど、バックエンドのセキュリティやDB構築をどう処理すればいいか分からない……",
-                  en: "Your client wants a membership site with custom payments. Design and WordPress — no problem. But backend security and database architecture? Complete blank.",
+                  ja: "クライアントから複雑なAPI連携や決済システムを求められ、技術的な不安から案件を諦めてしまう……",
+                  en: "A client asks for complex API integrations or a payment system, and technical anxiety makes you give up the project…",
                 },
               },
               {
-                label: { ja: "バックエンド開発者の限界", en: "The engineer's wall" },
+                num: "02",
+                label: { ja: "外注先エンジニアとの衝突", en: "Clashing with an outsourced engineer" },
                 body: {
-                  ja: "システムの裏側は完璧に組める。だけど、フロントのデザインセンスに自信がなくて、直受け案件の提案を躊躇してしまう……",
-                  en: "You can architect perfect systems. But your design confidence stops you from pitching direct clients, leaving money on the table every month.",
-                },
-              },
-              {
-                label: { ja: "既存の選択肢の罠", en: "The existing options trap" },
-                body: {
-                  ja: "企業に外注すると見積もりが高すぎる。クラウドソーシングは前払い・立替が必要。本当に動くものが納品されるか不安だし、そもそも手元の予算がない……",
-                  en: "Agency quotes blow the budget. Freelancer platforms require upfront payment before you see a single line of code. Neither option works.",
+                  ja: "外部のエンジニアに開発を頼んだら、「実装が面倒だから」とこだわりのUIや余白を勝手に崩され、デザインの世界観を台無しにされた……",
+                  en: "You hand development to an outside engineer, and they quietly break your carefully-tuned UI and spacing because \"it's a pain to build\" — ruining the world you designed…",
                 },
               },
             ].map((c, i) => (
@@ -84,7 +79,10 @@ function HomePage() {
                 delay={i * 90}
                 className="card-lift rounded-sm border border-border bg-background p-8"
               >
-                <div className="label-jp text-[var(--dreamblue)]">{t(c.label)}</div>
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-xs text-[var(--dreamblue)]">{c.num}</span>
+                  <div className="label-jp text-[var(--dreamblue)]">{t(c.label)}</div>
+                </div>
                 <p className="mt-4 text-sm leading-[1.8] text-muted-foreground">{t(c.body)}</p>
               </Reveal>
             ))}
@@ -92,36 +90,42 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Services */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <Reveal><SectionLabel index="03">{t({ ja: "私たちの約束", en: "What we promise" })}</SectionLabel></Reveal>
-        <Reveal as="h2" delay={80} className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
-          {t({ ja: "3つのメリット。", en: "Three guarantees." })}
+        <Reveal><SectionLabel index="03">{t({ ja: "サービス内容", en: "Services" })}</SectionLabel></Reveal>
+        <Reveal as="h2" delay={80} className="mt-6 max-w-4xl font-serif text-3xl leading-tight md:text-4xl">
+          {t({ ja: "皆様のデザインを、強固なシステムインフラと高度なUI実装で形にする", en: "Turning your design into reality with robust system infrastructure and advanced UI implementation" })}
+        </Reveal>
+        <Reveal as="p" delay={140} className="mt-6 max-w-3xl text-base leading-[1.8] text-muted-foreground">
+          {t({
+            ja: "DreamCha（ドリームチャ）は、Webデザインの美しさと世界観をそのまま形にするための、頼れる開発パートナーです。皆様が制作されたFigmaやSTUDIOのフロント画面に対する高度なUI実装から、その裏側にある複雑なバックエンドシステム（Stripe決済、ログイン機能、API連携、データベース構築）までを完璧に構築。チーム専用の強力なシステム開発部門として、技術商談の窓口からバグの保証までトータルで引き受けます。",
+            en: "DreamCha is the reliable development partner for bringing the beauty and worldview of your web design to life. From advanced UI implementation of the Figma or STUDIO front-end you create, to the complex backend behind it (Stripe payments, login, API integration, database construction), we build it perfectly — handling everything from technical negotiation to bug guarantees as your dedicated system-development division.",
+          })}
         </Reveal>
         <div className="mt-14 grid gap-10 md:grid-cols-3">
           {[
             {
-              icon: <ShieldCheck size={28} className="text-[var(--dreamblue)]" />,
-              title: { ja: "初期費用0円・完全成果報酬", en: "Zero upfront · Performance-based" },
+              icon: <Layers size={28} className="text-[var(--dreamblue)]" />,
+              title: { ja: "高度なUI実装とフロントエンド開発", en: "Advanced UI implementation & frontend development" },
               body: {
-                ja: "前払い・立替は一切不要。クライアントからの着金ベース、または案件検収後の支払いで対応します。あなたの身銭を切るリスクを完全に排除。",
-                en: "No prepayment, no cash advances. We invoice after your client pays or the project is accepted. Your financial risk: zero.",
+                ja: "DreamChaのフロントエンドエンジニアが、細かな余白、フォントファミリー、アニメーションなどを忠実にWeb上に再現します。各種ノーコードツール（STUDIO等）やWordPressへのシステムドッキングはもちろん、レスポンシブ対応やインタラクティブなUIの実装まで、デザインを活かす最適なフロントエンド開発を提供します。",
+                en: "Our frontend engineers faithfully reproduce fine spacing, font families and animation on the web. From system docking into no-code tools (STUDIO, etc.) and WordPress to responsive and interactive UI, we deliver the frontend that best serves your design.",
               },
             },
             {
-              icon: <Layers size={28} className="text-[var(--dreamblue)]" />,
-              title: { ja: "フロント × バックエンド ワンストップ", en: "Full-stack, one point of contact" },
+              icon: <ShieldCheck size={28} className="text-[var(--dreamblue)]" />,
+              title: { ja: "複雑なシステム要件の完全実装", en: "Full implementation of complex system requirements" },
               body: {
-                ja: "窓口は1つ。デザイン課題から複雑なAPI連携・決済・セキュリティまで一括で引き受け、あなたの提案力を劇的に引き上げます。",
-                en: "One contact for everything. From UI challenges to complex API integrations, payments and security — your proposal power multiplied.",
+                ja: "クライアントから求められるStripeなどの外部決済API連携、会員マイページ機能、複雑なデータベース（DB）構築、大規模ECサイト、強固なセキュリティ実装など、デザイナー様が一人で抱えるにはリスクの高すぎる重層的なバックエンド開発を、4名のバックエンドエンジニア陣が完璧に形にします。",
+                en: "External payment API integration (Stripe, etc.), member pages, complex databases, large-scale EC, robust security — the layered backend work that's too risky for a designer to carry alone is handled perfectly by our four backend engineers.",
               },
             },
             {
               icon: <Paintbrush size={28} className="text-[var(--dreamblue)]" />,
-              title: { ja: "デザインへの絶対不可侵", en: "Your design is sacred" },
+              title: { ja: "見積もり・技術仕様策定の窓口代行", en: "Estimate & tech-spec negotiation on your behalf" },
               body: {
-                ja: "デザイナー様のこだわりとブランドの世界観を100%尊重します。私たちはそれを裏側から動かす「エンジン」の構築に徹します。",
-                en: "Your creative vision and brand identity are untouchable. We build the engine that powers it from behind — nothing more, nothing less.",
+                ja: "クライアントからの「この機能は実装できるか？」「セキュリティの仕様はどうなっているか？」といった、専門知識が必要な技術的商談の窓口をチーム長（鈴木）が全面代行します。皆様のチームの「CTO（最高技術責任者）」として商談に同席し、クライアントを納得させる完璧な技術提案を組み立てます。",
+                en: "Team lead Suzuki fully handles the technical negotiations that need expertise — \"can this feature be built?\", \"what's the security spec?\". He sits in as your team's CTO and builds the technical proposal that convinces the client.",
               },
             },
           ].map((b, i) => (
@@ -150,7 +154,7 @@ function HomePage() {
               {t({ ja: "すべての実績 →", en: "All projects →" })}
             </Link>
           </Reveal>
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
             {[caseStudies[0], caseStudies[3]].map((c, i) => (
               <Reveal key={c.id} delay={i * 120} className="card-lift rounded-sm border border-border bg-background overflow-hidden">
                 {c.image ? (
@@ -208,32 +212,32 @@ function HomePage() {
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
         <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-16 text-center md:px-16 md:py-24">
-          <span className="label-jp text-[var(--dreamblue)]">{t({ ja: "ご相談はいつでも・無料", en: "Always free to ask" })}</span>
+          <span className="label-jp text-[var(--dreamblue)]">{t({ ja: "お問い合わせ", en: "Contact" })}</span>
           <h2 className="mt-6 font-serif text-3xl md:text-4xl">
-            {t({ ja: "「こんな相談でいいのかな？」は不要です。", en: "No such thing as a stupid question here." })}
+            {t({ ja: "システム要件の策定から、技術仕様のご相談まで。", en: "From defining system requirements to technical specs." })}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-[1.8] text-muted-foreground md:text-base">
             {t({
-              ja: "仕様書がない段階でも、商談前でも全く問題ありません。30分の無料壁打ち相談で、あなたの課題に最短の答えをお出しします。",
-              en: "No brief needed. No spec required. A free 30-minute session is all we need to give you a clear path forward.",
+              ja: "システム要件の策定や技術的な仕様に関するご相談を承ります。LINE公式アカウントより、お気軽にお問い合わせください。",
+              en: "We take on consultations about system requirements and technical specifications. Reach us anytime via our LINE Official Account.",
             })}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              to="/contact"
-              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
-            >
-              {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })}
-              <ArrowUpRight size={15} className="cta-arrow" />
-            </Link>
             <a
-              href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+              href="https://lin.ee/ncRMNzs"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-8 py-4 text-base font-medium text-white shadow-lg shadow-[#06C755]/20 transition-opacity hover:opacity-90"
             >
-              {t({ ja: "LINEで今すぐ相談（24時間受付）", en: "Chat on LINE (24h)" })}
+              {t({ ja: "LINE公式アカウントでテクニカル相談をする（無料）", en: "Technical consult on our LINE Official Account (free)" })}
+              <ArrowUpRight size={16} className="cta-arrow" />
             </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm"
+            >
+              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
+            </Link>
           </div>
         </Reveal>
       </section>

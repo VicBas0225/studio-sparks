@@ -164,30 +164,27 @@ function SecurityPage() {
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
         <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 bg-[var(--dreamblue)]/5 px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
-            {t({ ja: "規約を確認の上、無料壁打ち相談へ進む。", en: "Policies reviewed. Ready to talk." })}
+            {t({ ja: "規約をご確認の上、テクニカル相談へ。", en: "Policies reviewed. Let's talk technical." })}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm leading-[1.8] text-muted-foreground">
             {t({
-              ja: "仕様書がない段階でも、商談前でも全く問題ありません。30分の無料壁打ち相談で、あなたの課題に最短の答えをお出しします。",
-              en: "No brief needed. A free 30-minute session is all we need to give you a clear path forward.",
+              ja: "システム要件の策定や技術的な仕様に関するご相談を承ります。LINE公式アカウントより、お気軽にお問い合わせください。",
+              en: "We take on consultations about system requirements and technical specifications. Reach us anytime via our LINE Official Account.",
             })}
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link
-              to="/contact"
-              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
-            >
-              {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })}
-              <ArrowUpRight size={15} className="cta-arrow" />
-            </Link>
             <a
-              href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+              href="https://lin.ee/ncRMNzs"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-8 py-4 text-base font-medium text-white shadow-lg shadow-[#06C755]/20 transition-opacity hover:opacity-90"
             >
-              {t({ ja: "LINEで相談（24時間受付）", en: "Chat on LINE (24h)" })}
+              {t({ ja: "LINE公式アカウントでテクニカル相談をする（無料）", en: "Technical consult on our LINE Official Account (free)" })}
+              <ArrowUpRight size={16} className="cta-arrow" />
             </a>
+            <Link to="/contact" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
+              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
+            </Link>
           </div>
         </Reveal>
       </section>

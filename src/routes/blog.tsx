@@ -25,12 +25,12 @@ function BlogPage() {
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-28">
         <Reveal><SectionLabel index="01">{t({ ja: "お客様の声", en: "Client Stories" })}</SectionLabel></Reveal>
         <Reveal as="h1" delay={80} className="mt-8 max-w-4xl font-serif text-[clamp(2rem,5vw,3.75rem)] leading-[1.1]">
-          {t({ ja: "「成果報酬って、本当に大丈夫？」— 実際に使った人の声。", en: "\"Is performance-based pay actually safe?\" — from people who tried it." })}
+          {t({ ja: "デザインを守り抜いた、開発パートナーとしてのお客様の声。", en: "Client voices — from designers whose work we protected." })}
         </Reveal>
         <Reveal as="p" delay={160} className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
           {t({
-            ja: "成果報酬型は魅力的な反面、「本当にトラブルはないの？」という不安もあります。実際に課題を解決したクリエイターのリアルな声をそのまま掲載します。",
-            en: "Performance-based pay sounds great — but \"will it actually work?\" is a fair concern. Here are real stories from creators who found out.",
+            ja: "システム要件の壁を、デザインを1ミリも崩さずに突破したクリエイターのリアルな声をそのまま掲載します。",
+            en: "Real voices from creators who broke through system-requirement walls without altering their design at all.",
           })}
         </Reveal>
       </section>
@@ -108,23 +108,20 @@ function BlogPage() {
             {t({ ja: "次はあなたの番です。", en: "You could be the next story." })}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm leading-[1.8] text-muted-foreground">
-            {t({ ja: "まずは30分の無料壁打ち相談から。仕様書不要・商談前でも歓迎です。", en: "Start with a free 30-minute session. No spec needed." })}
+            {t({ ja: "システム要件の策定や技術的な仕様に関するご相談を承ります。", en: "We take on consultations about system requirements and technical specifications." })}
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link
-              to="/contact"
-              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[var(--dreamblue)] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
-            >
-              {t({ ja: "⚡ 無料壁打ち相談をする", en: "⚡ Book free consult" })} <ArrowUpRight size={15} className="cta-arrow" />
-            </Link>
             <a
-              href="https://line.me/ti/g2/VTUOklFBUpBzUCwZLs-opd7-hxSKRaooS7cowQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+              href="https://lin.ee/ncRMNzs"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="group/cta inline-flex items-center gap-2 rounded-sm bg-[#06C755] px-8 py-4 text-base font-medium text-white shadow-lg shadow-[#06C755]/20 transition-opacity hover:opacity-90"
             >
-              {t({ ja: "LINEで相談（24時間受付）", en: "Chat on LINE (24h)" })}
+              {t({ ja: "LINE公式アカウントでテクニカル相談をする（無料）", en: "Technical consult on our LINE Official Account (free)" })} <ArrowUpRight size={16} className="cta-arrow" />
             </a>
+            <Link to="/contact" className="inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">
+              {t({ ja: "お問い合わせフォーム →", en: "Contact form →" })}
+            </Link>
           </div>
         </Reveal>
       </section>

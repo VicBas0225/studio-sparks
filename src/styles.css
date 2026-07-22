@@ -76,24 +76,27 @@
 }
 
 .dark {
-  --paper: oklch(0.12 0.01 255);
-  --ink: oklch(0.96 0.005 80);
-  --sumi: oklch(0.78 0.008 60);
-  --hairline: oklch(0.28 0.01 255);
-  --dreamblue: oklch(0.58 0.18 250);
-  --dreamgold: oklch(0.78 0.10 75);
+  /* Permanent dark mode — fixed technology-infrastructure palette (項目1) */
+  --paper: #0a0a0c;                 /* base background */
+  --ink: #f5f5f7;                   /* primary text (off-white) */
+  --sumi: #c7c7cc;
+  --hairline: #2a2a2e;              /* decorative borders */
+  --dreamblue: #0071e3;             /* brand accent (deep tech blue) */
+  --dreamgold: oklch(0.78 0.1 75);
   --background: var(--paper);
   --foreground: var(--ink);
-  --card: oklch(0.17 0.01 255);
+  --card: #141417;
   --card-foreground: var(--ink);
-  --popover: oklch(0.17 0.01 255);
+  --popover: #141417;
   --popover-foreground: var(--ink);
   --primary: var(--dreamblue);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.20 0.01 255);
+  --primary-foreground: #ffffff;
+  --secondary: #161619;
   --secondary-foreground: var(--ink);
-  --muted: oklch(0.20 0.01 255);
-  --muted-foreground: oklch(0.65 0.008 255);
+  --muted: #161619;
+  --muted-foreground: #86868b;      /* secondary text (tech grey) */
+  --accent: var(--dreamblue);
+  --accent-foreground: #ffffff;
   --border: var(--hairline);
   --input: var(--hairline);
   --ring: var(--dreamblue);

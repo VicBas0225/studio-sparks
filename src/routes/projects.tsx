@@ -78,7 +78,7 @@ function ProjectsPage() {
                     <img
                       src={c.image}
                       alt={c.title.ja}
-                      className="aspect-[16/10] w-full object-cover object-top"
+                      className="case-image"
                     />
                   ) : (
                     <div

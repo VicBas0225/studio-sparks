@@ -212,6 +212,15 @@ html {
   }
 }
 
+/* Case-study / 実績 banner images — preserve native aspect ratio, scale to
+   100% width, never crop or distort, regardless of the image's dimensions. */
+@utility case-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 /* "お問い合わせフォーム →" — arrow slides on hover */
 .form-arrow {
   display: inline-block;

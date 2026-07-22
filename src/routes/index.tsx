@@ -218,7 +218,7 @@ function HomePage() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-[1.8] text-muted-foreground md:text-base">
             {t({
-              ja: "気軽な技術的なご質問や概算のお見積もりは、LINE公式アカウントへ。要件定義書やFigmaデータを添えた詳しいご相談は、お問い合わせフォームからどうぞ。",
+              ja: "技術的なご質問や概算のお見積もりは、LINE公式アカウントへお気軽に。要件定義書やFigmaデータを添えた詳しいご相談は、お問い合わせフォームからどうぞ。",
               en: "For quick technical questions or a rough estimate, use our LINE Official Account. For a detailed discussion with your requirements docs or Figma data, use the contact form.",
             })}
           </p>

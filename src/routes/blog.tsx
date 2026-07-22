@@ -3,14 +3,13 @@ import { useLang } from "@/lib/i18n";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Reveal } from "@/components/Reveal";
 import { blogPosts } from "@/lib/content";
-import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { ArrowUpRight, Quote } from "lucide-react";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
       { title: "お客様の声 — Dream-cha | Client Stories" },
-      { name: "description", content: "Dream-chaを使ってデザイナーやノーコードディレクターが案件を解決した実際の声。成果報酬型の安心感をリアルなフィードバックで確認できます。" },
+      { name: "description", content: "DreamCha（ドリームチャ）と共に案件を突破したデザイナー・ディレクターのリアルな声。デザインを1ミリも崩さずシステム要件の壁を越えた開発パートナーへのフィードバックを掲載しています。" },
     ],
   }),
   component: BlogPage,
@@ -18,7 +17,6 @@ export const Route = createFileRoute("/blog")({
 
 function BlogPage() {
   const { t } = useLang();
-  const [open, setOpen] = useState<string | null>(null);
 
   return (
     <>
@@ -29,8 +27,8 @@ function BlogPage() {
         </Reveal>
         <Reveal as="p" delay={160} className="mt-8 max-w-2xl text-base leading-[1.8] text-muted-foreground md:text-lg">
           {t({
-            ja: "システム要件の壁を、デザインを1ミリも崩さずに突破したクリエイターのリアルな声をそのまま掲載します。",
-            en: "Real voices from creators who broke through system-requirement walls without altering their design at all.",
+            ja: "システム要件の壁を、デザインを1ミリも崩さずに突破したクリエイターの皆さまから届いた、リアルな声をそのまま掲載しています。",
+            en: "Real, unedited voices from creators who broke through system-requirement walls without altering their design at all.",
           })}
         </Reveal>
       </section>
@@ -38,63 +36,28 @@ function BlogPage() {
       <div className="hairline mx-auto max-w-7xl h-[2px]" />
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
-        <div className="grid gap-8 md:grid-cols-2">
-          {blogPosts.map((post, i) => (
-            <Reveal as="article" key={post.id} delay={(i % 2) * 100} className="card-lift rounded-sm border border-border overflow-hidden">
-              {/* Card header */}
-              <div className="bg-[#F5F5F7] dark:bg-secondary/40 px-8 pt-8 pb-6">
-                <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-[var(--dreamblue)]/10 px-3 py-1 font-mono text-[10px] tracking-wider text-[var(--dreamblue)]">
-                    {t(post.tag)}
-                  </span>
-                  <span className="font-mono text-[10px] text-muted-foreground">{post.date}</span>
-                </div>
-                <h2 className="mt-4 font-serif text-xl leading-snug">{t(post.title)}</h2>
-                <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{t(post.intro)}</p>
+        {/* Unified card grid (masonry) — same design for every voice, light & dark ready */}
+        <div className="columns-1 gap-6 md:columns-2">
+          {blogPosts.map((post) => (
+            <Reveal
+              as="article"
+              key={post.id}
+              className="card-lift mb-6 break-inside-avoid rounded-xl border border-border bg-card p-7 md:p-8"
+            >
+              <div className="flex items-center justify-between">
+                <span className="rounded-full bg-[var(--dreamblue)]/10 px-3 py-1 font-mono text-[10px] tracking-wider text-[var(--dreamblue)]">
+                  {t(post.tag)}
+                </span>
+                <span className="font-mono text-[10px] text-muted-foreground">{post.date}</span>
               </div>
 
-              {/* Story body */}
-              <div className="px-8 py-6 space-y-5">
-                <div>
-                  <div className="label-jp text-[var(--dreamblue)]">{t({ ja: "依頼者プロフィール", en: "About the client" })}</div>
-                  <p className="mt-2 text-sm leading-[1.8] text-muted-foreground">{t(post.profile)}</p>
-                </div>
+              <Quote size={26} className="mt-5 text-[var(--dreamblue)]/40" aria-hidden />
 
-                {open === post.id ? (
-                  <>
-                    <div>
-                      <div className="label-jp text-red-500">{t({ ja: "直面していた絶望", en: "The problem" })}</div>
-                      <blockquote className="mt-2 border-l-2 border-red-200 pl-4 text-sm leading-[1.8] italic text-muted-foreground">
-                        {t(post.despair)}
-                      </blockquote>
-                    </div>
-                    <div>
-                      <div className="label-jp text-[var(--dreamblue)]">{t({ ja: "Dream-chaの対応", en: "How Dream-cha helped" })}</div>
-                      <blockquote className="mt-2 border-l-2 border-[var(--dreamblue)]/40 pl-4 text-sm leading-[1.8] italic text-muted-foreground">
-                        {t(post.response)}
-                      </blockquote>
-                    </div>
-                    <div>
-                      <div className="label-jp text-green-600 dark:text-green-400">{t({ ja: "解決後の未来", en: "Life after" })}</div>
-                      <blockquote className="mt-2 border-l-2 border-green-300 pl-4 text-sm leading-[1.8] italic text-muted-foreground">
-                        {t(post.future)}
-                      </blockquote>
-                    </div>
-                    <button
-                      onClick={() => setOpen(null)}
-                      className="text-xs text-muted-foreground hover:text-foreground"
-                    >
-                      {t({ ja: "▲ 閉じる", en: "▲ Close" })}
-                    </button>
-                  </>
-                ) : (
-                  <button
-                    onClick={() => setOpen(post.id)}
-                    className="text-sm text-[var(--dreamblue)] hover:opacity-80"
-                  >
-                    {t({ ja: "続きを読む →", en: "Read full story →" })}
-                  </button>
-                )}
+              <h2 className="mt-3 font-serif text-lg leading-snug">{t(post.title)}</h2>
+              <p className="mt-4 text-sm leading-[1.95] text-muted-foreground">{t(post.comment)}</p>
+
+              <div className="mt-6 border-t border-border pt-4">
+                <p className="text-xs font-medium text-foreground/80">{t(post.profile)}</p>
               </div>
             </Reveal>
           ))}
@@ -105,7 +68,7 @@ function BlogPage() {
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10 md:pb-32">
         <Reveal className="rounded-sm border border-[var(--dreamblue)]/30 cta-bg px-8 py-14 text-center md:px-16">
           <h2 className="font-serif text-2xl md:text-3xl">
-            {t({ ja: "次はあなたの番です。", en: "You could be the next story." })}
+            {t({ ja: "次は、あなたの番です。", en: "You could be the next story." })}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm leading-[1.8] text-muted-foreground">
             {t({ ja: "システム要件の策定や技術的な仕様に関するご相談を承ります。", en: "We take on consultations about system requirements and technical specifications." })}

@@ -427,11 +427,8 @@ export type BlogPost = {
   date: string;
   tag: Bi;
   title: Bi;
-  intro: Bi;
   profile: Bi;
-  despair: Bi;
-  response: Bi;
-  future: Bi;
+  comment: Bi;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -440,28 +437,16 @@ export const blogPosts: BlogPost[] = [
     date: "2025.11",
     tag: { ja: "お客様の声", en: "Client Voice" },
     title: {
-      ja: "『LINEログイン連動の会員サイト』の商談を、鈴木の同席で一発クリア",
-      en: "A LINE-login membership-site pitch, cleared in one shot with Suzuki in the room",
-    },
-    intro: {
-      ja: "技術的な会話ができず失注しかけた会員サイト案件を、商談同席で受注に繋げた事例。",
-      en: "A membership-site deal nearly lost over technical talk — won by joining the negotiation.",
+      ja: "失注寸前だった案件が、単価3倍の主力案件になりました",
+      en: "A deal I was about to lose became my flagship project — at triple the rate",
     },
     profile: {
       ja: "フリーランスWebデザイナー / 高橋 健二 様",
       en: "Freelance Web Designer / Kenji Takahashi",
     },
-    despair: {
-      ja: "「クライアントから突然『LINEログインと連動した会員サイトを作りたい』と言われ、技術的な会話が全くできず失注しかけていました。」",
-      en: '"My client suddenly said they wanted a members’ site with LINE login, and I couldn’t hold a technical conversation at all — I was about to lose the deal."',
-    },
-    response: {
-      ja: "「DreamChaの鈴木さんが商談に同席してくれたおかげで、先方のシステム担当者も一発で納得。」",
-      en: '"Because DreamCha’s Suzuki joined the negotiation, the client’s own system lead was convinced in one shot."',
-    },
-    future: {
-      ja: "「私はFigmaでのデザインとフロント実装に100%集中でき、受注単価がこれまでの3倍になりました！」",
-      en: '"I could focus 100% on Figma design and front-end, and my project rate tripled!"',
+    comment: {
+      ja: "正直に言うと、クライアントから突然『LINEログインと連動した会員サイトを作りたい』と言われたときは、頭が真っ白になりました。デザインには自信があるのに、システムの話になると何ひとつ答えられなくて……このままでは失注するな、と半分諦めていたんです。藁にもすがる思いでDreamChaさんに相談したら、鈴木さんが商談にそのまま同席してくれて。先方のシステム担当者からの細かい技術的な質問にも、その場でスラスラ答えてくれたんです。おかげで先方も一発で納得。あの瞬間は、正直ちょっと鳥肌が立ちました。結局その案件は受注単価がこれまでの3倍になって、今では自分の主力案件になっています。技術のことは全部お任せして、自分はデザインに100%集中できる——この安心感は、一度知ってしまったらもう戻れないですね。",
+      en: "Honestly, when my client suddenly said they wanted a members' site tied to LINE login, my mind went completely blank. I'm confident in my design, but the moment it turned technical I couldn't answer a single thing — I'd half given up, sure I'd lose the deal. As a last resort I reached out to DreamCha, and Suzuki just sat in on the meeting with me. He answered the client's system lead's detailed technical questions on the spot, effortlessly, and they were sold in one shot. That moment honestly gave me goosebumps. In the end my rate for that project tripled, and it's now my flagship work. I hand all the tech to them and pour 100% into design — once you've known this peace of mind, there's really no going back.",
     },
   },
   {
@@ -469,28 +454,16 @@ export const blogPosts: BlogPost[] = [
     date: "2026.01",
     tag: { ja: "お客様の声", en: "Client Voice" },
     title: {
-      ja: "デザイン世界観を保ったまま、StripeのAPIを裏側で強固に繋ぎ込み",
-      en: "Kept the design worldview intact while the Stripe API was wired in rock-solid behind the scenes",
-    },
-    intro: {
-      ja: "過去の決済エラーのトラウマを、フルスタックの実装力で払拭したサブスクEC事例。",
-      en: "A subscription-EC case that erased the trauma of past payment errors with full-stack skill.",
+      ja: "決済エラーのトラウマを、完璧な実装で消してもらえました",
+      en: "They erased my payment-error trauma with a flawless build",
     },
     profile: {
       ja: "UI/UXデザイナー・ブランドディレクター / 渡辺 茜 様",
       en: "UI/UX Designer & Brand Director / Akane Watanabe",
     },
-    despair: {
-      ja: "「過去に別のエンジニアに頼んだ際、プラグインの不具合で決済エラーが多発し、大クレームになったトラウマがありました。」",
-      en: '"With a previous engineer, plugin bugs caused repeated payment errors and a major complaint — it left me traumatised."',
-    },
-    response: {
-      ja: "「DreamChaさんに相談したところ、フルスタックの方が私の作ったデザイン世界観を完璧に保ったまま、StripeのAPIを裏側で驚くほど強固に繋ぎ込んでくれました。」",
-      en: '"When I consulted DreamCha, their full-stack engineer kept my design worldview perfectly intact and wired the Stripe API into the backend astonishingly robustly."',
-    },
-    future: {
-      ja: "「納品後のバグも一切なく、クライアントも大満足です。」",
-      en: '"There were zero post-launch bugs, and the client was thrilled."',
+    comment: {
+      ja: "以前、別のエンジニアさんにお願いしたときに、プラグインの不具合で決済エラーが多発して、クライアントから大クレームをいただいた苦い経験があったんです。だから今回のサブスクECのお話が来たときも、内心すごく怖くて。でもDreamChaさんは、私が細部まで作り込んだデザインの世界観を1ミリも崩さないまま、Stripeの決済を裏側で驚くほど堅牢に組み上げてくれました。納品後のバグはゼロ。クライアントにも本当に喜んでいただけて、あのときのトラウマがようやく消えた気がします。",
+      en: "I once had a previous engineer's plugin bug cause repeated payment errors and a huge complaint from the client — a bitter memory that stuck with me. So when this subscription-EC job came in, I was honestly scared. But DreamCha kept the world of my meticulously-crafted design perfectly intact and wired Stripe into the backend astonishingly solidly. Zero bugs after launch, and the client was genuinely delighted. That old trauma has finally faded.",
     },
   },
   {
@@ -498,28 +471,16 @@ export const blogPosts: BlogPost[] = [
     date: "2026.02",
     tag: { ja: "お客様の声", en: "Client Voice" },
     title: {
-      ja: "デザインの意図を『翻訳』し、見た目の崩れゼロの超高速検索システムを実現",
-      en: "“Translated” the design intent into an ultra-fast search system with zero visual breakage",
-    },
-    intro: {
-      ja: "難解なシステム要件の不動産案件を、デザイン意図の翻訳で完遂した事例。",
-      en: "A real-estate project with a daunting spec, completed by translating the design intent.",
+      ja: "デザインの意図を「翻訳」してくれるから、崩れが一切ない",
+      en: "Because they 'translate' the design intent, nothing breaks",
     },
     profile: {
       ja: "Web制作会社経営・フリーランスデザイナー / 小林 拓也 様",
       en: "Web Studio Owner & Freelance Designer / Takuya Kobayashi",
     },
-    despair: {
-      ja: "「大手不動産会社からの案件で、システム要件の仕様書が難解すぎて頭を抱えていました。」",
-      en: '"On a project for a major real-estate firm, the system-requirements spec was so complex it left me stumped."',
-    },
-    response: {
-      ja: "「DreamChaの佐藤さんが私のデザインの意図（余白や動線）をチームのエンジニアたちに完璧に『翻訳』して伝えてくれたため、見た目の崩れが一切ない、超高速な検索システムが完成しました。」",
-      en: '"DreamCha’s Sato perfectly ‘translated’ my design intent (spacing, flow) to the engineers, so an ultra-fast search system was built with zero visual breakage."',
-    },
-    future: {
-      ja: "「技術部門を丸ごと外注できる安心感は凄いです。」",
-      en: '"The peace of mind of outsourcing an entire technical department is incredible."',
+    comment: {
+      ja: "大手不動産会社さんの案件で、システム要件の仕様書があまりに難解で、正直お手上げでした。何より助かったのは、DreamChaの佐藤さんが、私のデザインの意図——余白の取り方や、ユーザーの動線といった細かいこだわりまで——を、開発チームのエンジニアさんたちに完璧に「翻訳」して橋渡ししてくれたことです。だから出来上がったものは見た目の崩れが本当に一切なくて、しかも検索が驚くほど高速。技術部門をまるごと信頼して任せられる、この安心感は他ではちょっと味わえないですね。",
+      en: "On a job for a major real-estate company, the requirements spec was so dense I was honestly at a loss. What helped most was that DreamCha's Sato perfectly 'translated' my design intent — right down to the spacing and the user flow I cared about — and bridged it to the engineers. So the result had truly zero visual breakage, and the search was astonishingly fast. Being able to entrust an entire technical department with real confidence is a peace of mind you can't easily find elsewhere.",
     },
   },
   {
@@ -527,28 +488,16 @@ export const blogPosts: BlogPost[] = [
     date: "2026.04",
     tag: { ja: "お客様の声", en: "Client Voice" },
     title: {
-      ja: "完全成果報酬で立替リスクゼロ。孤独なフリーランスの恐怖から解放",
-      en: "Fully performance-based, zero cash-advance risk — freed from the fear of freelancing alone",
-    },
-    intro: {
-      ja: "荷の重い予約システム開発を、着金ベースの成果報酬でリスクなく挑戦できた事例。",
-      en: "A heavy booking-system build, taken on risk-free on payment-triggered performance terms.",
+      ja: "前払い不要の成果報酬だから、ひとりで抱える恐怖から解放されました",
+      en: "No upfront cost, so I was freed from the fear of carrying it alone",
     },
     profile: {
       ja: "フリーランスWebディレクター 兼 デザイナー / 斎藤 美咲 様",
       en: "Freelance Web Director & Designer / Misaki Saito",
     },
-    despair: {
-      ja: "「個人で受けるには荷が重すぎるシステム開発案件でした。」",
-      en: '"It was a system-development project far too heavy to take on as an individual."',
-    },
-    response: {
-      ja: "「DreamChaさんが『前払い不要の完全成果報酬（着金ベース）』で入ってくれたため、金銭的な立替リスクゼロで挑戦できました。」",
-      en: '"Because DreamCha came in on ‘no-prepayment, fully performance-based (payment-triggered)’ terms, I could take it on with zero cash-advance risk."',
-    },
-    future: {
-      ja: "「鈴木様が技術的なリスクの責任を100%引き受けてくれたおかげで、孤独なフリーランスの恐怖から解放されました。」",
-      en: '"Because Suzuki took 100% responsibility for the technical risk, I was freed from the fear of freelancing alone."',
+    comment: {
+      ja: "正直、個人で受けるには荷が重すぎるシステム開発案件でした。リアルタイムの予約管理なんて、私ひとりではとても手に負えなくて。でもDreamChaさんが「前払い不要の完全成果報酬（着金ベース）」で入ってくれたので、金銭的な立替リスクはゼロで挑戦できたんです。しかも技術的なリスクの責任は、鈴木さんが100%引き受けてくれて。フリーランスって、こういう大きな案件を目の前にすると本当に孤独で怖いものなんですけど、その恐怖からすっと解放されました。",
+      en: "Honestly, it was a system-development job far too heavy for me to take on alone — real-time booking management was simply beyond me. But because DreamCha came in on 'no-prepayment, fully performance-based (payment-triggered)' terms, I could take it on with zero cash-advance risk. And Suzuki shouldered 100% of the technical risk himself. As a freelancer, facing a big job like this can feel genuinely lonely and frightening — and that fear just melted away.",
     },
   },
   {
@@ -556,28 +505,16 @@ export const blogPosts: BlogPost[] = [
     date: "2026.05",
     tag: { ja: "お客様の声", en: "Client Voice" },
     title: {
-      ja: "「デザインは1ミリも奪わない」— 紙媒体出身の私がDX案件を開拓できた",
-      en: '"They didn\'t take a millimeter of my design" — a print designer opening up DX work',
-    },
-    intro: {
-      ja: "Webシステム門外漢のデザイナーが、裏方に徹する開発でDX市場を開拓した事例。",
-      en: "A designer new to web systems opening up the DX market with behind-the-scenes development.",
+      ja: "「デザインは1ミリも奪わない」— 紙媒体出身の私が、DX市場を開拓できた",
+      en: "\"We won't take a millimeter of your design\" — a print designer breaking into the DX market",
     },
     profile: {
       ja: "グラフィック 兼 クリエイティブディレクター / 伊藤 裕太 様",
       en: "Graphic & Creative Director / Yuta Ito",
     },
-    despair: {
-      ja: "「私はもともと紙媒体のデザイン事務所をやっており、Webシステムは完全に門外漢でした。」",
-      en: '"I originally ran a print-design studio and was completely out of my depth with web systems."',
-    },
-    response: {
-      ja: "「DreamChaさんは『私たちはデザインは1ミリも奪いません』と言ってくれ、本当にシステム裏方の開発インフラだけに徹してくれました。」",
-      en: '"DreamCha told me, \'we won\'t take a millimeter of your design,\' and truly stuck to the backend development infrastructure only."',
-    },
-    future: {
-      ja: "「おかげさまで、自分の縄張りを守ったまま、企業のDX案件という超高単価な市場を開拓できました！」",
-      en: '"Thanks to them, I opened up the very high-value market of corporate DX work — while keeping my own turf intact!"',
+    comment: {
+      ja: "私はもともと紙媒体のデザイン事務所をやっていて、Webのシステムなんて完全に門外漢だったんです。だから最初は正直、エンジニアさんに入ってもらうと、自分のデザインが技術の都合でどんどん作り変えられてしまうんじゃないか、という不安がすごくありました。ところがDreamChaさんは、開口一番『私たちはデザインは1ミリも奪いません』と言い切ってくれて。そして実際、本当にその通りだったんです。STUDIOで作った私のデザインはそのまま活かして、Stripeの決済まわりだけを裏側で静かに繋いでくれました。表には一切出てこず、あくまで裏方に徹してくれる。この絶妙な距離感が、私にとっては何より嬉しかった。おかげさまで、自分の縄張りである「デザイン」を1ミリも手放さないまま、企業のDX案件という、これまで絶対に手の届かなかった超高単価の市場を開拓することができました。ずっと紙の世界にいた自分が、まさかこんな景色を見られるとは思ってもみませんでした。",
+      en: "I originally ran a print-design studio, so web systems were completely foreign to me. At first, honestly, I was really anxious that bringing engineers in would mean my design getting reshaped bit by bit to suit technical convenience. But the very first thing DreamCha said was, 'we won't take a millimeter of your design.' And they truly meant it. They kept my STUDIO design exactly as I made it and quietly connected only the Stripe payment side behind the scenes — never stepping into the spotlight, staying strictly in the engine room. That perfect sense of distance meant more to me than anything. Thanks to them, without letting go of a single millimeter of my turf — design — I broke into corporate DX projects, a high-value market I could never have reached. I never dreamed that someone who'd spent his whole career in print would get to see a view like this.",
     },
   },
 ];
